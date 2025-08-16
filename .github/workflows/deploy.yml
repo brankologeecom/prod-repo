@@ -1,0 +1,65 @@
+name: Full env deployment (Worldline)
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.CDK_DEFAULT_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Get Prestashop image sha
+        id: build-image-prestashop
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: worldline/integration-prestashop
+          IMAGE_TAG: latest
+        run: |
+          IMAGE_PRESTASHOP_SHA=$(aws ecr describe-images \
+          --repository-name $ECR_REPOSITORY \
+          --image-ids imageTag=$IMAGE_TAG \
+          --query 'sort_by(imageDetails,&imagePushedAt)[-1].imageDigest' \
+          --output text)
+          echo "IMAGE_PRESTASHOP_SHA=$IMAGE_PRESTASHOP_SHA" >> $GITHUB_ENV
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+      - name: Install CDK
+        run: |
+          npm install -g aws-cdk
+      - name: Install node packages
+        run: |
+          npm install
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.CDK_DEFAULT_REGION }}
+      - name: Deploy to AWS
+        run: |
+          cdk deploy --all --require-approval=never
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_ACCESS_KEY_SECRET: ${{ secrets.AWS_ACCESS_KEY_SECRET }}
+          CDK_DEFAULT_REGION: ${{ secrets.CDK_DEFAULT_REGION }}
+          CDK_DOMAIN: ${{ secrets.CDK_DOMAIN }}
+          CDK_HOSTED_ZONE: ${{ secrets.CDK_HOSTED_ZONE }}
+          VCS_ACCESS_TOKEN: ${{ secrets.VCS_ACCESS_TOKEN }}
+          DEPLOY_CONFIG: ${{ vars.DEPLOY_CONFIG }}
+          IMAGE: ${{ steps.login-ecr.outputs.registry }}/worldline/integration-prestashop@${{ env.IMAGE_PRESTASHOP_SHA }}
+          CDK_STACK_PREFIX: apps
