@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.4.10] - 2025-13-08
 ### Changed
-- Add null checking in liability/exemption chain
+- Add null checking in liability/exemption chain dsadsadsadsadsadsa
 
 ## [1.4.9] - 2025-11-08
 ### Changed
