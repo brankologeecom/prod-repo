@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Remove extension validation for template filename
 - Implement omit order item details button and logic
-- Fix order total webhook issue
+- Fix order total webhook issue (FIXED)
 
 ## [1.4.7] - 2025-30-06
 ### Added
@@ -143,3 +143,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - First major version
+- First major version X
+- First major version Y
+- First major version Z
+
