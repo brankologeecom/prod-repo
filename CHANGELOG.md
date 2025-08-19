@@ -142,8 +142,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.1.0] - 2022-02-22
 ### Added
 
-- First major version
-- First major version X
-- First major version Y
-- First major version Z
+- Worldline Direct Payment Test
+- Worldline Direct Payment Test X
+- Worldline Direct Payment Test Y
+- Worldline Direct Payment Test Z
+- Worldline Direct Payment Test R
+- Worldline Direct Payment Test
+- Worldline Direct Payment Test X
+- Worldline Direct Payment Test Y
+- Worldline Direct Payment Test Z
+- Worldline Direct Payment Test R
 
