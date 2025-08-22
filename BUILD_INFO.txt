@@ -1,1 +1,1 @@
-Built from Worldline-Plugins/plugin-prestashop-PRE-RELEASE@master on Fri Aug 22 09:46:39 UTC 2025
+Built from Worldline-Plugins/plugin-prestashop-PRE-RELEASE@master on Fri Aug 22 09:47:14 UTC 2025
