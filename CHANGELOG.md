@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.4.10] - 2025-13-08
 ### Changed
-- Add null checking in liability/exemption chain dsadsadsadsadsadsa
+- Add null checking in liability/exemption chain
 
 ## [1.4.9] - 2025-11-08
 ### Changed
@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Remove extension validation for template filename
 - Implement omit order item details button and logic
-- Fix order total webhook issue (FIXED)
+- Fix order total webhook issue
 
 ## [1.4.7] - 2025-30-06
 ### Added
@@ -142,14 +142,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.1.0] - 2022-02-22
 ### Added
 
-- Worldline Direct Payment Test
-- Worldline Direct Payment Test X
-- Worldline Direct Payment Test Y
-- Worldline Direct Payment Test Z
-- Worldline Direct Payment Test R
-- Worldline Direct Payment Test
-- Worldline Direct Payment Test X
-- Worldline Direct Payment Test Y
-- Worldline Direct Payment Test Z
-- Worldline Direct Payment Test R
-
+- First major version
