@@ -1,10 +1,25 @@
 <?php
 
-namespace OnlinePayments\Sdk;
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk;
 
+use DateTime;
 use Exception;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\ConnectionResponseInterface;
 use UnexpectedValueException;
-
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Authentication\Authenticator;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\Connection;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\DefaultConnection;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\ErrorResponseException;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\MetadataProvider;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\MetadataProviderInterface;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\MultipartDataObject;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\MultipartFormDataObject;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\RequestObject;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\ResponseBuilder;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\ResponseClassMap;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\ResponseFactory;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\DataObject;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Logging\CommunicatorLogger;
 /**
  * Class Communicator
  *
@@ -13,32 +28,29 @@ use UnexpectedValueException;
 class Communicator implements CommunicatorInterface
 {
     const MIME_APPLICATION_JSON = 'application/json';
-
+    /** @var string */
+    private $apiEndpoint;
+    /** @var Authenticator */
+    private $authenticator;
     /** @var Connection */
     private $connection;
-
-    /** @var CommunicatorConfiguration */
-    private $communicatorConfiguration;
-
+    /** @var MetadataProviderInterface */
+    private $metadataProvider;
     /** @var ResponseFactory|null */
     private $responseFactory = null;
-
-    /** @var ResponseExceptionFactory|null */
-    private $responseExceptionFactory = null;
-
     /**
-     * @param Connection $connection
      * @param CommunicatorConfiguration $communicatorConfiguration
+     * @param Authenticator $authenticator
+     * @param Connection|null $connection
+     * @param MetadataProviderInterface|null $metadataProvider
      */
-    public function __construct(
-        Connection                $connection,
-        CommunicatorConfiguration $communicatorConfiguration
-    )
+    public function __construct(CommunicatorConfiguration $communicatorConfiguration, Authenticator $authenticator, Connection $connection = null, MetadataProviderInterface $metadataProvider = null)
     {
-        $this->connection = $connection;
-        $this->communicatorConfiguration = $communicatorConfiguration;
+        $this->apiEndpoint = $communicatorConfiguration->getApiEndpoint();
+        $this->authenticator = $authenticator;
+        $this->connection = $connection ?? new DefaultConnection($communicatorConfiguration);
+        $this->metadataProvider = $metadataProvider ?? new MetadataProvider($communicatorConfiguration);
     }
-
     /**
      * @param CommunicatorLogger $communicatorLogger
      */
@@ -46,7 +58,6 @@ class Communicator implements CommunicatorInterface
     {
         $this->connection->enableLogging($communicatorLogger);
     }
-
     /**
      *
      */
@@ -54,244 +65,317 @@ class Communicator implements CommunicatorInterface
     {
         $this->connection->disableLogging();
     }
-
     /**
      * @param ResponseClassMap $responseClassMap
      * @param string $relativeUriPath
      * @param string $clientMetaInfo
      * @param RequestObject|null $requestParameters
-     * @param CallContext $callContext
+     * @param CallContext|null $callContext
      * @return DataObject
-     * @throws ResponseException
+     * @throws Exception
      */
-    public function get(
-        ResponseClassMap $responseClassMap,
-                         $relativeUriPath,
-                         $clientMetaInfo = '',
-        RequestObject    $requestParameters = null,
-        CallContext      $callContext = null
-    )
+    public function get(ResponseClassMap $responseClassMap, $relativeUriPath, $clientMetaInfo = '', RequestObject $requestParameters = null, CallContext $callContext = null)
     {
         $relativeUriPathWithRequestParameters = $this->getRelativeUriPathWithRequestParameters($relativeUriPath, $requestParameters);
         $requestHeaders = $this->getRequestHeaders('GET', $relativeUriPathWithRequestParameters, null, $clientMetaInfo, $callContext);
-
         $responseBuilder = new ResponseBuilder();
-        $responseHandler = function ($httpStatusCode, $data, $headers) use ($responseBuilder) {
+        $responseHandler = function ($httpStatusCode, $data, $headers) use($responseBuilder) {
             $responseBuilder->setHttpStatusCode($httpStatusCode);
             $responseBuilder->setHeaders($headers);
             $responseBuilder->appendBody($data);
         };
-
-        $this->getConnection()->get(
-            $this->communicatorConfiguration->getApiEndpoint() . $relativeUriPathWithRequestParameters,
-            $requestHeaders,
-            $responseHandler,
-            $this->communicatorConfiguration->getProxyConfiguration()
-        );
+        $this->connection->get($this->apiEndpoint . $relativeUriPathWithRequestParameters, $requestHeaders, $responseHandler);
         $connectionResponse = $responseBuilder->getResponse();
         $this->updateCallContext($connectionResponse, $callContext);
         $response = $this->getResponseFactory()->createResponse($connectionResponse, $responseClassMap);
         $httpStatusCode = $connectionResponse->getHttpStatusCode();
         if ($httpStatusCode >= 400) {
-            throw $this->getResponseExceptionFactory()->createException($httpStatusCode, $response, $callContext);
+            throw new ErrorResponseException($httpStatusCode, $response);
         }
         return $response;
     }
-
+    /**
+     * @param callable $bodyHandler Callable accepting a response body chunk and the response headers
+     * @param ResponseClassMap $responseClassMap Used for error handling
+     * @param string $relativeUriPath
+     * @param string $clientMetaInfo
+     * @param RequestObject|null $requestParameters
+     * @param CallContext|null $callContext
+     * @throws Exception
+     */
+    public function getWithBinaryResponse(callable $bodyHandler, ResponseClassMap $responseClassMap, $relativeUriPath, $clientMetaInfo = '', RequestObject $requestParameters = null, CallContext $callContext = null)
+    {
+        $relativeUriPathWithRequestParameters = $this->getRelativeUriPathWithRequestParameters($relativeUriPath, $requestParameters);
+        $requestHeaders = $this->getRequestHeaders('GET', $relativeUriPathWithRequestParameters, null, $clientMetaInfo, $callContext);
+        $responseBuilder = new ResponseBuilder();
+        $responseHandler = function ($httpStatusCode, $data, $headers) use($responseBuilder, $bodyHandler) {
+            $responseBuilder->setHttpStatusCode($httpStatusCode);
+            $responseBuilder->setHeaders($headers);
+            if ($httpStatusCode >= 400) {
+                $responseBuilder->appendBody($data);
+            } else {
+                \call_user_func($bodyHandler, $data, $headers);
+            }
+        };
+        $this->connection->get($this->apiEndpoint . $relativeUriPathWithRequestParameters, $requestHeaders, $responseHandler);
+        $connectionResponse = $responseBuilder->getResponse();
+        $this->updateCallContext($connectionResponse, $callContext);
+        $httpStatusCode = $connectionResponse->getHttpStatusCode();
+        if ($httpStatusCode >= 400) {
+            $response = $this->getResponseFactory()->createResponse($connectionResponse, $responseClassMap);
+            throw new ErrorResponseException($httpStatusCode, $response);
+        }
+    }
     /**
      * @param ResponseClassMap $responseClassMap
      * @param string $relativeUriPath
      * @param string $clientMetaInfo
      * @param RequestObject|null $requestParameters
-     * @param CallContext $callContext
+     * @param CallContext|null $callContext
      * @return DataObject
      * @throws Exception
      */
-    public function delete(
-        ResponseClassMap $responseClassMap,
-                         $relativeUriPath,
-                         $clientMetaInfo = '',
-        RequestObject    $requestParameters = null,
-        CallContext      $callContext = null
-    )
+    public function delete(ResponseClassMap $responseClassMap, $relativeUriPath, $clientMetaInfo = '', RequestObject $requestParameters = null, CallContext $callContext = null)
     {
         $relativeUriPathWithRequestParameters = $this->getRelativeUriPathWithRequestParameters($relativeUriPath, $requestParameters);
         $requestHeaders = $this->getRequestHeaders('DELETE', $relativeUriPathWithRequestParameters, null, $clientMetaInfo, $callContext);
-
         $responseBuilder = new ResponseBuilder();
-        $responseHandler = function ($httpStatusCode, $data, $headers) use ($responseBuilder) {
+        $responseHandler = function ($httpStatusCode, $data, $headers) use($responseBuilder) {
             $responseBuilder->setHttpStatusCode($httpStatusCode);
             $responseBuilder->setHeaders($headers);
             $responseBuilder->appendBody($data);
         };
-
-        $this->getConnection()->delete(
-            $this->communicatorConfiguration->getApiEndpoint() . $relativeUriPathWithRequestParameters,
-            $requestHeaders,
-            $responseHandler,
-            $this->communicatorConfiguration->getProxyConfiguration()
-        );
+        $this->connection->delete($this->apiEndpoint . $relativeUriPathWithRequestParameters, $requestHeaders, $responseHandler);
         $connectionResponse = $responseBuilder->getResponse();
         $this->updateCallContext($connectionResponse, $callContext);
         $response = $this->getResponseFactory()->createResponse($connectionResponse, $responseClassMap);
         $httpStatusCode = $connectionResponse->getHttpStatusCode();
         if ($httpStatusCode >= 400) {
-            throw $this->getResponseExceptionFactory()->createException($httpStatusCode, $response, $callContext);
+            throw new ErrorResponseException($httpStatusCode, $response);
         }
         return $response;
     }
-
+    /**
+     * @param callable $bodyHandler Callable accepting a response body chunk and the response headers
+     * @param ResponseClassMap $responseClassMap Used for error handling
+     * @param string $relativeUriPath
+     * @param string $clientMetaInfo
+     * @param RequestObject|null $requestParameters
+     * @param CallContext|null $callContext
+     * @throws Exception
+     */
+    public function deleteWithBinaryResponse(callable $bodyHandler, ResponseClassMap $responseClassMap, $relativeUriPath, $clientMetaInfo = '', RequestObject $requestParameters = null, CallContext $callContext = null)
+    {
+        $relativeUriPathWithRequestParameters = $this->getRelativeUriPathWithRequestParameters($relativeUriPath, $requestParameters);
+        $requestHeaders = $this->getRequestHeaders('DELETE', $relativeUriPathWithRequestParameters, null, $clientMetaInfo, $callContext);
+        $responseBuilder = new ResponseBuilder();
+        $responseHandler = function ($httpStatusCode, $data, $headers) use($responseBuilder, $bodyHandler) {
+            $responseBuilder->setHttpStatusCode($httpStatusCode);
+            $responseBuilder->setHeaders($headers);
+            if ($httpStatusCode >= 400) {
+                $responseBuilder->appendBody($data);
+            } else {
+                \call_user_func($bodyHandler, $data, $headers);
+            }
+        };
+        $this->connection->delete($this->apiEndpoint . $relativeUriPathWithRequestParameters, $requestHeaders, $responseHandler);
+        $connectionResponse = $responseBuilder->getResponse();
+        $this->updateCallContext($connectionResponse, $callContext);
+        $httpStatusCode = $connectionResponse->getHttpStatusCode();
+        if ($httpStatusCode >= 400) {
+            $response = $this->getResponseFactory()->createResponse($connectionResponse, $responseClassMap);
+            throw new ErrorResponseException($httpStatusCode, $response);
+        }
+    }
     /**
      * @param ResponseClassMap $responseClassMap
      * @param string $relativeUriPath
      * @param string $clientMetaInfo
-     * @param DataObject|null $requestBodyObject
+     * @param DataObject|MultipartDataObject|MultipartFormDataObject|null $requestBodyObject
      * @param RequestObject|null $requestParameters
-     * @param CallContext $callContext
+     * @param CallContext|null $callContext
      * @return DataObject
      * @throws Exception
      */
-    public function post(
-        ResponseClassMap $responseClassMap,
-                         $relativeUriPath,
-                         $clientMetaInfo = '',
-                         $requestBodyObject = null,
-        RequestObject    $requestParameters = null,
-        CallContext      $callContext = null
-    )
+    public function post(ResponseClassMap $responseClassMap, $relativeUriPath, $clientMetaInfo = '', $requestBodyObject = null, RequestObject $requestParameters = null, CallContext $callContext = null)
     {
         $relativeUriPathWithRequestParameters = $this->getRelativeUriPathWithRequestParameters($relativeUriPath, $requestParameters);
-        if ($requestBodyObject instanceof DataObject || is_null($requestBodyObject)) {
+        if ($requestBodyObject instanceof MultipartFormDataObject) {
+            $contentType = $requestBodyObject->getContentType();
+            $requestBody = $requestBodyObject;
+        } elseif ($requestBodyObject instanceof MultipartDataObject) {
+            $multipart = $requestBodyObject->toMultipartFormDataObject();
+            $contentType = $multipart->getContentType();
+            $requestBody = $multipart;
+        } elseif ($requestBodyObject instanceof DataObject || \is_null($requestBodyObject)) {
             $contentType = static::MIME_APPLICATION_JSON;
             $requestBody = $requestBodyObject ? $requestBodyObject->toJson() : '';
         } else {
             throw new UnexpectedValueException('Unsupported request body');
         }
         $requestHeaders = $this->getRequestHeaders('POST', $relativeUriPathWithRequestParameters, $contentType, $clientMetaInfo, $callContext);
-
         $responseBuilder = new ResponseBuilder();
-        $responseHandler = function ($httpStatusCode, $data, $headers) use ($responseBuilder) {
+        $responseHandler = function ($httpStatusCode, $data, $headers) use($responseBuilder) {
             $responseBuilder->setHttpStatusCode($httpStatusCode);
             $responseBuilder->setHeaders($headers);
             $responseBuilder->appendBody($data);
         };
-
-        $this->getConnection()->post(
-            $this->communicatorConfiguration->getApiEndpoint() . $relativeUriPathWithRequestParameters,
-            $requestHeaders,
-            $requestBody,
-            $responseHandler,
-            $this->communicatorConfiguration->getProxyConfiguration()
-        );
+        $this->connection->post($this->apiEndpoint . $relativeUriPathWithRequestParameters, $requestHeaders, $requestBody, $responseHandler);
         $connectionResponse = $responseBuilder->getResponse();
         $this->updateCallContext($connectionResponse, $callContext);
         $response = $this->getResponseFactory()->createResponse($connectionResponse, $responseClassMap);
         $httpStatusCode = $connectionResponse->getHttpStatusCode();
         if ($httpStatusCode >= 400) {
-            throw $this->getResponseExceptionFactory()->createException($httpStatusCode, $response, $callContext);
+            throw new ErrorResponseException($httpStatusCode, $response);
         }
         return $response;
     }
-
+    /**
+     * @param callable $bodyHandler Callable accepting a response body chunk and the response headers
+     * @param ResponseClassMap $responseClassMap Used for error handling
+     * @param string $relativeUriPath
+     * @param string $clientMetaInfo
+     * @param DataObject|MultipartDataObject|MultipartFormDataObject|null $requestBodyObject
+     * @param RequestObject|null $requestParameters
+     * @param CallContext|null $callContext
+     * @throws Exception
+     */
+    public function postWithBinaryResponse(callable $bodyHandler, ResponseClassMap $responseClassMap, $relativeUriPath, $clientMetaInfo = '', $requestBodyObject = null, RequestObject $requestParameters = null, CallContext $callContext = null)
+    {
+        $relativeUriPathWithRequestParameters = $this->getRelativeUriPathWithRequestParameters($relativeUriPath, $requestParameters);
+        if ($requestBodyObject instanceof MultipartFormDataObject) {
+            $contentType = $requestBodyObject->getContentType();
+            $requestBody = $requestBodyObject;
+        } elseif ($requestBodyObject instanceof MultipartDataObject) {
+            $multipart = $requestBodyObject->toMultipartFormDataObject();
+            $contentType = $multipart->getContentType();
+            $requestBody = $multipart;
+        } elseif ($requestBodyObject instanceof DataObject || \is_null($requestBodyObject)) {
+            $contentType = static::MIME_APPLICATION_JSON;
+            $requestBody = $requestBodyObject ? $requestBodyObject->toJson() : '';
+        } else {
+            throw new UnexpectedValueException('Unsupported request body');
+        }
+        $requestHeaders = $this->getRequestHeaders('POST', $relativeUriPathWithRequestParameters, $contentType, $clientMetaInfo, $callContext);
+        $responseBuilder = new ResponseBuilder();
+        $responseHandler = function ($httpStatusCode, $data, $headers) use($responseBuilder, $bodyHandler) {
+            $responseBuilder->setHttpStatusCode($httpStatusCode);
+            $responseBuilder->setHeaders($headers);
+            if ($httpStatusCode >= 400) {
+                $responseBuilder->appendBody($data);
+            } else {
+                \call_user_func($bodyHandler, $data, $headers);
+            }
+        };
+        $this->connection->post($this->apiEndpoint . $relativeUriPathWithRequestParameters, $requestHeaders, $requestBody, $responseHandler);
+        $connectionResponse = $responseBuilder->getResponse();
+        $this->updateCallContext($connectionResponse, $callContext);
+        $httpStatusCode = $connectionResponse->getHttpStatusCode();
+        if ($httpStatusCode >= 400) {
+            $response = $this->getResponseFactory()->createResponse($connectionResponse, $responseClassMap);
+            throw new ErrorResponseException($httpStatusCode, $response);
+        }
+    }
     /**
      * @param ResponseClassMap $responseClassMap
      * @param string $relativeUriPath
      * @param string $clientMetaInfo
-     * @param DataObject|null $requestBodyObject
+     * @param DataObject|MultipartDataObject|MultipartFormDataObject|null $requestBodyObject
      * @param RequestObject|null $requestParameters
-     * @param CallContext $callContext
+     * @param CallContext|null $callContext
      * @return DataObject
      * @throws Exception
      */
-    public function put(
-        ResponseClassMap $responseClassMap,
-                         $relativeUriPath,
-                         $clientMetaInfo = '',
-                         $requestBodyObject = null,
-        RequestObject    $requestParameters = null,
-        CallContext      $callContext = null
-    )
+    public function put(ResponseClassMap $responseClassMap, $relativeUriPath, $clientMetaInfo = '', $requestBodyObject = null, RequestObject $requestParameters = null, CallContext $callContext = null)
     {
         $relativeUriPathWithRequestParameters = $this->getRelativeUriPathWithRequestParameters($relativeUriPath, $requestParameters);
-        if ($requestBodyObject instanceof DataObject || is_null($requestBodyObject)) {
+        if ($requestBodyObject instanceof MultipartFormDataObject) {
+            $contentType = $requestBodyObject->getContentType();
+            $requestBody = $requestBodyObject;
+        } elseif ($requestBodyObject instanceof MultipartDataObject) {
+            $multipart = $requestBodyObject->toMultipartFormDataObject();
+            $contentType = $multipart->getContentType();
+            $requestBody = $multipart;
+        } elseif ($requestBodyObject instanceof DataObject || \is_null($requestBodyObject)) {
             $contentType = static::MIME_APPLICATION_JSON;
             $requestBody = $requestBodyObject ? $requestBodyObject->toJson() : '';
         } else {
             throw new UnexpectedValueException('Unsupported request body');
         }
         $requestHeaders = $this->getRequestHeaders('PUT', $relativeUriPathWithRequestParameters, $contentType, $clientMetaInfo, $callContext);
-
         $responseBuilder = new ResponseBuilder();
-        $responseHandler = function ($httpStatusCode, $data, $headers) use ($responseBuilder) {
+        $responseHandler = function ($httpStatusCode, $data, $headers) use($responseBuilder) {
             $responseBuilder->setHttpStatusCode($httpStatusCode);
             $responseBuilder->setHeaders($headers);
             $responseBuilder->appendBody($data);
         };
-
-        $this->getConnection()->put(
-            $this->communicatorConfiguration->getApiEndpoint() . $relativeUriPathWithRequestParameters,
-            $requestHeaders,
-            $requestBody,
-            $responseHandler,
-            $this->communicatorConfiguration->getProxyConfiguration()
-        );
+        $this->connection->put($this->apiEndpoint . $relativeUriPathWithRequestParameters, $requestHeaders, $requestBody, $responseHandler);
         $connectionResponse = $responseBuilder->getResponse();
         $this->updateCallContext($connectionResponse, $callContext);
         $response = $this->getResponseFactory()->createResponse($connectionResponse, $responseClassMap);
         $httpStatusCode = $connectionResponse->getHttpStatusCode();
         if ($httpStatusCode >= 400) {
-            throw $this->getResponseExceptionFactory()->createException($httpStatusCode, $response, $callContext);
+            throw new ErrorResponseException($httpStatusCode, $response);
         }
         return $response;
     }
-
     /**
-     * @param ConnectionResponse $response
-     * @param CallContext $callContext
+     * @param callable $bodyHandler Callable accepting a response body chunk and the response headers
+     * @param ResponseClassMap $responseClassMap Used for error handling
+     * @param string $relativeUriPath
+     * @param string $clientMetaInfo
+     * @param DataObject|MultipartDataObject|MultipartFormDataObject|null $requestBodyObject
+     * @param RequestObject|null $requestParameters
+     * @param CallContext|null $callContext
+     * @throws Exception
      */
-    protected function updateCallContext(ConnectionResponse $response, CallContext $callContext = null)
+    public function putWithBinaryResponse(callable $bodyHandler, ResponseClassMap $responseClassMap, $relativeUriPath, $clientMetaInfo = '', $requestBodyObject = null, RequestObject $requestParameters = null, CallContext $callContext = null)
     {
-        if ($callContext) {
-            $callContext->setIdempotenceRequestTimestamp(
-                $response->getHeaderValue('X-GCS-Idempotence-Request-Timestamp')
-            );
+        $relativeUriPathWithRequestParameters = $this->getRelativeUriPathWithRequestParameters($relativeUriPath, $requestParameters);
+        if ($requestBodyObject instanceof MultipartFormDataObject) {
+            $contentType = $requestBodyObject->getContentType();
+            $requestBody = $requestBodyObject;
+        } elseif ($requestBodyObject instanceof MultipartDataObject) {
+            $multipart = $requestBodyObject->toMultipartFormDataObject();
+            $contentType = $multipart->getContentType();
+            $requestBody = $multipart;
+        } elseif ($requestBodyObject instanceof DataObject || \is_null($requestBodyObject)) {
+            $contentType = static::MIME_APPLICATION_JSON;
+            $requestBody = $requestBodyObject ? $requestBodyObject->toJson() : '';
+        } else {
+            throw new UnexpectedValueException('Unsupported request body');
+        }
+        $requestHeaders = $this->getRequestHeaders('PUT', $relativeUriPathWithRequestParameters, $contentType, $clientMetaInfo, $callContext);
+        $responseBuilder = new ResponseBuilder();
+        $responseHandler = function ($httpStatusCode, $data, $headers) use($responseBuilder, $bodyHandler) {
+            $responseBuilder->setHttpStatusCode($httpStatusCode);
+            $responseBuilder->setHeaders($headers);
+            if ($httpStatusCode >= 400) {
+                $responseBuilder->appendBody($data);
+            } else {
+                \call_user_func($bodyHandler, $data, $headers);
+            }
+        };
+        $this->connection->put($this->apiEndpoint . $relativeUriPathWithRequestParameters, $requestHeaders, $requestBody, $responseHandler);
+        $connectionResponse = $responseBuilder->getResponse();
+        $this->updateCallContext($connectionResponse, $callContext);
+        $httpStatusCode = $connectionResponse->getHttpStatusCode();
+        if ($httpStatusCode >= 400) {
+            $response = $this->getResponseFactory()->createResponse($connectionResponse, $responseClassMap);
+            throw new ErrorResponseException($httpStatusCode, $response);
         }
     }
-
     /**
-     * @return Connection
+     * @param ConnectionResponseInterface $response
+     * @param CallContext|null $callContext
      */
-    public function getConnection()
+    protected function updateCallContext(ConnectionResponseInterface $response, CallContext $callContext = null)
     {
-        return $this->connection;
+        if ($callContext) {
+            $callContext->setIdempotenceRequestTimestamp($response->getHeaderValue('X-GCS-Idempotence-Request-Timestamp'));
+            $callContext->setIdempotenceResponseDateTime(new DateTime($response->getHeaderValue('IdempotencyResponseDatetime')));
+        }
     }
-
-    /**
-     * @param Connection $connection
-     */
-    public function setConnection(Connection $connection)
-    {
-        $this->connection = $connection;
-    }
-
-    /**
-     * @return CommunicatorConfiguration
-     */
-    protected function getCommunicatorConfiguration()
-    {
-        return $this->communicatorConfiguration;
-    }
-
-    /**
-     * @param CommunicatorConfiguration
-     * @return Communicator
-     */
-    public function setCommunicatorConfiguration(CommunicatorConfiguration $communicatorConfiguration)
-    {
-        $this->communicatorConfiguration = $communicatorConfiguration;
-        return $this;
-    }
-
     /**
      * @param $relativeUriPath
      * @param RequestObject|null $requestParameters
@@ -300,75 +384,66 @@ class Communicator implements CommunicatorInterface
      */
     protected function getRequestUri($relativeUriPath, RequestObject $requestParameters = null)
     {
-        return
-            $this->communicatorConfiguration->getApiEndpoint() .
-            $this->getRelativeUriPathWithRequestParameters($relativeUriPath, $requestParameters);
+        return $this->apiEndpoint . $this->getRelativeUriPathWithRequestParameters($relativeUriPath, $requestParameters);
     }
-
     /**
      * @param string $httpMethod
      * @param string $relativeUriPathWithRequestParameters
-     * @param string $contentType
+     * @param string|null $contentType
      * @param string $clientMetaInfo
-     * @param CallContext $callContext
+     * @param CallContext|null $callContext
      * @return string[]
      */
-    protected function getRequestHeaders(
-        $httpMethod,
-        $relativeUriPathWithRequestParameters,
-        $contentType,
-        $clientMetaInfo = '',
-        CallContext $callContext = null
-    )
+    protected function getRequestHeaders($httpMethod, $relativeUriPathWithRequestParameters, $contentType = null, $clientMetaInfo = '', CallContext $callContext = null)
     {
-        $requestHeaderGenerator = new RequestHeaderGenerator(
-            $this->communicatorConfiguration,
-            $httpMethod,
-            $relativeUriPathWithRequestParameters,
-            $clientMetaInfo,
-            $callContext
-        );
-        return $requestHeaderGenerator->generateRequestHeaders($contentType);
+        $rfc2616Date = self::getRfc161Date();
+        $requestHeaders = array();
+        if (!empty($contentType)) {
+            $requestHeaders['Content-Type'] = $contentType;
+        }
+        $requestHeaders['Date'] = $rfc2616Date;
+        if ($clientMetaInfo) {
+            $requestHeaders['X-GCS-ClientMetaInfo'] = $clientMetaInfo;
+        }
+        $requestHeaders['X-GCS-ServerMetaInfo'] = $this->metadataProvider->getServerMetaInfoValue();
+        if ($callContext && \strlen($callContext->getIdempotenceKey()) > 0) {
+            $requestHeaders['X-GCS-Idempotence-Key'] = $callContext->getIdempotenceKey();
+        }
+        $requestHeaders['Authorization'] = $this->authenticator->getAuthorization($httpMethod, $relativeUriPathWithRequestParameters, $requestHeaders);
+        return $requestHeaders;
     }
-
     /**
-     * @param $relativeUriPath
+     * @return string
+     */
+    protected static function getRfc161Date()
+    {
+        return \gmdate('D, d M Y H:i:s T');
+    }
+    /**
+     * @param string $relativeUriPath
      * @param RequestObject|null $requestParameters
      * @return string
      */
-    protected function getRelativeUriPathWithRequestParameters(
-        $relativeUriPath,
-        RequestObject $requestParameters = null
-    )
+    protected function getRelativeUriPathWithRequestParameters($relativeUriPath, RequestObject $requestParameters = null)
     {
-        if (is_null($requestParameters)) {
+        if (\is_null($requestParameters)) {
             return $relativeUriPath;
         }
-        $requestParameterObjectVars = $requestParameters->toArray();
-        if (count($requestParameterObjectVars) == 0) {
+        $requestParameterObjectVars = \method_exists($requestParameters, 'toArray') ? $requestParameters->toArray() : \get_object_vars($requestParameters);
+        if (\count($requestParameterObjectVars) == 0) {
             return $relativeUriPath;
         }
-        $httpQuery = http_build_query($requestParameterObjectVars);
+        $httpQuery = \http_build_query($requestParameterObjectVars);
         // remove [0], [1] etc that are added if properties are arrays
-        $httpQuery = preg_replace('/%5B[0-9]+%5D/simU', '', $httpQuery);
+        $httpQuery = \preg_replace('/%5B[0-9]+%5D/simU', '', $httpQuery);
         return $relativeUriPath . '?' . $httpQuery;
     }
-
     /** @return ResponseFactory */
     protected function getResponseFactory()
     {
-        if (is_null($this->responseFactory)) {
+        if (\is_null($this->responseFactory)) {
             $this->responseFactory = new ResponseFactory();
         }
         return $this->responseFactory;
-    }
-
-    /** @return ResponseExceptionFactory */
-    protected function getResponseExceptionFactory()
-    {
-        if (is_null($this->responseExceptionFactory)) {
-            $this->responseExceptionFactory = new ResponseExceptionFactory();
-        }
-        return $this->responseExceptionFactory;
     }
 }

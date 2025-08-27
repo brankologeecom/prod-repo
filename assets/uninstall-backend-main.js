@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(function(){var e=document.querySelector("#woocommerce_cawl-for-woocommerce_clear_data_on_uninstall ~ a");e&&e.addEventListener("click",(function(e){window.confirm(wp.i18n.__("Are you sure you want to clear all CAWL plugin data from the database? This action cannot be undone.","cawl-for-woocommerce"))||e.preventDefault()}))}));

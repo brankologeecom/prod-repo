@@ -1,145 +1,125 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class AirlineData extends DataObject
 {
-    // Properties
     /**
      * @var string
      */
-    private $agentNumericCode;
-
+    public $agentNumericCode = null;
     /**
      * @var string
      */
-    private $code;
-
+    public $code = null;
+    /**
+     * @var string
+     * @deprecated This field is not used by any payment product Date of the Flight Format: YYYYMMDD
+     */
+    public $flightDate = null;
     /**
      * @var string
      */
-    private $flightDate;
-
-    /**
-     * @var string
-     */
-    private $flightIndicator;
-
+    public $flightIndicator = null;
     /**
      * @var AirlineFlightLeg[]
      */
-    private $flightLegs;
-
+    public $flightLegs = null;
     /**
      * @var string
      */
-    private $invoiceNumber;
-
+    public $invoiceNumber = null;
+    /**
+     * @var bool
+     * @deprecated Deprecated
+     */
+    public $isETicket = null;
     /**
      * @var bool
      */
-    private $isETicket;
-
+    public $isRestrictedTicket = null;
     /**
      * @var bool
+     * @deprecated This field is not used by any payment product  * true - The payer is the ticket holder  * false - The payer is not the ticket holder
      */
-    private $isRestrictedTicket;
-
-    /**
-     * @var bool
-     */
-    private $isThirdParty;
-
+    public $isThirdParty = null;
     /**
      * @var string
      */
-    private $issueDate;
-
+    public $issueDate = null;
     /**
      * @var string
      */
-    private $merchantCustomerId;
-
+    public $merchantCustomerId = null;
     /**
      * @var string
+     * @deprecated This field is not used by any payment product Name of the airline
      */
-    private $name;
-
+    public $name = null;
     /**
      * @var string
+     * @deprecated Use passengers instead Name of passenger
      */
-    private $passengerName;
-
+    public $passengerName = null;
     /**
      * @var AirlinePassenger[]
      */
-    private $passengers;
-
+    public $passengers = null;
+    /**
+     * @var string
+     * @deprecated This field is not used by any payment product Place of issue For sales in the US the last two characters (pos 14-15) must be the US state code.
+     */
+    public $placeOfIssue = null;
+    /**
+     * @var string
+     * @deprecated Use passengers instead.
+     */
+    public $pnr = null;
     /**
      * @var string
      */
-    private $placeOfIssue;
-
+    public $pointOfSale = null;
+    /**
+     * @var string
+     * @deprecated This field is not used by any payment product City code of the point of sale
+     */
+    public $posCityCode = null;
     /**
      * @var string
      */
-    private $pnr;
-
+    public $ticketCurrency = null;
+    /**
+     * @var string
+     * @deprecated This field is not used by any payment product Delivery method of the ticket
+     */
+    public $ticketDeliveryMethod = null;
     /**
      * @var string
      */
-    private $pointOfSale;
-
-    /**
-     * @var string
-     */
-    private $posCityCode;
-
-    /**
-     * @var string
-     */
-    private $ticketCurrency;
-
-    /**
-     * @var string
-     */
-    private $ticketDeliveryMethod;
-
-    /**
-     * @var string
-     */
-    private $ticketNumber;
-
+    public $ticketNumber = null;
     /**
      * @var int
      */
-    private $totalFare;
-
+    public $totalFare = null;
     /**
      * @var int
      */
-    private $totalFee;
-
+    public $totalFee = null;
     /**
      * @var int
      */
-    private $totalTaxes;
-
+    public $totalTaxes = null;
     /**
      * @var string
      */
-    private $travelAgencyName;
-
-    // Methods
+    public $travelAgencyName = null;
     /**
      * @return string
      */
@@ -148,13 +128,12 @@ class AirlineData extends DataObject
         return $this->agentNumericCode;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setAgentNumericCode($value)
     {
         $this->agentNumericCode = $value;
     }
-
     /**
      * @return string
      */
@@ -163,28 +142,28 @@ class AirlineData extends DataObject
         return $this->code;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setCode($value)
     {
         $this->code = $value;
     }
-
     /**
      * @return string
+     * @deprecated This field is not used by any payment product Date of the Flight Format: YYYYMMDD
      */
     public function getFlightDate()
     {
         return $this->flightDate;
     }
     /**
-     * @var string
+     * @param string
+     * @deprecated This field is not used by any payment product Date of the Flight Format: YYYYMMDD
      */
     public function setFlightDate($value)
     {
         $this->flightDate = $value;
     }
-
     /**
      * @return string
      */
@@ -193,13 +172,12 @@ class AirlineData extends DataObject
         return $this->flightIndicator;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setFlightIndicator($value)
     {
         $this->flightIndicator = $value;
     }
-
     /**
      * @return AirlineFlightLeg[]
      */
@@ -208,13 +186,12 @@ class AirlineData extends DataObject
         return $this->flightLegs;
     }
     /**
-     * @var AirlineFlightLeg[]
+     * @param AirlineFlightLeg[]
      */
     public function setFlightLegs($value)
     {
         $this->flightLegs = $value;
     }
-
     /**
      * @return string
      */
@@ -223,28 +200,28 @@ class AirlineData extends DataObject
         return $this->invoiceNumber;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setInvoiceNumber($value)
     {
         $this->invoiceNumber = $value;
     }
-
     /**
      * @return bool
+     * @deprecated Deprecated
      */
     public function getIsETicket()
     {
         return $this->isETicket;
     }
     /**
-     * @var bool
+     * @param bool
+     * @deprecated Deprecated
      */
     public function setIsETicket($value)
     {
         $this->isETicket = $value;
     }
-
     /**
      * @return bool
      */
@@ -253,28 +230,28 @@ class AirlineData extends DataObject
         return $this->isRestrictedTicket;
     }
     /**
-     * @var bool
+     * @param bool
      */
     public function setIsRestrictedTicket($value)
     {
         $this->isRestrictedTicket = $value;
     }
-
     /**
      * @return bool
+     * @deprecated This field is not used by any payment product  * true - The payer is the ticket holder  * false - The payer is not the ticket holder
      */
     public function getIsThirdParty()
     {
         return $this->isThirdParty;
     }
     /**
-     * @var bool
+     * @param bool
+     * @deprecated This field is not used by any payment product  * true - The payer is the ticket holder  * false - The payer is not the ticket holder
      */
     public function setIsThirdParty($value)
     {
         $this->isThirdParty = $value;
     }
-
     /**
      * @return string
      */
@@ -283,13 +260,12 @@ class AirlineData extends DataObject
         return $this->issueDate;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setIssueDate($value)
     {
         $this->issueDate = $value;
     }
-
     /**
      * @return string
      */
@@ -298,43 +274,44 @@ class AirlineData extends DataObject
         return $this->merchantCustomerId;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setMerchantCustomerId($value)
     {
         $this->merchantCustomerId = $value;
     }
-
     /**
      * @return string
+     * @deprecated This field is not used by any payment product Name of the airline
      */
     public function getName()
     {
         return $this->name;
     }
     /**
-     * @var string
+     * @param string
+     * @deprecated This field is not used by any payment product Name of the airline
      */
     public function setName($value)
     {
         $this->name = $value;
     }
-
     /**
      * @return string
+     * @deprecated Use passengers instead Name of passenger
      */
     public function getPassengerName()
     {
         return $this->passengerName;
     }
     /**
-     * @var string
+     * @param string
+     * @deprecated Use passengers instead Name of passenger
      */
     public function setPassengerName($value)
     {
         $this->passengerName = $value;
     }
-
     /**
      * @return AirlinePassenger[]
      */
@@ -343,43 +320,44 @@ class AirlineData extends DataObject
         return $this->passengers;
     }
     /**
-     * @var AirlinePassenger[]
+     * @param AirlinePassenger[]
      */
     public function setPassengers($value)
     {
         $this->passengers = $value;
     }
-
     /**
      * @return string
+     * @deprecated This field is not used by any payment product Place of issue For sales in the US the last two characters (pos 14-15) must be the US state code.
      */
     public function getPlaceOfIssue()
     {
         return $this->placeOfIssue;
     }
     /**
-     * @var string
+     * @param string
+     * @deprecated This field is not used by any payment product Place of issue For sales in the US the last two characters (pos 14-15) must be the US state code.
      */
     public function setPlaceOfIssue($value)
     {
         $this->placeOfIssue = $value;
     }
-
     /**
      * @return string
+     * @deprecated Use passengers instead.
      */
     public function getPnr()
     {
         return $this->pnr;
     }
     /**
-     * @var string
+     * @param string
+     * @deprecated Use passengers instead.
      */
     public function setPnr($value)
     {
         $this->pnr = $value;
     }
-
     /**
      * @return string
      */
@@ -388,28 +366,28 @@ class AirlineData extends DataObject
         return $this->pointOfSale;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setPointOfSale($value)
     {
         $this->pointOfSale = $value;
     }
-
     /**
      * @return string
+     * @deprecated This field is not used by any payment product City code of the point of sale
      */
     public function getPosCityCode()
     {
         return $this->posCityCode;
     }
     /**
-     * @var string
+     * @param string
+     * @deprecated This field is not used by any payment product City code of the point of sale
      */
     public function setPosCityCode($value)
     {
         $this->posCityCode = $value;
     }
-
     /**
      * @return string
      */
@@ -418,28 +396,28 @@ class AirlineData extends DataObject
         return $this->ticketCurrency;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setTicketCurrency($value)
     {
         $this->ticketCurrency = $value;
     }
-
     /**
      * @return string
+     * @deprecated This field is not used by any payment product Delivery method of the ticket
      */
     public function getTicketDeliveryMethod()
     {
         return $this->ticketDeliveryMethod;
     }
     /**
-     * @var string
+     * @param string
+     * @deprecated This field is not used by any payment product Delivery method of the ticket
      */
     public function setTicketDeliveryMethod($value)
     {
         $this->ticketDeliveryMethod = $value;
     }
-
     /**
      * @return string
      */
@@ -448,13 +426,12 @@ class AirlineData extends DataObject
         return $this->ticketNumber;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setTicketNumber($value)
     {
         $this->ticketNumber = $value;
     }
-
     /**
      * @return int
      */
@@ -463,13 +440,12 @@ class AirlineData extends DataObject
         return $this->totalFare;
     }
     /**
-     * @var int
+     * @param int
      */
     public function setTotalFare($value)
     {
         $this->totalFare = $value;
     }
-
     /**
      * @return int
      */
@@ -478,13 +454,12 @@ class AirlineData extends DataObject
         return $this->totalFee;
     }
     /**
-     * @var int
+     * @param int
      */
     public function setTotalFee($value)
     {
         $this->totalFee = $value;
     }
-
     /**
      * @return int
      */
@@ -493,13 +468,12 @@ class AirlineData extends DataObject
         return $this->totalTaxes;
     }
     /**
-     * @var int
+     * @param int
      */
     public function setTotalTaxes($value)
     {
         $this->totalTaxes = $value;
     }
-
     /**
      * @return string
      */
@@ -508,107 +482,105 @@ class AirlineData extends DataObject
         return $this->travelAgencyName;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setTravelAgencyName($value)
     {
         $this->travelAgencyName = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->agentNumericCode !== null) {
+        if (!\is_null($this->agentNumericCode)) {
             $object->agentNumericCode = $this->agentNumericCode;
         }
-        if ($this->code !== null) {
+        if (!\is_null($this->code)) {
             $object->code = $this->code;
         }
-        if ($this->flightDate !== null) {
+        if (!\is_null($this->flightDate)) {
             $object->flightDate = $this->flightDate;
         }
-        if ($this->flightIndicator !== null) {
+        if (!\is_null($this->flightIndicator)) {
             $object->flightIndicator = $this->flightIndicator;
         }
-        if ($this->flightLegs !== null) {
+        if (!\is_null($this->flightLegs)) {
             $object->flightLegs = [];
             foreach ($this->flightLegs as $element) {
-                if ($element !== null) {
+                if (!\is_null($element)) {
                     $object->flightLegs[] = $element->toObject();
                 }
             }
         }
-        if ($this->invoiceNumber !== null) {
+        if (!\is_null($this->invoiceNumber)) {
             $object->invoiceNumber = $this->invoiceNumber;
         }
-        if ($this->isETicket !== null) {
+        if (!\is_null($this->isETicket)) {
             $object->isETicket = $this->isETicket;
         }
-        if ($this->isRestrictedTicket !== null) {
+        if (!\is_null($this->isRestrictedTicket)) {
             $object->isRestrictedTicket = $this->isRestrictedTicket;
         }
-        if ($this->isThirdParty !== null) {
+        if (!\is_null($this->isThirdParty)) {
             $object->isThirdParty = $this->isThirdParty;
         }
-        if ($this->issueDate !== null) {
+        if (!\is_null($this->issueDate)) {
             $object->issueDate = $this->issueDate;
         }
-        if ($this->merchantCustomerId !== null) {
+        if (!\is_null($this->merchantCustomerId)) {
             $object->merchantCustomerId = $this->merchantCustomerId;
         }
-        if ($this->name !== null) {
+        if (!\is_null($this->name)) {
             $object->name = $this->name;
         }
-        if ($this->passengerName !== null) {
+        if (!\is_null($this->passengerName)) {
             $object->passengerName = $this->passengerName;
         }
-        if ($this->passengers !== null) {
+        if (!\is_null($this->passengers)) {
             $object->passengers = [];
             foreach ($this->passengers as $element) {
-                if ($element !== null) {
+                if (!\is_null($element)) {
                     $object->passengers[] = $element->toObject();
                 }
             }
         }
-        if ($this->placeOfIssue !== null) {
+        if (!\is_null($this->placeOfIssue)) {
             $object->placeOfIssue = $this->placeOfIssue;
         }
-        if ($this->pnr !== null) {
+        if (!\is_null($this->pnr)) {
             $object->pnr = $this->pnr;
         }
-        if ($this->pointOfSale !== null) {
+        if (!\is_null($this->pointOfSale)) {
             $object->pointOfSale = $this->pointOfSale;
         }
-        if ($this->posCityCode !== null) {
+        if (!\is_null($this->posCityCode)) {
             $object->posCityCode = $this->posCityCode;
         }
-        if ($this->ticketCurrency !== null) {
+        if (!\is_null($this->ticketCurrency)) {
             $object->ticketCurrency = $this->ticketCurrency;
         }
-        if ($this->ticketDeliveryMethod !== null) {
+        if (!\is_null($this->ticketDeliveryMethod)) {
             $object->ticketDeliveryMethod = $this->ticketDeliveryMethod;
         }
-        if ($this->ticketNumber !== null) {
+        if (!\is_null($this->ticketNumber)) {
             $object->ticketNumber = $this->ticketNumber;
         }
-        if ($this->totalFare !== null) {
+        if (!\is_null($this->totalFare)) {
             $object->totalFare = $this->totalFare;
         }
-        if ($this->totalFee !== null) {
+        if (!\is_null($this->totalFee)) {
             $object->totalFee = $this->totalFee;
         }
-        if ($this->totalTaxes !== null) {
+        if (!\is_null($this->totalTaxes)) {
             $object->totalTaxes = $this->totalTaxes;
         }
-        if ($this->travelAgencyName !== null) {
+        if (!\is_null($this->travelAgencyName)) {
             $object->travelAgencyName = $this->travelAgencyName;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -617,21 +589,21 @@ class AirlineData extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'agentNumericCode')) {
+        if (\property_exists($object, 'agentNumericCode')) {
             $this->agentNumericCode = $object->agentNumericCode;
         }
-        if (property_exists($object, 'code')) {
+        if (\property_exists($object, 'code')) {
             $this->code = $object->code;
         }
-        if (property_exists($object, 'flightDate')) {
+        if (\property_exists($object, 'flightDate')) {
             $this->flightDate = $object->flightDate;
         }
-        if (property_exists($object, 'flightIndicator')) {
+        if (\property_exists($object, 'flightIndicator')) {
             $this->flightIndicator = $object->flightIndicator;
         }
-        if (property_exists($object, 'flightLegs')) {
-            if (!is_array($object->flightLegs) && !is_object($object->flightLegs)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->flightLegs, true) . '\' is not an array or object');
+        if (\property_exists($object, 'flightLegs')) {
+            if (!\is_array($object->flightLegs) && !\is_object($object->flightLegs)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->flightLegs, \true) . '\' is not an array or object');
             }
             $this->flightLegs = [];
             foreach ($object->flightLegs as $element) {
@@ -639,33 +611,33 @@ class AirlineData extends DataObject
                 $this->flightLegs[] = $value->fromObject($element);
             }
         }
-        if (property_exists($object, 'invoiceNumber')) {
+        if (\property_exists($object, 'invoiceNumber')) {
             $this->invoiceNumber = $object->invoiceNumber;
         }
-        if (property_exists($object, 'isETicket')) {
+        if (\property_exists($object, 'isETicket')) {
             $this->isETicket = $object->isETicket;
         }
-        if (property_exists($object, 'isRestrictedTicket')) {
+        if (\property_exists($object, 'isRestrictedTicket')) {
             $this->isRestrictedTicket = $object->isRestrictedTicket;
         }
-        if (property_exists($object, 'isThirdParty')) {
+        if (\property_exists($object, 'isThirdParty')) {
             $this->isThirdParty = $object->isThirdParty;
         }
-        if (property_exists($object, 'issueDate')) {
+        if (\property_exists($object, 'issueDate')) {
             $this->issueDate = $object->issueDate;
         }
-        if (property_exists($object, 'merchantCustomerId')) {
+        if (\property_exists($object, 'merchantCustomerId')) {
             $this->merchantCustomerId = $object->merchantCustomerId;
         }
-        if (property_exists($object, 'name')) {
+        if (\property_exists($object, 'name')) {
             $this->name = $object->name;
         }
-        if (property_exists($object, 'passengerName')) {
+        if (\property_exists($object, 'passengerName')) {
             $this->passengerName = $object->passengerName;
         }
-        if (property_exists($object, 'passengers')) {
-            if (!is_array($object->passengers) && !is_object($object->passengers)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->passengers, true) . '\' is not an array or object');
+        if (\property_exists($object, 'passengers')) {
+            if (!\is_array($object->passengers) && !\is_object($object->passengers)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->passengers, \true) . '\' is not an array or object');
             }
             $this->passengers = [];
             foreach ($object->passengers as $element) {
@@ -673,37 +645,37 @@ class AirlineData extends DataObject
                 $this->passengers[] = $value->fromObject($element);
             }
         }
-        if (property_exists($object, 'placeOfIssue')) {
+        if (\property_exists($object, 'placeOfIssue')) {
             $this->placeOfIssue = $object->placeOfIssue;
         }
-        if (property_exists($object, 'pnr')) {
+        if (\property_exists($object, 'pnr')) {
             $this->pnr = $object->pnr;
         }
-        if (property_exists($object, 'pointOfSale')) {
+        if (\property_exists($object, 'pointOfSale')) {
             $this->pointOfSale = $object->pointOfSale;
         }
-        if (property_exists($object, 'posCityCode')) {
+        if (\property_exists($object, 'posCityCode')) {
             $this->posCityCode = $object->posCityCode;
         }
-        if (property_exists($object, 'ticketCurrency')) {
+        if (\property_exists($object, 'ticketCurrency')) {
             $this->ticketCurrency = $object->ticketCurrency;
         }
-        if (property_exists($object, 'ticketDeliveryMethod')) {
+        if (\property_exists($object, 'ticketDeliveryMethod')) {
             $this->ticketDeliveryMethod = $object->ticketDeliveryMethod;
         }
-        if (property_exists($object, 'ticketNumber')) {
+        if (\property_exists($object, 'ticketNumber')) {
             $this->ticketNumber = $object->ticketNumber;
         }
-        if (property_exists($object, 'totalFare')) {
+        if (\property_exists($object, 'totalFare')) {
             $this->totalFare = $object->totalFare;
         }
-        if (property_exists($object, 'totalFee')) {
+        if (\property_exists($object, 'totalFee')) {
             $this->totalFee = $object->totalFee;
         }
-        if (property_exists($object, 'totalTaxes')) {
+        if (\property_exists($object, 'totalTaxes')) {
             $this->totalTaxes = $object->totalTaxes;
         }
-        if (property_exists($object, 'travelAgencyName')) {
+        if (\property_exists($object, 'travelAgencyName')) {
             $this->travelAgencyName = $object->travelAgencyName;
         }
         return $this;

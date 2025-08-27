@@ -1,25 +1,20 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class PaymentProduct130SpecificInput extends DataObject
 {
-    // Properties
     /**
      * @var PaymentProduct130SpecificThreeDSecure
      */
-    private $threeDSecure;
-
-    // Methods
+    public $threeDSecure = null;
     /**
      * @return PaymentProduct130SpecificThreeDSecure
      */
@@ -28,25 +23,23 @@ class PaymentProduct130SpecificInput extends DataObject
         return $this->threeDSecure;
     }
     /**
-     * @var PaymentProduct130SpecificThreeDSecure
+     * @param PaymentProduct130SpecificThreeDSecure
      */
     public function setThreeDSecure($value)
     {
         $this->threeDSecure = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->threeDSecure !== null) {
+        if (!\is_null($this->threeDSecure)) {
             $object->threeDSecure = $this->threeDSecure->toObject();
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -55,9 +48,9 @@ class PaymentProduct130SpecificInput extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'threeDSecure')) {
-            if (!is_object($object->threeDSecure)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->threeDSecure, true) . '\' is not an object');
+        if (\property_exists($object, 'threeDSecure')) {
+            if (!\is_object($object->threeDSecure)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->threeDSecure, \true) . '\' is not an object');
             }
             $value = new PaymentProduct130SpecificThreeDSecure();
             $this->threeDSecure = $value->fromObject($object->threeDSecure);

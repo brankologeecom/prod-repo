@@ -1,30 +1,24 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class MobilePaymentData extends DataObject
 {
-    // Properties
     /**
      * @var string
      */
-    private $dpan;
-
+    public $dpan = null;
     /**
      * @var string
      */
-    private $expiryDate;
-
-    // Methods
+    public $expiryDate = null;
     /**
      * @return string
      */
@@ -33,13 +27,12 @@ class MobilePaymentData extends DataObject
         return $this->dpan;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setDpan($value)
     {
         $this->dpan = $value;
     }
-
     /**
      * @return string
      */
@@ -48,28 +41,26 @@ class MobilePaymentData extends DataObject
         return $this->expiryDate;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setExpiryDate($value)
     {
         $this->expiryDate = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->dpan !== null) {
+        if (!\is_null($this->dpan)) {
             $object->dpan = $this->dpan;
         }
-        if ($this->expiryDate !== null) {
+        if (!\is_null($this->expiryDate)) {
             $object->expiryDate = $this->expiryDate;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -78,10 +69,10 @@ class MobilePaymentData extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'dpan')) {
+        if (\property_exists($object, 'dpan')) {
             $this->dpan = $object->dpan;
         }
-        if (property_exists($object, 'expiryDate')) {
+        if (\property_exists($object, 'expiryDate')) {
             $this->expiryDate = $object->expiryDate;
         }
         return $this;

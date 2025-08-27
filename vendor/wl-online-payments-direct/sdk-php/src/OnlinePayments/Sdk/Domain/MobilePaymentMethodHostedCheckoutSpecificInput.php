@@ -1,35 +1,32 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class MobilePaymentMethodHostedCheckoutSpecificInput extends DataObject
 {
-    // Properties
     /**
      * @var string
      */
-    private $authorizationMode;
-
+    public $authorizationMode = null;
     /**
-     * @var int
+     * @var MobilePaymentProduct302SpecificInput
      */
-    private $paymentProductId;
-
+    public $paymentProduct302SpecificInput = null;
     /**
      * @var MobilePaymentProduct320SpecificInput
      */
-    private $paymentProduct320SpecificInput;
-
-    // Methods
+    public $paymentProduct320SpecificInput = null;
+    /**
+     * @var int
+     */
+    public $paymentProductId = null;
     /**
      * @return string
      */
@@ -38,13 +35,40 @@ class MobilePaymentMethodHostedCheckoutSpecificInput extends DataObject
         return $this->authorizationMode;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setAuthorizationMode($value)
     {
         $this->authorizationMode = $value;
     }
-
+    /**
+     * @return MobilePaymentProduct302SpecificInput
+     */
+    public function getPaymentProduct302SpecificInput()
+    {
+        return $this->paymentProduct302SpecificInput;
+    }
+    /**
+     * @param MobilePaymentProduct302SpecificInput
+     */
+    public function setPaymentProduct302SpecificInput($value)
+    {
+        $this->paymentProduct302SpecificInput = $value;
+    }
+    /**
+     * @return MobilePaymentProduct320SpecificInput
+     */
+    public function getPaymentProduct320SpecificInput()
+    {
+        return $this->paymentProduct320SpecificInput;
+    }
+    /**
+     * @param MobilePaymentProduct320SpecificInput
+     */
+    public function setPaymentProduct320SpecificInput($value)
+    {
+        $this->paymentProduct320SpecificInput = $value;
+    }
     /**
      * @return int
      */
@@ -53,47 +77,32 @@ class MobilePaymentMethodHostedCheckoutSpecificInput extends DataObject
         return $this->paymentProductId;
     }
     /**
-     * @var int
+     * @param int
      */
     public function setPaymentProductId($value)
     {
         $this->paymentProductId = $value;
     }
-
-    /**
-     * @return MobilePaymentProduct320SpecificInput
-     */
-    public function getPaymentProduct320SpecificInput()
-    {
-        return $this->paymentProduct320SpecificInput;
-    }
-
-    /**
-     * @var MobilePaymentProduct320SpecificInput $paymentProduct320SpecificInput
-     */
-    public function setPaymentProduct320SpecificInput($paymentProduct320SpecificInput): void
-    {
-        $this->paymentProduct320SpecificInput = $paymentProduct320SpecificInput;
-    }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->authorizationMode !== null) {
+        if (!\is_null($this->authorizationMode)) {
             $object->authorizationMode = $this->authorizationMode;
         }
-        if ($this->paymentProductId !== null) {
-            $object->paymentProductId = $this->paymentProductId;
+        if (!\is_null($this->paymentProduct302SpecificInput)) {
+            $object->paymentProduct302SpecificInput = $this->paymentProduct302SpecificInput->toObject();
         }
-        if ($this->paymentProduct320SpecificInput !== null) {
+        if (!\is_null($this->paymentProduct320SpecificInput)) {
             $object->paymentProduct320SpecificInput = $this->paymentProduct320SpecificInput->toObject();
+        }
+        if (!\is_null($this->paymentProductId)) {
+            $object->paymentProductId = $this->paymentProductId;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -102,18 +111,25 @@ class MobilePaymentMethodHostedCheckoutSpecificInput extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'authorizationMode')) {
+        if (\property_exists($object, 'authorizationMode')) {
             $this->authorizationMode = $object->authorizationMode;
         }
-        if (property_exists($object, 'paymentProductId')) {
-            $this->paymentProductId = $object->paymentProductId;
+        if (\property_exists($object, 'paymentProduct302SpecificInput')) {
+            if (!\is_object($object->paymentProduct302SpecificInput)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->paymentProduct302SpecificInput, \true) . '\' is not an object');
+            }
+            $value = new MobilePaymentProduct302SpecificInput();
+            $this->paymentProduct302SpecificInput = $value->fromObject($object->paymentProduct302SpecificInput);
         }
-        if (property_exists($object, 'paymentProduct320SpecificInput')) {
-            if (!is_object($object->paymentProduct320SpecificInput)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->paymentProduct320SpecificInput, true) . '\' is not an object');
+        if (\property_exists($object, 'paymentProduct320SpecificInput')) {
+            if (!\is_object($object->paymentProduct320SpecificInput)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->paymentProduct320SpecificInput, \true) . '\' is not an object');
             }
             $value = new MobilePaymentProduct320SpecificInput();
             $this->paymentProduct320SpecificInput = $value->fromObject($object->paymentProduct320SpecificInput);
+        }
+        if (\property_exists($object, 'paymentProductId')) {
+            $this->paymentProductId = $object->paymentProductId;
         }
         return $this;
     }

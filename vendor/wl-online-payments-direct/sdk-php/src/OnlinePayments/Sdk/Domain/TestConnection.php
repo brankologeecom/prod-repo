@@ -1,25 +1,20 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class TestConnection extends DataObject
 {
-    // Properties
     /**
      * @var string
      */
-    private $result;
-
-    // Methods
+    public $result = null;
     /**
      * @return string
      */
@@ -28,25 +23,23 @@ class TestConnection extends DataObject
         return $this->result;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setResult($value)
     {
         $this->result = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->result !== null) {
+        if (!\is_null($this->result)) {
             $object->result = $this->result;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -55,7 +48,7 @@ class TestConnection extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'result')) {
+        if (\property_exists($object, 'result')) {
             $this->result = $object->result;
         }
         return $this;

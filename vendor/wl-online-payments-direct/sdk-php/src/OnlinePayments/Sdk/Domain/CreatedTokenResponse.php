@@ -1,45 +1,36 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class CreatedTokenResponse extends DataObject
 {
-    // Properties
     /**
      * @var CardWithoutCvv
      */
-    private $card;
-
+    public $card = null;
     /**
      * @var ExternalTokenLinked
      */
-    private $externalTokenLinked;
-
+    public $externalTokenLinked = null;
     /**
      * @var bool
      */
-    private $isNewToken;
-
+    public $isNewToken = null;
     /**
      * @var string
      */
-    private $token;
-
+    public $token = null;
     /**
      * @var string
      */
-    private $tokenStatus;
-
-    // Methods
+    public $tokenStatus = null;
     /**
      * @return CardWithoutCvv
      */
@@ -48,13 +39,12 @@ class CreatedTokenResponse extends DataObject
         return $this->card;
     }
     /**
-     * @var CardWithoutCvv
+     * @param CardWithoutCvv
      */
     public function setCard($value)
     {
         $this->card = $value;
     }
-
     /**
      * @return ExternalTokenLinked
      */
@@ -63,13 +53,12 @@ class CreatedTokenResponse extends DataObject
         return $this->externalTokenLinked;
     }
     /**
-     * @var ExternalTokenLinked
+     * @param ExternalTokenLinked
      */
     public function setExternalTokenLinked($value)
     {
         $this->externalTokenLinked = $value;
     }
-
     /**
      * @return bool
      */
@@ -78,13 +67,12 @@ class CreatedTokenResponse extends DataObject
         return $this->isNewToken;
     }
     /**
-     * @var bool
+     * @param bool
      */
     public function setIsNewToken($value)
     {
         $this->isNewToken = $value;
     }
-
     /**
      * @return string
      */
@@ -93,13 +81,12 @@ class CreatedTokenResponse extends DataObject
         return $this->token;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setToken($value)
     {
         $this->token = $value;
     }
-
     /**
      * @return string
      */
@@ -108,37 +95,35 @@ class CreatedTokenResponse extends DataObject
         return $this->tokenStatus;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setTokenStatus($value)
     {
         $this->tokenStatus = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->card !== null) {
+        if (!\is_null($this->card)) {
             $object->card = $this->card->toObject();
         }
-        if ($this->externalTokenLinked !== null) {
+        if (!\is_null($this->externalTokenLinked)) {
             $object->externalTokenLinked = $this->externalTokenLinked->toObject();
         }
-        if ($this->isNewToken !== null) {
+        if (!\is_null($this->isNewToken)) {
             $object->isNewToken = $this->isNewToken;
         }
-        if ($this->token !== null) {
+        if (!\is_null($this->token)) {
             $object->token = $this->token;
         }
-        if ($this->tokenStatus !== null) {
+        if (!\is_null($this->tokenStatus)) {
             $object->tokenStatus = $this->tokenStatus;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -147,27 +132,27 @@ class CreatedTokenResponse extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'card')) {
-            if (!is_object($object->card)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->card, true) . '\' is not an object');
+        if (\property_exists($object, 'card')) {
+            if (!\is_object($object->card)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->card, \true) . '\' is not an object');
             }
             $value = new CardWithoutCvv();
             $this->card = $value->fromObject($object->card);
         }
-        if (property_exists($object, 'externalTokenLinked')) {
-            if (!is_object($object->externalTokenLinked)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->externalTokenLinked, true) . '\' is not an object');
+        if (\property_exists($object, 'externalTokenLinked')) {
+            if (!\is_object($object->externalTokenLinked)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->externalTokenLinked, \true) . '\' is not an object');
             }
             $value = new ExternalTokenLinked();
             $this->externalTokenLinked = $value->fromObject($object->externalTokenLinked);
         }
-        if (property_exists($object, 'isNewToken')) {
+        if (\property_exists($object, 'isNewToken')) {
             $this->isNewToken = $object->isNewToken;
         }
-        if (property_exists($object, 'token')) {
+        if (\property_exists($object, 'token')) {
             $this->token = $object->token;
         }
-        if (property_exists($object, 'tokenStatus')) {
+        if (\property_exists($object, 'tokenStatus')) {
             $this->tokenStatus = $object->tokenStatus;
         }
         return $this;

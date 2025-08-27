@@ -1,25 +1,20 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class PaymentProduct771SpecificOutput extends DataObject
 {
-    // Properties
     /**
      * @var string
      */
-    private $mandateReference;
-
-    // Methods
+    public $mandateReference = null;
     /**
      * @return string
      */
@@ -28,25 +23,23 @@ class PaymentProduct771SpecificOutput extends DataObject
         return $this->mandateReference;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setMandateReference($value)
     {
         $this->mandateReference = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->mandateReference !== null) {
+        if (!\is_null($this->mandateReference)) {
             $object->mandateReference = $this->mandateReference;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -55,7 +48,7 @@ class PaymentProduct771SpecificOutput extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'mandateReference')) {
+        if (\property_exists($object, 'mandateReference')) {
             $this->mandateReference = $object->mandateReference;
         }
         return $this;

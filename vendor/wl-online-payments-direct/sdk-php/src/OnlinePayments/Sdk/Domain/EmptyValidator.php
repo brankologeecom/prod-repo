@@ -1,20 +1,16 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class EmptyValidator extends DataObject
 {
-    // Properties
-    // Methods
     /**
      * @return object
      */
@@ -23,7 +19,6 @@ class EmptyValidator extends DataObject
         $object = parent::toObject();
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this

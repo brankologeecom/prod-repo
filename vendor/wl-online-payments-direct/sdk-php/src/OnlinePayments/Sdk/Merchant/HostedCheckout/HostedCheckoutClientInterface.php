@@ -1,58 +1,56 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\HostedCheckout;
 
-namespace OnlinePayments\Sdk\Merchant\HostedCheckout;
-
-use Exception;
-use OnlinePayments\Sdk\ApiException;
-use OnlinePayments\Sdk\AuthorizationException;
-use OnlinePayments\Sdk\CallContext;
-use OnlinePayments\Sdk\Domain\CreateHostedCheckoutRequest;
-use OnlinePayments\Sdk\Domain\CreateHostedCheckoutResponse;
-use OnlinePayments\Sdk\Domain\GetHostedCheckoutResponse;
-use OnlinePayments\Sdk\IdempotenceException;
-use OnlinePayments\Sdk\InvalidResponseException;
-use OnlinePayments\Sdk\PaymentPlatformException;
-use OnlinePayments\Sdk\ReferenceException;
-use OnlinePayments\Sdk\ValidationException;
-
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\ApiException;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\AuthorizationException;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\CallContext;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\InvalidResponseException;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\CreateHostedCheckoutRequest;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\CreateHostedCheckoutResponse;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\GetHostedCheckoutResponse;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\IdempotenceException;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\PlatformException;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\ReferenceException;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\ValidationException;
+/**
+ * HostedCheckout client interface.
+ */
 interface HostedCheckoutClientInterface
 {
     /**
      * Resource /v2/{merchantId}/hostedcheckouts - Create hosted checkout
      *
      * @param CreateHostedCheckoutRequest $body
-     * @param CallContext $callContext
+     * @param CallContext|null $callContext
      * @return CreateHostedCheckoutResponse
      *
-     * @throws ApiException
-     * @throws AuthorizationException
-     * @throws Exception
-     * @throws PaymentPlatformException
      * @throws IdempotenceException
-     * @throws InvalidResponseException
-     * @throws ReferenceException
      * @throws ValidationException
+     * @throws AuthorizationException
+     * @throws ReferenceException
+     * @throws PlatformException
+     * @throws ApiException
+     * @throws InvalidResponseException
      */
-    public function createHostedCheckout(CreateHostedCheckoutRequest $body, CallContext $callContext = null);
-
+    function createHostedCheckout(CreateHostedCheckoutRequest $body, CallContext $callContext = null);
     /**
      * Resource /v2/{merchantId}/hostedcheckouts/{hostedCheckoutId} - Get hosted checkout status
      *
      * @param string $hostedCheckoutId
-     * @param CallContext $callContext
+     * @param CallContext|null $callContext
      * @return GetHostedCheckoutResponse
      *
-     * @throws ApiException
-     * @throws AuthorizationException
-     * @throws Exception
-     * @throws PaymentPlatformException
      * @throws IdempotenceException
-     * @throws InvalidResponseException
-     * @throws ReferenceException
      * @throws ValidationException
+     * @throws AuthorizationException
+     * @throws ReferenceException
+     * @throws PlatformException
+     * @throws ApiException
+     * @throws InvalidResponseException
      */
-    public function getHostedCheckout($hostedCheckoutId, CallContext $callContext = null);
+    function getHostedCheckout($hostedCheckoutId, CallContext $callContext = null);
 }

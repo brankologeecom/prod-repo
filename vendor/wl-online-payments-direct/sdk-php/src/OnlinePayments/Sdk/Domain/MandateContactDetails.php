@@ -1,25 +1,20 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class MandateContactDetails extends DataObject
 {
-    // Properties
     /**
      * @var string
      */
-    private $emailAddress;
-
-    // Methods
+    public $emailAddress = null;
     /**
      * @return string
      */
@@ -28,25 +23,23 @@ class MandateContactDetails extends DataObject
         return $this->emailAddress;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setEmailAddress($value)
     {
         $this->emailAddress = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->emailAddress !== null) {
+        if (!\is_null($this->emailAddress)) {
             $object->emailAddress = $this->emailAddress;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -55,7 +48,7 @@ class MandateContactDetails extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'emailAddress')) {
+        if (\property_exists($object, 'emailAddress')) {
             $this->emailAddress = $object->emailAddress;
         }
         return $this;

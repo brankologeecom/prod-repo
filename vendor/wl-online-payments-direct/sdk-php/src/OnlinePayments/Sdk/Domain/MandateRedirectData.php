@@ -1,30 +1,24 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class MandateRedirectData extends DataObject
 {
-    // Properties
     /**
      * @var string
      */
-    private $RETURNMAC;
-
+    public $RETURNMAC = null;
     /**
      * @var string
      */
-    private $redirectURL;
-
-    // Methods
+    public $redirectURL = null;
     /**
      * @return string
      */
@@ -33,13 +27,12 @@ class MandateRedirectData extends DataObject
         return $this->RETURNMAC;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setRETURNMAC($value)
     {
         $this->RETURNMAC = $value;
     }
-
     /**
      * @return string
      */
@@ -48,28 +41,26 @@ class MandateRedirectData extends DataObject
         return $this->redirectURL;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setRedirectURL($value)
     {
         $this->redirectURL = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->RETURNMAC !== null) {
+        if (!\is_null($this->RETURNMAC)) {
             $object->RETURNMAC = $this->RETURNMAC;
         }
-        if ($this->redirectURL !== null) {
+        if (!\is_null($this->redirectURL)) {
             $object->redirectURL = $this->redirectURL;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -78,10 +69,10 @@ class MandateRedirectData extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'RETURNMAC')) {
+        if (\property_exists($object, 'RETURNMAC')) {
             $this->RETURNMAC = $object->RETURNMAC;
         }
-        if (property_exists($object, 'redirectURL')) {
+        if (\property_exists($object, 'redirectURL')) {
             $this->redirectURL = $object->redirectURL;
         }
         return $this;

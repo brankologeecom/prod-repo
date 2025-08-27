@@ -1,30 +1,24 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class AmountOfMoney extends DataObject
 {
-    // Properties
     /**
      * @var int
      */
-    private $amount;
-
+    public $amount = null;
     /**
      * @var string
      */
-    private $currencyCode;
-
-    // Methods
+    public $currencyCode = null;
     /**
      * @return int
      */
@@ -33,13 +27,12 @@ class AmountOfMoney extends DataObject
         return $this->amount;
     }
     /**
-     * @var int
+     * @param int
      */
     public function setAmount($value)
     {
         $this->amount = $value;
     }
-
     /**
      * @return string
      */
@@ -48,28 +41,26 @@ class AmountOfMoney extends DataObject
         return $this->currencyCode;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setCurrencyCode($value)
     {
         $this->currencyCode = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->amount !== null) {
+        if (!\is_null($this->amount)) {
             $object->amount = $this->amount;
         }
-        if ($this->currencyCode !== null) {
+        if (!\is_null($this->currencyCode)) {
             $object->currencyCode = $this->currencyCode;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -78,10 +69,10 @@ class AmountOfMoney extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'amount')) {
+        if (\property_exists($object, 'amount')) {
             $this->amount = $object->amount;
         }
-        if (property_exists($object, 'currencyCode')) {
+        if (\property_exists($object, 'currencyCode')) {
             $this->currencyCode = $object->currencyCode;
         }
         return $this;

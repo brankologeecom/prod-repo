@@ -1,25 +1,20 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class RefundPaymentProduct840SpecificOutput extends DataObject
 {
-    // Properties
     /**
      * @var RefundPaymentProduct840CustomerAccount
      */
-    private $customerAccount;
-
-    // Methods
+    public $customerAccount = null;
     /**
      * @return RefundPaymentProduct840CustomerAccount
      */
@@ -28,25 +23,23 @@ class RefundPaymentProduct840SpecificOutput extends DataObject
         return $this->customerAccount;
     }
     /**
-     * @var RefundPaymentProduct840CustomerAccount
+     * @param RefundPaymentProduct840CustomerAccount
      */
     public function setCustomerAccount($value)
     {
         $this->customerAccount = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->customerAccount !== null) {
+        if (!\is_null($this->customerAccount)) {
             $object->customerAccount = $this->customerAccount->toObject();
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -55,9 +48,9 @@ class RefundPaymentProduct840SpecificOutput extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'customerAccount')) {
-            if (!is_object($object->customerAccount)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->customerAccount, true) . '\' is not an object');
+        if (\property_exists($object, 'customerAccount')) {
+            if (!\is_object($object->customerAccount)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->customerAccount, \true) . '\' is not an object');
             }
             $value = new RefundPaymentProduct840CustomerAccount();
             $this->customerAccount = $value->fromObject($object->customerAccount);

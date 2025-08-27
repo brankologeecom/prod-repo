@@ -1,25 +1,20 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class CapturesResponse extends DataObject
 {
-    // Properties
     /**
      * @var Capture[]
      */
-    private $captures;
-
-    // Methods
+    public $captures = null;
     /**
      * @return Capture[]
      */
@@ -28,30 +23,28 @@ class CapturesResponse extends DataObject
         return $this->captures;
     }
     /**
-     * @var Capture[]
+     * @param Capture[]
      */
     public function setCaptures($value)
     {
         $this->captures = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->captures !== null) {
+        if (!\is_null($this->captures)) {
             $object->captures = [];
             foreach ($this->captures as $element) {
-                if ($element !== null) {
+                if (!\is_null($element)) {
                     $object->captures[] = $element->toObject();
                 }
             }
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -60,9 +53,9 @@ class CapturesResponse extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'captures')) {
-            if (!is_array($object->captures) && !is_object($object->captures)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->captures, true) . '\' is not an array or object');
+        if (\property_exists($object, 'captures')) {
+            if (!\is_array($object->captures) && !\is_object($object->captures)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->captures, \true) . '\' is not an array or object');
             }
             $this->captures = [];
             foreach ($object->captures as $element) {

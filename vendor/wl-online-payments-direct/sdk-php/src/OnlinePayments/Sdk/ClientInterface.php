@@ -1,14 +1,14 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk;
 
-namespace OnlinePayments\Sdk;
-
-use OnlinePayments\Sdk\Merchant\MerchantClientInterface;
-
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Logging\CommunicatorLogger;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\MerchantClientInterface;
 /**
- * API specifications
+ * Payment platform client interface.
  */
 interface ClientInterface
 {
@@ -16,14 +16,20 @@ interface ClientInterface
      * @param CommunicatorLogger $communicatorLogger
      */
     function enableLogging(CommunicatorLogger $communicatorLogger);
-
+    /**
+     * @return void
+     */
     function disableLogging();
-
+    /**
+     * @param string $clientMetaInfo
+     * @return $this
+     */
+    function setClientMetaInfo($clientMetaInfo);
     /**
      * Resource /v2/{merchantId}
      *
      * @param string $merchantId
      * @return MerchantClientInterface
      */
-    public function merchant($merchantId);
+    function merchant($merchantId);
 }

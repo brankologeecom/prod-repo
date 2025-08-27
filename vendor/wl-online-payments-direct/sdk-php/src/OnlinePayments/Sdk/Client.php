@@ -1,74 +1,63 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk;
 
-namespace OnlinePayments\Sdk;
-
-use OnlinePayments\Sdk\Merchant\MerchantClient;
-
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Logging\CommunicatorLogger;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\MerchantClient;
 /**
- * API specifications
+ * Payment platform client.
  */
-class Client extends Resource implements ClientInterface
+class Client extends ApiResource implements ClientInterface
 {
-    const API_VERSION = 'v2';
-
-    /** @var Communicator */
+    /** @var CommunicatorInterface */
     private $communicator;
-
     /** @var string */
     private $clientMetaInfo;
-
     /**
-     * Construct a new payment platform server-to-server API client.
+     * Construct a new Payment platform API client.
      *
-     * @param Communicator $communicator
+     * @param CommunicatorInterface $communicator
      * @param string $clientMetaInfo
-     *
      */
-    public function __construct(Communicator $communicator, $clientMetaInfo = '')
+    public function __construct(CommunicatorInterface $communicator, $clientMetaInfo = '')
     {
         parent::__construct();
         $this->communicator = $communicator;
         $this->setClientMetaInfo($clientMetaInfo);
-        $this->context = array('apiVersion' => static::API_VERSION);
+        $this->context = array();
     }
-
     /**
-     * @return Communicator
+     * @return CommunicatorInterface
      */
     protected function getCommunicator()
     {
         return $this->communicator;
     }
-
     /**
-     * @param CommunicatorLogger $communicatorLogger
+     * @inheritdoc
      */
     public function enableLogging(CommunicatorLogger $communicatorLogger)
     {
         $this->getCommunicator()->enableLogging($communicatorLogger);
     }
-
     /**
-     *
+     * @inheritdoc
      */
     public function disableLogging()
     {
         $this->getCommunicator()->disableLogging();
     }
-
     /**
-     * @param string $clientMetaInfo
-     * @return $this
+     * @inheritdoc
      */
     public function setClientMetaInfo($clientMetaInfo)
     {
-        $this->clientMetaInfo = $clientMetaInfo ? base64_encode($clientMetaInfo) : '';
+        $this->clientMetaInfo = $clientMetaInfo ? \base64_encode($clientMetaInfo) : '';
         return $this;
     }
-
     /**
      * @return string
      */
@@ -76,9 +65,8 @@ class Client extends Resource implements ClientInterface
     {
         return $this->clientMetaInfo;
     }
-
     /**
-     * {@inheritDoc}
+     * @inheritdoc
      */
     public function merchant($merchantId)
     {

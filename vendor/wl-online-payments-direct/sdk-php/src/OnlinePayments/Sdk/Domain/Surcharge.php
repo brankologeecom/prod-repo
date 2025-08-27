@@ -1,50 +1,40 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class Surcharge extends DataObject
 {
-    // Properties
     /**
      * @var AmountOfMoney
      */
-    private $netAmount;
-
+    public $netAmount = null;
     /**
      * @var int
      */
-    private $paymentProductId;
-
+    public $paymentProductId = null;
     /**
      * @var string
      */
-    private $result;
-
+    public $result = null;
     /**
      * @var AmountOfMoney
      */
-    private $surchargeAmount;
-
+    public $surchargeAmount = null;
     /**
      * @var SurchargeRate
      */
-    private $surchargeRate;
-
+    public $surchargeRate = null;
     /**
      * @var AmountOfMoney
      */
-    private $totalAmount;
-
-    // Methods
+    public $totalAmount = null;
     /**
      * @return AmountOfMoney
      */
@@ -53,13 +43,12 @@ class Surcharge extends DataObject
         return $this->netAmount;
     }
     /**
-     * @var AmountOfMoney
+     * @param AmountOfMoney
      */
     public function setNetAmount($value)
     {
         $this->netAmount = $value;
     }
-
     /**
      * @return int
      */
@@ -68,13 +57,12 @@ class Surcharge extends DataObject
         return $this->paymentProductId;
     }
     /**
-     * @var int
+     * @param int
      */
     public function setPaymentProductId($value)
     {
         $this->paymentProductId = $value;
     }
-
     /**
      * @return string
      */
@@ -83,13 +71,12 @@ class Surcharge extends DataObject
         return $this->result;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setResult($value)
     {
         $this->result = $value;
     }
-
     /**
      * @return AmountOfMoney
      */
@@ -98,13 +85,12 @@ class Surcharge extends DataObject
         return $this->surchargeAmount;
     }
     /**
-     * @var AmountOfMoney
+     * @param AmountOfMoney
      */
     public function setSurchargeAmount($value)
     {
         $this->surchargeAmount = $value;
     }
-
     /**
      * @return SurchargeRate
      */
@@ -113,13 +99,12 @@ class Surcharge extends DataObject
         return $this->surchargeRate;
     }
     /**
-     * @var SurchargeRate
+     * @param SurchargeRate
      */
     public function setSurchargeRate($value)
     {
         $this->surchargeRate = $value;
     }
-
     /**
      * @return AmountOfMoney
      */
@@ -128,40 +113,38 @@ class Surcharge extends DataObject
         return $this->totalAmount;
     }
     /**
-     * @var AmountOfMoney
+     * @param AmountOfMoney
      */
     public function setTotalAmount($value)
     {
         $this->totalAmount = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->netAmount !== null) {
+        if (!\is_null($this->netAmount)) {
             $object->netAmount = $this->netAmount->toObject();
         }
-        if ($this->paymentProductId !== null) {
+        if (!\is_null($this->paymentProductId)) {
             $object->paymentProductId = $this->paymentProductId;
         }
-        if ($this->result !== null) {
+        if (!\is_null($this->result)) {
             $object->result = $this->result;
         }
-        if ($this->surchargeAmount !== null) {
+        if (!\is_null($this->surchargeAmount)) {
             $object->surchargeAmount = $this->surchargeAmount->toObject();
         }
-        if ($this->surchargeRate !== null) {
+        if (!\is_null($this->surchargeRate)) {
             $object->surchargeRate = $this->surchargeRate->toObject();
         }
-        if ($this->totalAmount !== null) {
+        if (!\is_null($this->totalAmount)) {
             $object->totalAmount = $this->totalAmount->toObject();
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -170,36 +153,36 @@ class Surcharge extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'netAmount')) {
-            if (!is_object($object->netAmount)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->netAmount, true) . '\' is not an object');
+        if (\property_exists($object, 'netAmount')) {
+            if (!\is_object($object->netAmount)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->netAmount, \true) . '\' is not an object');
             }
             $value = new AmountOfMoney();
             $this->netAmount = $value->fromObject($object->netAmount);
         }
-        if (property_exists($object, 'paymentProductId')) {
+        if (\property_exists($object, 'paymentProductId')) {
             $this->paymentProductId = $object->paymentProductId;
         }
-        if (property_exists($object, 'result')) {
+        if (\property_exists($object, 'result')) {
             $this->result = $object->result;
         }
-        if (property_exists($object, 'surchargeAmount')) {
-            if (!is_object($object->surchargeAmount)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->surchargeAmount, true) . '\' is not an object');
+        if (\property_exists($object, 'surchargeAmount')) {
+            if (!\is_object($object->surchargeAmount)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->surchargeAmount, \true) . '\' is not an object');
             }
             $value = new AmountOfMoney();
             $this->surchargeAmount = $value->fromObject($object->surchargeAmount);
         }
-        if (property_exists($object, 'surchargeRate')) {
-            if (!is_object($object->surchargeRate)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->surchargeRate, true) . '\' is not an object');
+        if (\property_exists($object, 'surchargeRate')) {
+            if (!\is_object($object->surchargeRate)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->surchargeRate, \true) . '\' is not an object');
             }
             $value = new SurchargeRate();
             $this->surchargeRate = $value->fromObject($object->surchargeRate);
         }
-        if (property_exists($object, 'totalAmount')) {
-            if (!is_object($object->totalAmount)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->totalAmount, true) . '\' is not an object');
+        if (\property_exists($object, 'totalAmount')) {
+            if (!\is_object($object->totalAmount)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->totalAmount, \true) . '\' is not an object');
             }
             $value = new AmountOfMoney();
             $this->totalAmount = $value->fromObject($object->totalAmount);

@@ -1,45 +1,36 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class ContactDetails extends DataObject
 {
-    // Properties
     /**
      * @var string
      */
-    private $emailAddress;
-
+    public $emailAddress = null;
     /**
      * @var string
      */
-    private $faxNumber;
-
+    public $faxNumber = null;
     /**
      * @var string
      */
-    private $mobilePhoneNumber;
-
+    public $mobilePhoneNumber = null;
     /**
      * @var string
      */
-    private $phoneNumber;
-
+    public $phoneNumber = null;
     /**
      * @var string
      */
-    private $workPhoneNumber;
-
-    // Methods
+    public $workPhoneNumber = null;
     /**
      * @return string
      */
@@ -48,13 +39,12 @@ class ContactDetails extends DataObject
         return $this->emailAddress;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setEmailAddress($value)
     {
         $this->emailAddress = $value;
     }
-
     /**
      * @return string
      */
@@ -63,13 +53,12 @@ class ContactDetails extends DataObject
         return $this->faxNumber;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setFaxNumber($value)
     {
         $this->faxNumber = $value;
     }
-
     /**
      * @return string
      */
@@ -78,13 +67,12 @@ class ContactDetails extends DataObject
         return $this->mobilePhoneNumber;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setMobilePhoneNumber($value)
     {
         $this->mobilePhoneNumber = $value;
     }
-
     /**
      * @return string
      */
@@ -93,13 +81,12 @@ class ContactDetails extends DataObject
         return $this->phoneNumber;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setPhoneNumber($value)
     {
         $this->phoneNumber = $value;
     }
-
     /**
      * @return string
      */
@@ -108,37 +95,35 @@ class ContactDetails extends DataObject
         return $this->workPhoneNumber;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setWorkPhoneNumber($value)
     {
         $this->workPhoneNumber = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->emailAddress !== null) {
+        if (!\is_null($this->emailAddress)) {
             $object->emailAddress = $this->emailAddress;
         }
-        if ($this->faxNumber !== null) {
+        if (!\is_null($this->faxNumber)) {
             $object->faxNumber = $this->faxNumber;
         }
-        if ($this->mobilePhoneNumber !== null) {
+        if (!\is_null($this->mobilePhoneNumber)) {
             $object->mobilePhoneNumber = $this->mobilePhoneNumber;
         }
-        if ($this->phoneNumber !== null) {
+        if (!\is_null($this->phoneNumber)) {
             $object->phoneNumber = $this->phoneNumber;
         }
-        if ($this->workPhoneNumber !== null) {
+        if (!\is_null($this->workPhoneNumber)) {
             $object->workPhoneNumber = $this->workPhoneNumber;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -147,19 +132,19 @@ class ContactDetails extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'emailAddress')) {
+        if (\property_exists($object, 'emailAddress')) {
             $this->emailAddress = $object->emailAddress;
         }
-        if (property_exists($object, 'faxNumber')) {
+        if (\property_exists($object, 'faxNumber')) {
             $this->faxNumber = $object->faxNumber;
         }
-        if (property_exists($object, 'mobilePhoneNumber')) {
+        if (\property_exists($object, 'mobilePhoneNumber')) {
             $this->mobilePhoneNumber = $object->mobilePhoneNumber;
         }
-        if (property_exists($object, 'phoneNumber')) {
+        if (\property_exists($object, 'phoneNumber')) {
             $this->phoneNumber = $object->phoneNumber;
         }
-        if (property_exists($object, 'workPhoneNumber')) {
+        if (\property_exists($object, 'workPhoneNumber')) {
             $this->workPhoneNumber = $object->workPhoneNumber;
         }
         return $this;

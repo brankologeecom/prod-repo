@@ -1,30 +1,24 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class CreateTokenRequest extends DataObject
 {
-    // Properties
     /**
      * @var TokenCardSpecificInput
      */
-    private $card;
-
+    public $card = null;
     /**
      * @var int
      */
-    private $paymentProductId;
-
-    // Methods
+    public $paymentProductId = null;
     /**
      * @return TokenCardSpecificInput
      */
@@ -33,13 +27,12 @@ class CreateTokenRequest extends DataObject
         return $this->card;
     }
     /**
-     * @var TokenCardSpecificInput
+     * @param TokenCardSpecificInput
      */
     public function setCard($value)
     {
         $this->card = $value;
     }
-
     /**
      * @return int
      */
@@ -48,28 +41,26 @@ class CreateTokenRequest extends DataObject
         return $this->paymentProductId;
     }
     /**
-     * @var int
+     * @param int
      */
     public function setPaymentProductId($value)
     {
         $this->paymentProductId = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->card !== null) {
+        if (!\is_null($this->card)) {
             $object->card = $this->card->toObject();
         }
-        if ($this->paymentProductId !== null) {
+        if (!\is_null($this->paymentProductId)) {
             $object->paymentProductId = $this->paymentProductId;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -78,14 +69,14 @@ class CreateTokenRequest extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'card')) {
-            if (!is_object($object->card)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->card, true) . '\' is not an object');
+        if (\property_exists($object, 'card')) {
+            if (!\is_object($object->card)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->card, \true) . '\' is not an object');
             }
             $value = new TokenCardSpecificInput();
             $this->card = $value->fromObject($object->card);
         }
-        if (property_exists($object, 'paymentProductId')) {
+        if (\property_exists($object, 'paymentProductId')) {
             $this->paymentProductId = $object->paymentProductId;
         }
         return $this;

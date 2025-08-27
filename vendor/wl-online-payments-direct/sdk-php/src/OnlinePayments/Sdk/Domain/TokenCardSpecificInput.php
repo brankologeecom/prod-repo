@@ -1,25 +1,20 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class TokenCardSpecificInput extends DataObject
 {
-    // Properties
     /**
      * @var TokenData
      */
-    private $data;
-
-    // Methods
+    public $data = null;
     /**
      * @return TokenData
      */
@@ -28,25 +23,23 @@ class TokenCardSpecificInput extends DataObject
         return $this->data;
     }
     /**
-     * @var TokenData
+     * @param TokenData
      */
     public function setData($value)
     {
         $this->data = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->data !== null) {
+        if (!\is_null($this->data)) {
             $object->data = $this->data->toObject();
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -55,9 +48,9 @@ class TokenCardSpecificInput extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'data')) {
-            if (!is_object($object->data)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->data, true) . '\' is not an object');
+        if (\property_exists($object, 'data')) {
+            if (!\is_object($object->data)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->data, \true) . '\' is not an object');
             }
             $value = new TokenData();
             $this->data = $value->fromObject($object->data);

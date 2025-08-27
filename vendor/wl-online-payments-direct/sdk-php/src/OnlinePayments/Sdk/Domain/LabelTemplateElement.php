@@ -1,30 +1,24 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class LabelTemplateElement extends DataObject
 {
-    // Properties
     /**
      * @var string
      */
-    private $attributeKey;
-
+    public $attributeKey = null;
     /**
      * @var string
      */
-    private $mask;
-
-    // Methods
+    public $mask = null;
     /**
      * @return string
      */
@@ -33,13 +27,12 @@ class LabelTemplateElement extends DataObject
         return $this->attributeKey;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setAttributeKey($value)
     {
         $this->attributeKey = $value;
     }
-
     /**
      * @return string
      */
@@ -48,28 +41,26 @@ class LabelTemplateElement extends DataObject
         return $this->mask;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setMask($value)
     {
         $this->mask = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->attributeKey !== null) {
+        if (!\is_null($this->attributeKey)) {
             $object->attributeKey = $this->attributeKey;
         }
-        if ($this->mask !== null) {
+        if (!\is_null($this->mask)) {
             $object->mask = $this->mask;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -78,10 +69,10 @@ class LabelTemplateElement extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'attributeKey')) {
+        if (\property_exists($object, 'attributeKey')) {
             $this->attributeKey = $object->attributeKey;
         }
-        if (property_exists($object, 'mask')) {
+        if (\property_exists($object, 'mask')) {
             $this->mask = $object->mask;
         }
         return $this;

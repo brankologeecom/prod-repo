@@ -1,30 +1,42 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class IINDetail extends DataObject
 {
-    // Properties
+    /**
+     * @var string
+     */
+    public $cardType = null;
     /**
      * @var bool
      */
-    private $isAllowedInContext;
-
+    public $isAllowedInContext = null;
     /**
      * @var int
      */
-    private $paymentProductId;
-
-    // Methods
+    public $paymentProductId = null;
+    /**
+     * @return string
+     */
+    public function getCardType()
+    {
+        return $this->cardType;
+    }
+    /**
+     * @param string
+     */
+    public function setCardType($value)
+    {
+        $this->cardType = $value;
+    }
     /**
      * @return bool
      */
@@ -33,13 +45,12 @@ class IINDetail extends DataObject
         return $this->isAllowedInContext;
     }
     /**
-     * @var bool
+     * @param bool
      */
     public function setIsAllowedInContext($value)
     {
         $this->isAllowedInContext = $value;
     }
-
     /**
      * @return int
      */
@@ -48,28 +59,29 @@ class IINDetail extends DataObject
         return $this->paymentProductId;
     }
     /**
-     * @var int
+     * @param int
      */
     public function setPaymentProductId($value)
     {
         $this->paymentProductId = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->isAllowedInContext !== null) {
+        if (!\is_null($this->cardType)) {
+            $object->cardType = $this->cardType;
+        }
+        if (!\is_null($this->isAllowedInContext)) {
             $object->isAllowedInContext = $this->isAllowedInContext;
         }
-        if ($this->paymentProductId !== null) {
+        if (!\is_null($this->paymentProductId)) {
             $object->paymentProductId = $this->paymentProductId;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -78,10 +90,13 @@ class IINDetail extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'isAllowedInContext')) {
+        if (\property_exists($object, 'cardType')) {
+            $this->cardType = $object->cardType;
+        }
+        if (\property_exists($object, 'isAllowedInContext')) {
             $this->isAllowedInContext = $object->isAllowedInContext;
         }
-        if (property_exists($object, 'paymentProductId')) {
+        if (\property_exists($object, 'paymentProductId')) {
             $this->paymentProductId = $object->paymentProductId;
         }
         return $this;

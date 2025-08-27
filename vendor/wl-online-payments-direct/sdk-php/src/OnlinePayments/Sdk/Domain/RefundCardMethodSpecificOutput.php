@@ -1,30 +1,42 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class RefundCardMethodSpecificOutput extends DataObject
 {
-    // Properties
+    /**
+     * @var CurrencyConversion
+     */
+    public $currencyConversion = null;
     /**
      * @var int
      */
-    private $totalAmountPaid;
-
+    public $totalAmountPaid = null;
     /**
      * @var int
      */
-    private $totalAmountRefunded;
-
-    // Methods
+    public $totalAmountRefunded = null;
+    /**
+     * @return CurrencyConversion
+     */
+    public function getCurrencyConversion()
+    {
+        return $this->currencyConversion;
+    }
+    /**
+     * @param CurrencyConversion
+     */
+    public function setCurrencyConversion($value)
+    {
+        $this->currencyConversion = $value;
+    }
     /**
      * @return int
      */
@@ -33,13 +45,12 @@ class RefundCardMethodSpecificOutput extends DataObject
         return $this->totalAmountPaid;
     }
     /**
-     * @var int
+     * @param int
      */
     public function setTotalAmountPaid($value)
     {
         $this->totalAmountPaid = $value;
     }
-
     /**
      * @return int
      */
@@ -48,28 +59,29 @@ class RefundCardMethodSpecificOutput extends DataObject
         return $this->totalAmountRefunded;
     }
     /**
-     * @var int
+     * @param int
      */
     public function setTotalAmountRefunded($value)
     {
         $this->totalAmountRefunded = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->totalAmountPaid !== null) {
+        if (!\is_null($this->currencyConversion)) {
+            $object->currencyConversion = $this->currencyConversion->toObject();
+        }
+        if (!\is_null($this->totalAmountPaid)) {
             $object->totalAmountPaid = $this->totalAmountPaid;
         }
-        if ($this->totalAmountRefunded !== null) {
+        if (!\is_null($this->totalAmountRefunded)) {
             $object->totalAmountRefunded = $this->totalAmountRefunded;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -78,10 +90,17 @@ class RefundCardMethodSpecificOutput extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'totalAmountPaid')) {
+        if (\property_exists($object, 'currencyConversion')) {
+            if (!\is_object($object->currencyConversion)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->currencyConversion, \true) . '\' is not an object');
+            }
+            $value = new CurrencyConversion();
+            $this->currencyConversion = $value->fromObject($object->currencyConversion);
+        }
+        if (\property_exists($object, 'totalAmountPaid')) {
             $this->totalAmountPaid = $object->totalAmountPaid;
         }
-        if (property_exists($object, 'totalAmountRefunded')) {
+        if (\property_exists($object, 'totalAmountRefunded')) {
             $this->totalAmountRefunded = $object->totalAmountRefunded;
         }
         return $this;

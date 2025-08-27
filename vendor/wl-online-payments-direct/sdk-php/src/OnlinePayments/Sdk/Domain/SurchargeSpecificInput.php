@@ -1,30 +1,24 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class SurchargeSpecificInput extends DataObject
 {
-    // Properties
     /**
      * @var string
      */
-    private $mode;
-
+    public $mode = null;
     /**
      * @var AmountOfMoney
      */
-    private $surchargeAmount;
-
-    // Methods
+    public $surchargeAmount = null;
     /**
      * @return string
      */
@@ -33,13 +27,12 @@ class SurchargeSpecificInput extends DataObject
         return $this->mode;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setMode($value)
     {
         $this->mode = $value;
     }
-
     /**
      * @return AmountOfMoney
      */
@@ -48,28 +41,26 @@ class SurchargeSpecificInput extends DataObject
         return $this->surchargeAmount;
     }
     /**
-     * @var AmountOfMoney
+     * @param AmountOfMoney
      */
     public function setSurchargeAmount($value)
     {
         $this->surchargeAmount = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->mode !== null) {
+        if (!\is_null($this->mode)) {
             $object->mode = $this->mode;
         }
-        if ($this->surchargeAmount !== null) {
+        if (!\is_null($this->surchargeAmount)) {
             $object->surchargeAmount = $this->surchargeAmount->toObject();
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -78,12 +69,12 @@ class SurchargeSpecificInput extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'mode')) {
+        if (\property_exists($object, 'mode')) {
             $this->mode = $object->mode;
         }
-        if (property_exists($object, 'surchargeAmount')) {
-            if (!is_object($object->surchargeAmount)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->surchargeAmount, true) . '\' is not an object');
+        if (\property_exists($object, 'surchargeAmount')) {
+            if (!\is_object($object->surchargeAmount)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->surchargeAmount, \true) . '\' is not an object');
             }
             $value = new AmountOfMoney();
             $this->surchargeAmount = $value->fromObject($object->surchargeAmount);

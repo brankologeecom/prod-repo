@@ -1,21 +1,29 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant;
 
-namespace OnlinePayments\Sdk\Merchant;
-
-use OnlinePayments\Sdk\Merchant\HostedCheckout\HostedCheckoutClientInterface;
-use OnlinePayments\Sdk\Merchant\HostedTokenization\HostedTokenizationClientInterface;
-use OnlinePayments\Sdk\Merchant\Mandates\MandatesClientInterface;
-use OnlinePayments\Sdk\Merchant\Payments\PaymentsClientInterface;
-use OnlinePayments\Sdk\Merchant\Payouts\PayoutsClientInterface;
-use OnlinePayments\Sdk\Merchant\ProductGroups\ProductGroupsClientInterface;
-use OnlinePayments\Sdk\Merchant\Products\ProductsClientInterface;
-use OnlinePayments\Sdk\Merchant\Services\ServicesClientInterface;
-use OnlinePayments\Sdk\Merchant\Sessions\SessionsClientInterface;
-use OnlinePayments\Sdk\Merchant\Tokens\TokensClientInterface;
-
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\Captures\CapturesClientInterface;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\Complete\CompleteClientInterface;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\HostedCheckout\HostedCheckoutClientInterface;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\HostedTokenization\HostedTokenizationClientInterface;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\Mandates\MandatesClientInterface;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\PaymentLinks\PaymentLinksClientInterface;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\Payments\PaymentsClientInterface;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\Payouts\PayoutsClientInterface;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\PrivacyPolicy\PrivacyPolicyClientInterface;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\ProductGroups\ProductGroupsClientInterface;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\Products\ProductsClientInterface;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\Refunds\RefundsClientInterface;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\Services\ServicesClientInterface;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\Sessions\SessionsClientInterface;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\Tokens\TokensClientInterface;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\Webhooks\WebhooksClientInterface;
+/**
+ * Merchant client interface.
+ */
 interface MerchantClientInterface
 {
     /**
@@ -23,68 +31,95 @@ interface MerchantClientInterface
      *
      * @return HostedCheckoutClientInterface
      */
-    public function hostedCheckout();
-
+    function hostedCheckout();
     /**
      * Resource /v2/{merchantId}/hostedtokenizations
      *
      * @return HostedTokenizationClientInterface
      */
-    public function hostedTokenization();
-
-    /**
-     * Resource /v2/{merchantId}/mandates
-     *
-     * @return MandatesClientInterface
-     */
-    public function mandates();
-
+    function hostedTokenization();
     /**
      * Resource /v2/{merchantId}/payments
      *
      * @return PaymentsClientInterface
      */
-    public function payments();
-
+    function payments();
     /**
-     * Resource /v2/{merchantId}/payouts
+     * Resource /v2/{merchantId}/payments/{paymentId}/captures
      *
-     * @return PayoutsClientInterface
+     * @return CapturesClientInterface
      */
-    public function payouts();
-
+    function captures();
+    /**
+     * Resource /v2/{merchantId}/payments/{paymentId}/refunds
+     *
+     * @return RefundsClientInterface
+     */
+    function refunds();
+    /**
+     * Resource /v2/{merchantId}/payments/{paymentId}/complete
+     *
+     * @return CompleteClientInterface
+     */
+    function complete();
     /**
      * Resource /v2/{merchantId}/productgroups
      *
      * @return ProductGroupsClientInterface
      */
-    public function productGroups();
-
+    function productGroups();
     /**
      * Resource /v2/{merchantId}/products
      *
      * @return ProductsClientInterface
      */
-    public function products();
-
+    function products();
     /**
-     * Resource /v2/{merchantId}/services
+     * Resource /v2/{merchantId}/services/testconnection
      *
      * @return ServicesClientInterface
      */
-    public function services();
-
+    function services();
+    /**
+     * Resource /v2/{merchantId}/webhooks/validateCredentials
+     *
+     * @return WebhooksClientInterface
+     */
+    function webhooks();
     /**
      * Resource /v2/{merchantId}/sessions
      *
      * @return SessionsClientInterface
      */
-    public function sessions();
-
+    function sessions();
     /**
-     * Resource /v2/{merchantId}/tokens
+     * Resource /v2/{merchantId}/tokens/{tokenId}
      *
      * @return TokensClientInterface
      */
-    public function tokens();
+    function tokens();
+    /**
+     * Resource /v2/{merchantId}/payouts/{payoutId}
+     *
+     * @return PayoutsClientInterface
+     */
+    function payouts();
+    /**
+     * Resource /v2/{merchantId}/mandates
+     *
+     * @return MandatesClientInterface
+     */
+    function mandates();
+    /**
+     * Resource /v2/{merchantId}/services/privacypolicy
+     *
+     * @return PrivacyPolicyClientInterface
+     */
+    function privacyPolicy();
+    /**
+     * Resource /v2/{merchantId}/paymentlinks
+     *
+     * @return PaymentLinksClientInterface
+     */
+    function paymentLinks();
 }

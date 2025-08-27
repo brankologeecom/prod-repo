@@ -1,25 +1,20 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class CustomerDeviceOutput extends DataObject
 {
-    // Properties
     /**
      * @var string
      */
-    private $ipAddressCountryCode;
-
-    // Methods
+    public $ipAddressCountryCode = null;
     /**
      * @return string
      */
@@ -28,25 +23,23 @@ class CustomerDeviceOutput extends DataObject
         return $this->ipAddressCountryCode;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setIpAddressCountryCode($value)
     {
         $this->ipAddressCountryCode = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->ipAddressCountryCode !== null) {
+        if (!\is_null($this->ipAddressCountryCode)) {
             $object->ipAddressCountryCode = $this->ipAddressCountryCode;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -55,7 +48,7 @@ class CustomerDeviceOutput extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'ipAddressCountryCode')) {
+        if (\property_exists($object, 'ipAddressCountryCode')) {
             $this->ipAddressCountryCode = $object->ipAddressCountryCode;
         }
         return $this;

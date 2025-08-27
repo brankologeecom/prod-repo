@@ -1,58 +1,56 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\HostedTokenization;
 
-namespace OnlinePayments\Sdk\Merchant\HostedTokenization;
-
-use Exception;
-use OnlinePayments\Sdk\ApiException;
-use OnlinePayments\Sdk\AuthorizationException;
-use OnlinePayments\Sdk\CallContext;
-use OnlinePayments\Sdk\Domain\CreateHostedTokenizationRequest;
-use OnlinePayments\Sdk\Domain\CreateHostedTokenizationResponse;
-use OnlinePayments\Sdk\Domain\GetHostedTokenizationResponse;
-use OnlinePayments\Sdk\IdempotenceException;
-use OnlinePayments\Sdk\InvalidResponseException;
-use OnlinePayments\Sdk\PaymentPlatformException;
-use OnlinePayments\Sdk\ReferenceException;
-use OnlinePayments\Sdk\ValidationException;
-
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\ApiException;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\AuthorizationException;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\CallContext;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\InvalidResponseException;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\CreateHostedTokenizationRequest;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\CreateHostedTokenizationResponse;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\GetHostedTokenizationResponse;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\IdempotenceException;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\PlatformException;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\ReferenceException;
+use Syde\Vendor\Cawl\OnlinePayments\Sdk\ValidationException;
+/**
+ * HostedTokenization client interface.
+ */
 interface HostedTokenizationClientInterface
 {
     /**
      * Resource /v2/{merchantId}/hostedtokenizations - Create hosted tokenization session
      *
      * @param CreateHostedTokenizationRequest $body
-     * @param CallContext $callContext
+     * @param CallContext|null $callContext
      * @return CreateHostedTokenizationResponse
      *
-     * @throws ApiException
-     * @throws AuthorizationException
-     * @throws Exception
-     * @throws PaymentPlatformException
      * @throws IdempotenceException
-     * @throws InvalidResponseException
-     * @throws ReferenceException
      * @throws ValidationException
+     * @throws AuthorizationException
+     * @throws ReferenceException
+     * @throws PlatformException
+     * @throws ApiException
+     * @throws InvalidResponseException
      */
-    public function createHostedTokenization(CreateHostedTokenizationRequest $body, CallContext $callContext = null);
-
+    function createHostedTokenization(CreateHostedTokenizationRequest $body, CallContext $callContext = null);
     /**
      * Resource /v2/{merchantId}/hostedtokenizations/{hostedTokenizationId} - Get hosted tokenization session
      *
      * @param string $hostedTokenizationId
-     * @param CallContext $callContext
+     * @param CallContext|null $callContext
      * @return GetHostedTokenizationResponse
      *
-     * @throws ApiException
-     * @throws AuthorizationException
-     * @throws Exception
-     * @throws PaymentPlatformException
      * @throws IdempotenceException
-     * @throws InvalidResponseException
-     * @throws ReferenceException
      * @throws ValidationException
+     * @throws AuthorizationException
+     * @throws ReferenceException
+     * @throws PlatformException
+     * @throws ApiException
+     * @throws InvalidResponseException
      */
-    public function getHostedTokenization($hostedTokenizationId, CallContext $callContext = null);
+    function getHostedTokenization($hostedTokenizationId, CallContext $callContext = null);
 }

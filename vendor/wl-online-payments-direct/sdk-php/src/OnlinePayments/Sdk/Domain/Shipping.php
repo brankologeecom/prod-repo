@@ -1,65 +1,52 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class Shipping extends DataObject
 {
-    // Properties
     /**
      * @var AddressPersonal
      */
-    private $address;
-
+    public $address = null;
     /**
      * @var string
      */
-    private $addressIndicator;
-
+    public $addressIndicator = null;
     /**
      * @var string
      */
-    private $emailAddress;
-
+    public $emailAddress = null;
     /**
      * @var string
      */
-    private $firstUsageDate;
-
+    public $firstUsageDate = null;
     /**
      * @var bool
      */
-    private $isFirstUsage;
-
+    public $isFirstUsage = null;
     /**
      * @var ShippingMethod
      */
-    private $method;
-
+    public $method = null;
     /**
      * @var int
      */
-    private $shippingCost;
-
+    public $shippingCost = null;
     /**
      * @var int
      */
-    private $shippingCostTax;
-
+    public $shippingCostTax = null;
     /**
      * @var string
      */
-    private $type;
-
-    // Methods
+    public $type = null;
     /**
      * @return AddressPersonal
      */
@@ -68,13 +55,12 @@ class Shipping extends DataObject
         return $this->address;
     }
     /**
-     * @var AddressPersonal
+     * @param AddressPersonal
      */
     public function setAddress($value)
     {
         $this->address = $value;
     }
-
     /**
      * @return string
      */
@@ -83,13 +69,12 @@ class Shipping extends DataObject
         return $this->addressIndicator;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setAddressIndicator($value)
     {
         $this->addressIndicator = $value;
     }
-
     /**
      * @return string
      */
@@ -98,13 +83,12 @@ class Shipping extends DataObject
         return $this->emailAddress;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setEmailAddress($value)
     {
         $this->emailAddress = $value;
     }
-
     /**
      * @return string
      */
@@ -113,13 +97,12 @@ class Shipping extends DataObject
         return $this->firstUsageDate;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setFirstUsageDate($value)
     {
         $this->firstUsageDate = $value;
     }
-
     /**
      * @return bool
      */
@@ -128,13 +111,12 @@ class Shipping extends DataObject
         return $this->isFirstUsage;
     }
     /**
-     * @var bool
+     * @param bool
      */
     public function setIsFirstUsage($value)
     {
         $this->isFirstUsage = $value;
     }
-
     /**
      * @return ShippingMethod
      */
@@ -143,13 +125,12 @@ class Shipping extends DataObject
         return $this->method;
     }
     /**
-     * @var ShippingMethod
+     * @param ShippingMethod
      */
     public function setMethod($value)
     {
         $this->method = $value;
     }
-
     /**
      * @return int
      */
@@ -158,13 +139,12 @@ class Shipping extends DataObject
         return $this->shippingCost;
     }
     /**
-     * @var int
+     * @param int
      */
     public function setShippingCost($value)
     {
         $this->shippingCost = $value;
     }
-
     /**
      * @return int
      */
@@ -173,13 +153,12 @@ class Shipping extends DataObject
         return $this->shippingCostTax;
     }
     /**
-     * @var int
+     * @param int
      */
     public function setShippingCostTax($value)
     {
         $this->shippingCostTax = $value;
     }
-
     /**
      * @return string
      */
@@ -188,49 +167,47 @@ class Shipping extends DataObject
         return $this->type;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setType($value)
     {
         $this->type = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->address !== null) {
+        if (!\is_null($this->address)) {
             $object->address = $this->address->toObject();
         }
-        if ($this->addressIndicator !== null) {
+        if (!\is_null($this->addressIndicator)) {
             $object->addressIndicator = $this->addressIndicator;
         }
-        if ($this->emailAddress !== null) {
+        if (!\is_null($this->emailAddress)) {
             $object->emailAddress = $this->emailAddress;
         }
-        if ($this->firstUsageDate !== null) {
+        if (!\is_null($this->firstUsageDate)) {
             $object->firstUsageDate = $this->firstUsageDate;
         }
-        if ($this->isFirstUsage !== null) {
+        if (!\is_null($this->isFirstUsage)) {
             $object->isFirstUsage = $this->isFirstUsage;
         }
-        if ($this->method !== null) {
+        if (!\is_null($this->method)) {
             $object->method = $this->method->toObject();
         }
-        if ($this->shippingCost !== null) {
+        if (!\is_null($this->shippingCost)) {
             $object->shippingCost = $this->shippingCost;
         }
-        if ($this->shippingCostTax !== null) {
+        if (!\is_null($this->shippingCostTax)) {
             $object->shippingCostTax = $this->shippingCostTax;
         }
-        if ($this->type !== null) {
+        if (!\is_null($this->type)) {
             $object->type = $this->type;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -239,39 +216,39 @@ class Shipping extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'address')) {
-            if (!is_object($object->address)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->address, true) . '\' is not an object');
+        if (\property_exists($object, 'address')) {
+            if (!\is_object($object->address)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->address, \true) . '\' is not an object');
             }
             $value = new AddressPersonal();
             $this->address = $value->fromObject($object->address);
         }
-        if (property_exists($object, 'addressIndicator')) {
+        if (\property_exists($object, 'addressIndicator')) {
             $this->addressIndicator = $object->addressIndicator;
         }
-        if (property_exists($object, 'emailAddress')) {
+        if (\property_exists($object, 'emailAddress')) {
             $this->emailAddress = $object->emailAddress;
         }
-        if (property_exists($object, 'firstUsageDate')) {
+        if (\property_exists($object, 'firstUsageDate')) {
             $this->firstUsageDate = $object->firstUsageDate;
         }
-        if (property_exists($object, 'isFirstUsage')) {
+        if (\property_exists($object, 'isFirstUsage')) {
             $this->isFirstUsage = $object->isFirstUsage;
         }
-        if (property_exists($object, 'method')) {
-            if (!is_object($object->method)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->method, true) . '\' is not an object');
+        if (\property_exists($object, 'method')) {
+            if (!\is_object($object->method)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->method, \true) . '\' is not an object');
             }
             $value = new ShippingMethod();
             $this->method = $value->fromObject($object->method);
         }
-        if (property_exists($object, 'shippingCost')) {
+        if (\property_exists($object, 'shippingCost')) {
             $this->shippingCost = $object->shippingCost;
         }
-        if (property_exists($object, 'shippingCostTax')) {
+        if (\property_exists($object, 'shippingCostTax')) {
             $this->shippingCostTax = $object->shippingCostTax;
         }
-        if (property_exists($object, 'type')) {
+        if (\property_exists($object, 'type')) {
             $this->type = $object->type;
         }
         return $this;

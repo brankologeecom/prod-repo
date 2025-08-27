@@ -1,30 +1,24 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class OrderTypeInformation extends DataObject
 {
-    // Properties
     /**
      * @var string
      */
-    private $purchaseType;
-
+    public $purchaseType = null;
     /**
      * @var string
      */
-    private $transactionType;
-
-    // Methods
+    public $transactionType = null;
     /**
      * @return string
      */
@@ -33,13 +27,12 @@ class OrderTypeInformation extends DataObject
         return $this->purchaseType;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setPurchaseType($value)
     {
         $this->purchaseType = $value;
     }
-
     /**
      * @return string
      */
@@ -48,28 +41,26 @@ class OrderTypeInformation extends DataObject
         return $this->transactionType;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setTransactionType($value)
     {
         $this->transactionType = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->purchaseType !== null) {
+        if (!\is_null($this->purchaseType)) {
             $object->purchaseType = $this->purchaseType;
         }
-        if ($this->transactionType !== null) {
+        if (!\is_null($this->transactionType)) {
             $object->transactionType = $this->transactionType;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -78,10 +69,10 @@ class OrderTypeInformation extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'purchaseType')) {
+        if (\property_exists($object, 'purchaseType')) {
             $this->purchaseType = $object->purchaseType;
         }
-        if (property_exists($object, 'transactionType')) {
+        if (\property_exists($object, 'transactionType')) {
             $this->transactionType = $object->transactionType;
         }
         return $this;

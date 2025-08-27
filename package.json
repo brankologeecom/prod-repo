@@ -1,0 +1,55 @@
+{
+    "name": "@inpsyde/cawl-for-woocommerce",
+    "version": "0.1.0",
+    "license": "GPL-2.0-or-later",
+    "engines": {
+        "node": ">=16"
+    },
+    "browserslist": [
+        "> 0.5%",
+        "Safari >= 8",
+        "Chrome >= 41",
+        "Firefox >= 43",
+        "Edge >= 14"
+    ],
+    "dependencies": {
+        "@woocommerce/currency": "^4.3.0",
+        "@woocommerce/settings": "^1.0.0",
+        "@wordpress/data": "^10.20.0",
+        "core-js": "^3.25.0"
+    },
+    "devDependencies": {
+        "@types/jquery": "^3.5.30",
+        "@types/react": "^19",
+        "@types/react-dom": "^19",
+        "@wordpress/eslint-plugin": "^21",
+        "@wordpress/scripts": "^30",
+        "eslint-import-resolver-custom-alias": "^1.3.2",
+        "npm-run-all": "^4.1.5",
+        "ts-loader": "^9.0.0",
+        "typescript": "^5"
+    },
+    "imports": {
+        "#shared/*": [
+            "./shared/ts/*.ts"
+        ]
+    },
+    "scripts": {
+        "ddev:setup": "ddev start && ddev orchestrate",
+        "ddev:reset": "ddev orchestrate -f",
+        "assets": "composer compile-assets --ignore-lock=*",
+        "install-deps": "composer install && yarn install",
+        "build": "wp-scripts build",
+        "build:dev": "wp-scripts build --mode development",
+        "watch": "wp-scripts start",
+        "lint:md": "wp-scripts lint-md-docs *.md",
+        "lint:js": "wp-scripts lint-js modules.local/*/resources/*",
+        "lint:style": "wp-scripts lint-style modules.local/*/resources/**/*.scss",
+        "lint:php": "yarn phpcs && yarn psalm",
+        "lint:php-fix": "vendor/bin/phpcbf --parallel=8",
+        "phpcs": "vendor/bin/phpcs --parallel=8 -s",
+        "psalm": "vendor/bin/psalm --show-info=false --threads=8 --diff",
+        "test": "yarn test:php:unit",
+        "test:php:unit": "vendor/bin/phpunit"
+    }
+}

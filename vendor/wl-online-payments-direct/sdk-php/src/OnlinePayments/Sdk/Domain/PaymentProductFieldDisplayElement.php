@@ -1,40 +1,32 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class PaymentProductFieldDisplayElement extends DataObject
 {
-    // Properties
     /**
      * @var string
      */
-    private $id;
-
+    public $id = null;
     /**
      * @var string
      */
-    private $label;
-
+    public $label = null;
     /**
      * @var string
      */
-    private $type;
-
+    public $type = null;
     /**
      * @var string
      */
-    private $value;
-
-    // Methods
+    public $value = null;
     /**
      * @return string
      */
@@ -43,13 +35,12 @@ class PaymentProductFieldDisplayElement extends DataObject
         return $this->id;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setId($value)
     {
         $this->id = $value;
     }
-
     /**
      * @return string
      */
@@ -58,13 +49,12 @@ class PaymentProductFieldDisplayElement extends DataObject
         return $this->label;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setLabel($value)
     {
         $this->label = $value;
     }
-
     /**
      * @return string
      */
@@ -73,13 +63,12 @@ class PaymentProductFieldDisplayElement extends DataObject
         return $this->type;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setType($value)
     {
         $this->type = $value;
     }
-
     /**
      * @return string
      */
@@ -88,34 +77,32 @@ class PaymentProductFieldDisplayElement extends DataObject
         return $this->value;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setValue($value)
     {
         $this->value = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->id !== null) {
+        if (!\is_null($this->id)) {
             $object->id = $this->id;
         }
-        if ($this->label !== null) {
+        if (!\is_null($this->label)) {
             $object->label = $this->label;
         }
-        if ($this->type !== null) {
+        if (!\is_null($this->type)) {
             $object->type = $this->type;
         }
-        if ($this->value !== null) {
+        if (!\is_null($this->value)) {
             $object->value = $this->value;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -124,16 +111,16 @@ class PaymentProductFieldDisplayElement extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'id')) {
+        if (\property_exists($object, 'id')) {
             $this->id = $object->id;
         }
-        if (property_exists($object, 'label')) {
+        if (\property_exists($object, 'label')) {
             $this->label = $object->label;
         }
-        if (property_exists($object, 'type')) {
+        if (\property_exists($object, 'type')) {
             $this->type = $object->type;
         }
-        if (property_exists($object, 'value')) {
+        if (\property_exists($object, 'value')) {
             $this->value = $object->value;
         }
         return $this;

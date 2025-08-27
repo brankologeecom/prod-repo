@@ -1,80 +1,69 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class PaymentOutput extends DataObject
 {
-    // Properties
     /**
      * @var AmountOfMoney
      */
-    private $acquiredAmount;
-
+    public $acquiredAmount = null;
     /**
      * @var AmountOfMoney
      */
-    private $amountOfMoney;
-
+    public $amountOfMoney = null;
     /**
      * @var int
+     * @deprecated Amount that has been paid. This is deprecated. Use acquiredAmount instead.
      */
-    private $amountPaid;
-
+    public $amountPaid = null;
     /**
      * @var CardPaymentMethodSpecificOutput
      */
-    private $cardPaymentMethodSpecificOutput;
-
+    public $cardPaymentMethodSpecificOutput = null;
     /**
      * @var CustomerOutput
      */
-    private $customer;
-
+    public $customer = null;
+    /**
+     * @var Discount
+     */
+    public $discount = null;
     /**
      * @var string
      */
-    private $merchantParameters;
-
+    public $merchantParameters = null;
     /**
      * @var MobilePaymentMethodSpecificOutput
      */
-    private $mobilePaymentMethodSpecificOutput;
-
+    public $mobilePaymentMethodSpecificOutput = null;
     /**
      * @var string
      */
-    private $paymentMethod;
-
+    public $paymentMethod = null;
     /**
      * @var RedirectPaymentMethodSpecificOutput
      */
-    private $redirectPaymentMethodSpecificOutput;
-
+    public $redirectPaymentMethodSpecificOutput = null;
     /**
      * @var PaymentReferences
      */
-    private $references;
-
+    public $references = null;
     /**
      * @var SepaDirectDebitPaymentMethodSpecificOutput
      */
-    private $sepaDirectDebitPaymentMethodSpecificOutput;
-
+    public $sepaDirectDebitPaymentMethodSpecificOutput = null;
     /**
      * @var SurchargeSpecificOutput
      */
-    private $surchargeSpecificOutput;
-
-    // Methods
+    public $surchargeSpecificOutput = null;
     /**
      * @return AmountOfMoney
      */
@@ -83,13 +72,12 @@ class PaymentOutput extends DataObject
         return $this->acquiredAmount;
     }
     /**
-     * @var AmountOfMoney
+     * @param AmountOfMoney
      */
     public function setAcquiredAmount($value)
     {
         $this->acquiredAmount = $value;
     }
-
     /**
      * @return AmountOfMoney
      */
@@ -98,28 +86,28 @@ class PaymentOutput extends DataObject
         return $this->amountOfMoney;
     }
     /**
-     * @var AmountOfMoney
+     * @param AmountOfMoney
      */
     public function setAmountOfMoney($value)
     {
         $this->amountOfMoney = $value;
     }
-
     /**
      * @return int
+     * @deprecated Amount that has been paid. This is deprecated. Use acquiredAmount instead.
      */
     public function getAmountPaid()
     {
         return $this->amountPaid;
     }
     /**
-     * @var int
+     * @param int
+     * @deprecated Amount that has been paid. This is deprecated. Use acquiredAmount instead.
      */
     public function setAmountPaid($value)
     {
         $this->amountPaid = $value;
     }
-
     /**
      * @return CardPaymentMethodSpecificOutput
      */
@@ -128,13 +116,12 @@ class PaymentOutput extends DataObject
         return $this->cardPaymentMethodSpecificOutput;
     }
     /**
-     * @var CardPaymentMethodSpecificOutput
+     * @param CardPaymentMethodSpecificOutput
      */
     public function setCardPaymentMethodSpecificOutput($value)
     {
         $this->cardPaymentMethodSpecificOutput = $value;
     }
-
     /**
      * @return CustomerOutput
      */
@@ -143,13 +130,26 @@ class PaymentOutput extends DataObject
         return $this->customer;
     }
     /**
-     * @var CustomerOutput
+     * @param CustomerOutput
      */
     public function setCustomer($value)
     {
         $this->customer = $value;
     }
-
+    /**
+     * @return Discount
+     */
+    public function getDiscount()
+    {
+        return $this->discount;
+    }
+    /**
+     * @param Discount
+     */
+    public function setDiscount($value)
+    {
+        $this->discount = $value;
+    }
     /**
      * @return string
      */
@@ -158,13 +158,12 @@ class PaymentOutput extends DataObject
         return $this->merchantParameters;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setMerchantParameters($value)
     {
         $this->merchantParameters = $value;
     }
-
     /**
      * @return MobilePaymentMethodSpecificOutput
      */
@@ -173,13 +172,12 @@ class PaymentOutput extends DataObject
         return $this->mobilePaymentMethodSpecificOutput;
     }
     /**
-     * @var MobilePaymentMethodSpecificOutput
+     * @param MobilePaymentMethodSpecificOutput
      */
     public function setMobilePaymentMethodSpecificOutput($value)
     {
         $this->mobilePaymentMethodSpecificOutput = $value;
     }
-
     /**
      * @return string
      */
@@ -188,13 +186,12 @@ class PaymentOutput extends DataObject
         return $this->paymentMethod;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setPaymentMethod($value)
     {
         $this->paymentMethod = $value;
     }
-
     /**
      * @return RedirectPaymentMethodSpecificOutput
      */
@@ -203,13 +200,12 @@ class PaymentOutput extends DataObject
         return $this->redirectPaymentMethodSpecificOutput;
     }
     /**
-     * @var RedirectPaymentMethodSpecificOutput
+     * @param RedirectPaymentMethodSpecificOutput
      */
     public function setRedirectPaymentMethodSpecificOutput($value)
     {
         $this->redirectPaymentMethodSpecificOutput = $value;
     }
-
     /**
      * @return PaymentReferences
      */
@@ -218,13 +214,12 @@ class PaymentOutput extends DataObject
         return $this->references;
     }
     /**
-     * @var PaymentReferences
+     * @param PaymentReferences
      */
     public function setReferences($value)
     {
         $this->references = $value;
     }
-
     /**
      * @return SepaDirectDebitPaymentMethodSpecificOutput
      */
@@ -233,13 +228,12 @@ class PaymentOutput extends DataObject
         return $this->sepaDirectDebitPaymentMethodSpecificOutput;
     }
     /**
-     * @var SepaDirectDebitPaymentMethodSpecificOutput
+     * @param SepaDirectDebitPaymentMethodSpecificOutput
      */
     public function setSepaDirectDebitPaymentMethodSpecificOutput($value)
     {
         $this->sepaDirectDebitPaymentMethodSpecificOutput = $value;
     }
-
     /**
      * @return SurchargeSpecificOutput
      */
@@ -248,58 +242,59 @@ class PaymentOutput extends DataObject
         return $this->surchargeSpecificOutput;
     }
     /**
-     * @var SurchargeSpecificOutput
+     * @param SurchargeSpecificOutput
      */
     public function setSurchargeSpecificOutput($value)
     {
         $this->surchargeSpecificOutput = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->acquiredAmount !== null) {
+        if (!\is_null($this->acquiredAmount)) {
             $object->acquiredAmount = $this->acquiredAmount->toObject();
         }
-        if ($this->amountOfMoney !== null) {
+        if (!\is_null($this->amountOfMoney)) {
             $object->amountOfMoney = $this->amountOfMoney->toObject();
         }
-        if ($this->amountPaid !== null) {
+        if (!\is_null($this->amountPaid)) {
             $object->amountPaid = $this->amountPaid;
         }
-        if ($this->cardPaymentMethodSpecificOutput !== null) {
+        if (!\is_null($this->cardPaymentMethodSpecificOutput)) {
             $object->cardPaymentMethodSpecificOutput = $this->cardPaymentMethodSpecificOutput->toObject();
         }
-        if ($this->customer !== null) {
+        if (!\is_null($this->customer)) {
             $object->customer = $this->customer->toObject();
         }
-        if ($this->merchantParameters !== null) {
+        if (!\is_null($this->discount)) {
+            $object->discount = $this->discount->toObject();
+        }
+        if (!\is_null($this->merchantParameters)) {
             $object->merchantParameters = $this->merchantParameters;
         }
-        if ($this->mobilePaymentMethodSpecificOutput !== null) {
+        if (!\is_null($this->mobilePaymentMethodSpecificOutput)) {
             $object->mobilePaymentMethodSpecificOutput = $this->mobilePaymentMethodSpecificOutput->toObject();
         }
-        if ($this->paymentMethod !== null) {
+        if (!\is_null($this->paymentMethod)) {
             $object->paymentMethod = $this->paymentMethod;
         }
-        if ($this->redirectPaymentMethodSpecificOutput !== null) {
+        if (!\is_null($this->redirectPaymentMethodSpecificOutput)) {
             $object->redirectPaymentMethodSpecificOutput = $this->redirectPaymentMethodSpecificOutput->toObject();
         }
-        if ($this->references !== null) {
+        if (!\is_null($this->references)) {
             $object->references = $this->references->toObject();
         }
-        if ($this->sepaDirectDebitPaymentMethodSpecificOutput !== null) {
+        if (!\is_null($this->sepaDirectDebitPaymentMethodSpecificOutput)) {
             $object->sepaDirectDebitPaymentMethodSpecificOutput = $this->sepaDirectDebitPaymentMethodSpecificOutput->toObject();
         }
-        if ($this->surchargeSpecificOutput !== null) {
+        if (!\is_null($this->surchargeSpecificOutput)) {
             $object->surchargeSpecificOutput = $this->surchargeSpecificOutput->toObject();
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -308,74 +303,81 @@ class PaymentOutput extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'acquiredAmount')) {
-            if (!is_object($object->acquiredAmount)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->acquiredAmount, true) . '\' is not an object');
+        if (\property_exists($object, 'acquiredAmount')) {
+            if (!\is_object($object->acquiredAmount)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->acquiredAmount, \true) . '\' is not an object');
             }
             $value = new AmountOfMoney();
             $this->acquiredAmount = $value->fromObject($object->acquiredAmount);
         }
-        if (property_exists($object, 'amountOfMoney')) {
-            if (!is_object($object->amountOfMoney)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->amountOfMoney, true) . '\' is not an object');
+        if (\property_exists($object, 'amountOfMoney')) {
+            if (!\is_object($object->amountOfMoney)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->amountOfMoney, \true) . '\' is not an object');
             }
             $value = new AmountOfMoney();
             $this->amountOfMoney = $value->fromObject($object->amountOfMoney);
         }
-        if (property_exists($object, 'amountPaid')) {
+        if (\property_exists($object, 'amountPaid')) {
             $this->amountPaid = $object->amountPaid;
         }
-        if (property_exists($object, 'cardPaymentMethodSpecificOutput')) {
-            if (!is_object($object->cardPaymentMethodSpecificOutput)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->cardPaymentMethodSpecificOutput, true) . '\' is not an object');
+        if (\property_exists($object, 'cardPaymentMethodSpecificOutput')) {
+            if (!\is_object($object->cardPaymentMethodSpecificOutput)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->cardPaymentMethodSpecificOutput, \true) . '\' is not an object');
             }
             $value = new CardPaymentMethodSpecificOutput();
             $this->cardPaymentMethodSpecificOutput = $value->fromObject($object->cardPaymentMethodSpecificOutput);
         }
-        if (property_exists($object, 'customer')) {
-            if (!is_object($object->customer)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->customer, true) . '\' is not an object');
+        if (\property_exists($object, 'customer')) {
+            if (!\is_object($object->customer)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->customer, \true) . '\' is not an object');
             }
             $value = new CustomerOutput();
             $this->customer = $value->fromObject($object->customer);
         }
-        if (property_exists($object, 'merchantParameters')) {
+        if (\property_exists($object, 'discount')) {
+            if (!\is_object($object->discount)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->discount, \true) . '\' is not an object');
+            }
+            $value = new Discount();
+            $this->discount = $value->fromObject($object->discount);
+        }
+        if (\property_exists($object, 'merchantParameters')) {
             $this->merchantParameters = $object->merchantParameters;
         }
-        if (property_exists($object, 'mobilePaymentMethodSpecificOutput')) {
-            if (!is_object($object->mobilePaymentMethodSpecificOutput)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->mobilePaymentMethodSpecificOutput, true) . '\' is not an object');
+        if (\property_exists($object, 'mobilePaymentMethodSpecificOutput')) {
+            if (!\is_object($object->mobilePaymentMethodSpecificOutput)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->mobilePaymentMethodSpecificOutput, \true) . '\' is not an object');
             }
             $value = new MobilePaymentMethodSpecificOutput();
             $this->mobilePaymentMethodSpecificOutput = $value->fromObject($object->mobilePaymentMethodSpecificOutput);
         }
-        if (property_exists($object, 'paymentMethod')) {
+        if (\property_exists($object, 'paymentMethod')) {
             $this->paymentMethod = $object->paymentMethod;
         }
-        if (property_exists($object, 'redirectPaymentMethodSpecificOutput')) {
-            if (!is_object($object->redirectPaymentMethodSpecificOutput)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->redirectPaymentMethodSpecificOutput, true) . '\' is not an object');
+        if (\property_exists($object, 'redirectPaymentMethodSpecificOutput')) {
+            if (!\is_object($object->redirectPaymentMethodSpecificOutput)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->redirectPaymentMethodSpecificOutput, \true) . '\' is not an object');
             }
             $value = new RedirectPaymentMethodSpecificOutput();
             $this->redirectPaymentMethodSpecificOutput = $value->fromObject($object->redirectPaymentMethodSpecificOutput);
         }
-        if (property_exists($object, 'references')) {
-            if (!is_object($object->references)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->references, true) . '\' is not an object');
+        if (\property_exists($object, 'references')) {
+            if (!\is_object($object->references)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->references, \true) . '\' is not an object');
             }
             $value = new PaymentReferences();
             $this->references = $value->fromObject($object->references);
         }
-        if (property_exists($object, 'sepaDirectDebitPaymentMethodSpecificOutput')) {
-            if (!is_object($object->sepaDirectDebitPaymentMethodSpecificOutput)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->sepaDirectDebitPaymentMethodSpecificOutput, true) . '\' is not an object');
+        if (\property_exists($object, 'sepaDirectDebitPaymentMethodSpecificOutput')) {
+            if (!\is_object($object->sepaDirectDebitPaymentMethodSpecificOutput)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->sepaDirectDebitPaymentMethodSpecificOutput, \true) . '\' is not an object');
             }
             $value = new SepaDirectDebitPaymentMethodSpecificOutput();
             $this->sepaDirectDebitPaymentMethodSpecificOutput = $value->fromObject($object->sepaDirectDebitPaymentMethodSpecificOutput);
         }
-        if (property_exists($object, 'surchargeSpecificOutput')) {
-            if (!is_object($object->surchargeSpecificOutput)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->surchargeSpecificOutput, true) . '\' is not an object');
+        if (\property_exists($object, 'surchargeSpecificOutput')) {
+            if (!\is_object($object->surchargeSpecificOutput)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->surchargeSpecificOutput, \true) . '\' is not an object');
             }
             $value = new SurchargeSpecificOutput();
             $this->surchargeSpecificOutput = $value->fromObject($object->surchargeSpecificOutput);

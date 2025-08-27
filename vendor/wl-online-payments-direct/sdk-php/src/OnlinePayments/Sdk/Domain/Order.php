@@ -1,55 +1,48 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class Order extends DataObject
 {
-    // Properties
     /**
      * @var AdditionalOrderInput
      */
-    private $additionalInput;
-
+    public $additionalInput = null;
     /**
      * @var AmountOfMoney
      */
-    private $amountOfMoney;
-
+    public $amountOfMoney = null;
     /**
      * @var Customer
      */
-    private $customer;
-
+    public $customer = null;
+    /**
+     * @var Discount
+     */
+    public $discount = null;
     /**
      * @var OrderReferences
      */
-    private $references;
-
+    public $references = null;
     /**
      * @var Shipping
      */
-    private $shipping;
-
+    public $shipping = null;
     /**
      * @var ShoppingCart
      */
-    private $shoppingCart;
-
+    public $shoppingCart = null;
     /**
      * @var SurchargeSpecificInput
      */
-    private $surchargeSpecificInput;
-
-    // Methods
+    public $surchargeSpecificInput = null;
     /**
      * @return AdditionalOrderInput
      */
@@ -58,13 +51,12 @@ class Order extends DataObject
         return $this->additionalInput;
     }
     /**
-     * @var AdditionalOrderInput
+     * @param AdditionalOrderInput
      */
     public function setAdditionalInput($value)
     {
         $this->additionalInput = $value;
     }
-
     /**
      * @return AmountOfMoney
      */
@@ -73,13 +65,12 @@ class Order extends DataObject
         return $this->amountOfMoney;
     }
     /**
-     * @var AmountOfMoney
+     * @param AmountOfMoney
      */
     public function setAmountOfMoney($value)
     {
         $this->amountOfMoney = $value;
     }
-
     /**
      * @return Customer
      */
@@ -88,13 +79,26 @@ class Order extends DataObject
         return $this->customer;
     }
     /**
-     * @var Customer
+     * @param Customer
      */
     public function setCustomer($value)
     {
         $this->customer = $value;
     }
-
+    /**
+     * @return Discount
+     */
+    public function getDiscount()
+    {
+        return $this->discount;
+    }
+    /**
+     * @param Discount
+     */
+    public function setDiscount($value)
+    {
+        $this->discount = $value;
+    }
     /**
      * @return OrderReferences
      */
@@ -103,13 +107,12 @@ class Order extends DataObject
         return $this->references;
     }
     /**
-     * @var OrderReferences
+     * @param OrderReferences
      */
     public function setReferences($value)
     {
         $this->references = $value;
     }
-
     /**
      * @return Shipping
      */
@@ -118,13 +121,12 @@ class Order extends DataObject
         return $this->shipping;
     }
     /**
-     * @var Shipping
+     * @param Shipping
      */
     public function setShipping($value)
     {
         $this->shipping = $value;
     }
-
     /**
      * @return ShoppingCart
      */
@@ -133,13 +135,12 @@ class Order extends DataObject
         return $this->shoppingCart;
     }
     /**
-     * @var ShoppingCart
+     * @param ShoppingCart
      */
     public function setShoppingCart($value)
     {
         $this->shoppingCart = $value;
     }
-
     /**
      * @return SurchargeSpecificInput
      */
@@ -148,43 +149,44 @@ class Order extends DataObject
         return $this->surchargeSpecificInput;
     }
     /**
-     * @var SurchargeSpecificInput
+     * @param SurchargeSpecificInput
      */
     public function setSurchargeSpecificInput($value)
     {
         $this->surchargeSpecificInput = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->additionalInput !== null) {
+        if (!\is_null($this->additionalInput)) {
             $object->additionalInput = $this->additionalInput->toObject();
         }
-        if ($this->amountOfMoney !== null) {
+        if (!\is_null($this->amountOfMoney)) {
             $object->amountOfMoney = $this->amountOfMoney->toObject();
         }
-        if ($this->customer !== null) {
+        if (!\is_null($this->customer)) {
             $object->customer = $this->customer->toObject();
         }
-        if ($this->references !== null) {
+        if (!\is_null($this->discount)) {
+            $object->discount = $this->discount->toObject();
+        }
+        if (!\is_null($this->references)) {
             $object->references = $this->references->toObject();
         }
-        if ($this->shipping !== null) {
+        if (!\is_null($this->shipping)) {
             $object->shipping = $this->shipping->toObject();
         }
-        if ($this->shoppingCart !== null) {
+        if (!\is_null($this->shoppingCart)) {
             $object->shoppingCart = $this->shoppingCart->toObject();
         }
-        if ($this->surchargeSpecificInput !== null) {
+        if (!\is_null($this->surchargeSpecificInput)) {
             $object->surchargeSpecificInput = $this->surchargeSpecificInput->toObject();
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -193,51 +195,58 @@ class Order extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'additionalInput')) {
-            if (!is_object($object->additionalInput)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->additionalInput, true) . '\' is not an object');
+        if (\property_exists($object, 'additionalInput')) {
+            if (!\is_object($object->additionalInput)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->additionalInput, \true) . '\' is not an object');
             }
             $value = new AdditionalOrderInput();
             $this->additionalInput = $value->fromObject($object->additionalInput);
         }
-        if (property_exists($object, 'amountOfMoney')) {
-            if (!is_object($object->amountOfMoney)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->amountOfMoney, true) . '\' is not an object');
+        if (\property_exists($object, 'amountOfMoney')) {
+            if (!\is_object($object->amountOfMoney)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->amountOfMoney, \true) . '\' is not an object');
             }
             $value = new AmountOfMoney();
             $this->amountOfMoney = $value->fromObject($object->amountOfMoney);
         }
-        if (property_exists($object, 'customer')) {
-            if (!is_object($object->customer)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->customer, true) . '\' is not an object');
+        if (\property_exists($object, 'customer')) {
+            if (!\is_object($object->customer)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->customer, \true) . '\' is not an object');
             }
             $value = new Customer();
             $this->customer = $value->fromObject($object->customer);
         }
-        if (property_exists($object, 'references')) {
-            if (!is_object($object->references)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->references, true) . '\' is not an object');
+        if (\property_exists($object, 'discount')) {
+            if (!\is_object($object->discount)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->discount, \true) . '\' is not an object');
+            }
+            $value = new Discount();
+            $this->discount = $value->fromObject($object->discount);
+        }
+        if (\property_exists($object, 'references')) {
+            if (!\is_object($object->references)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->references, \true) . '\' is not an object');
             }
             $value = new OrderReferences();
             $this->references = $value->fromObject($object->references);
         }
-        if (property_exists($object, 'shipping')) {
-            if (!is_object($object->shipping)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->shipping, true) . '\' is not an object');
+        if (\property_exists($object, 'shipping')) {
+            if (!\is_object($object->shipping)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->shipping, \true) . '\' is not an object');
             }
             $value = new Shipping();
             $this->shipping = $value->fromObject($object->shipping);
         }
-        if (property_exists($object, 'shoppingCart')) {
-            if (!is_object($object->shoppingCart)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->shoppingCart, true) . '\' is not an object');
+        if (\property_exists($object, 'shoppingCart')) {
+            if (!\is_object($object->shoppingCart)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->shoppingCart, \true) . '\' is not an object');
             }
             $value = new ShoppingCart();
             $this->shoppingCart = $value->fromObject($object->shoppingCart);
         }
-        if (property_exists($object, 'surchargeSpecificInput')) {
-            if (!is_object($object->surchargeSpecificInput)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->surchargeSpecificInput, true) . '\' is not an object');
+        if (\property_exists($object, 'surchargeSpecificInput')) {
+            if (!\is_object($object->surchargeSpecificInput)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->surchargeSpecificInput, \true) . '\' is not an object');
             }
             $value = new SurchargeSpecificInput();
             $this->surchargeSpecificInput = $value->fromObject($object->surchargeSpecificInput);

@@ -1,10 +1,9 @@
 <?php
 
-namespace OnlinePayments\Sdk\Webhooks;
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Webhooks;
 
 use Exception;
 use RuntimeException;
-
 /**
  * Class SignatureValidationException
  *
@@ -13,11 +12,11 @@ use RuntimeException;
 class SignatureValidationException extends RuntimeException
 {
     /**
-     * @param string $message
-     * @param Exception @previous
+     * @param string|null $message
+     * @param Exception|null $previous
      */
     public function __construct($message = null, $previous = null)
     {
-        parent::__construct($message, null, $previous);
+        parent::__construct($message, 0, $previous);
     }
 }

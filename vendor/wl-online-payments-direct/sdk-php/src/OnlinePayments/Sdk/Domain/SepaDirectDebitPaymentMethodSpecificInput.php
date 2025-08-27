@@ -1,30 +1,24 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class SepaDirectDebitPaymentMethodSpecificInput extends DataObject
 {
-    // Properties
     /**
      * @var SepaDirectDebitPaymentProduct771SpecificInput
      */
-    private $paymentProduct771SpecificInput;
-
+    public $paymentProduct771SpecificInput = null;
     /**
      * @var int
      */
-    private $paymentProductId;
-
-    // Methods
+    public $paymentProductId = null;
     /**
      * @return SepaDirectDebitPaymentProduct771SpecificInput
      */
@@ -33,13 +27,12 @@ class SepaDirectDebitPaymentMethodSpecificInput extends DataObject
         return $this->paymentProduct771SpecificInput;
     }
     /**
-     * @var SepaDirectDebitPaymentProduct771SpecificInput
+     * @param SepaDirectDebitPaymentProduct771SpecificInput
      */
     public function setPaymentProduct771SpecificInput($value)
     {
         $this->paymentProduct771SpecificInput = $value;
     }
-
     /**
      * @return int
      */
@@ -48,28 +41,26 @@ class SepaDirectDebitPaymentMethodSpecificInput extends DataObject
         return $this->paymentProductId;
     }
     /**
-     * @var int
+     * @param int
      */
     public function setPaymentProductId($value)
     {
         $this->paymentProductId = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->paymentProduct771SpecificInput !== null) {
+        if (!\is_null($this->paymentProduct771SpecificInput)) {
             $object->paymentProduct771SpecificInput = $this->paymentProduct771SpecificInput->toObject();
         }
-        if ($this->paymentProductId !== null) {
+        if (!\is_null($this->paymentProductId)) {
             $object->paymentProductId = $this->paymentProductId;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -78,14 +69,14 @@ class SepaDirectDebitPaymentMethodSpecificInput extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'paymentProduct771SpecificInput')) {
-            if (!is_object($object->paymentProduct771SpecificInput)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->paymentProduct771SpecificInput, true) . '\' is not an object');
+        if (\property_exists($object, 'paymentProduct771SpecificInput')) {
+            if (!\is_object($object->paymentProduct771SpecificInput)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->paymentProduct771SpecificInput, \true) . '\' is not an object');
             }
             $value = new SepaDirectDebitPaymentProduct771SpecificInput();
             $this->paymentProduct771SpecificInput = $value->fromObject($object->paymentProduct771SpecificInput);
         }
-        if (property_exists($object, 'paymentProductId')) {
+        if (\property_exists($object, 'paymentProductId')) {
             $this->paymentProductId = $object->paymentProductId;
         }
         return $this;

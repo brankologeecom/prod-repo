@@ -1,25 +1,20 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class CaptureStatusOutput extends DataObject
 {
-    // Properties
     /**
      * @var int
      */
-    private $statusCode;
-
-    // Methods
+    public $statusCode = null;
     /**
      * @return int
      */
@@ -28,25 +23,23 @@ class CaptureStatusOutput extends DataObject
         return $this->statusCode;
     }
     /**
-     * @var int
+     * @param int
      */
     public function setStatusCode($value)
     {
         $this->statusCode = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->statusCode !== null) {
+        if (!\is_null($this->statusCode)) {
             $object->statusCode = $this->statusCode;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -55,7 +48,7 @@ class CaptureStatusOutput extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'statusCode')) {
+        if (\property_exists($object, 'statusCode')) {
             $this->statusCode = $object->statusCode;
         }
         return $this;

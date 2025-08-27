@@ -1,25 +1,20 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class CustomerOutput extends DataObject
 {
-    // Properties
     /**
      * @var CustomerDeviceOutput
      */
-    private $device;
-
-    // Methods
+    public $device = null;
     /**
      * @return CustomerDeviceOutput
      */
@@ -28,25 +23,23 @@ class CustomerOutput extends DataObject
         return $this->device;
     }
     /**
-     * @var CustomerDeviceOutput
+     * @param CustomerDeviceOutput
      */
     public function setDevice($value)
     {
         $this->device = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->device !== null) {
+        if (!\is_null($this->device)) {
             $object->device = $this->device->toObject();
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -55,9 +48,9 @@ class CustomerOutput extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'device')) {
-            if (!is_object($object->device)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->device, true) . '\' is not an object');
+        if (\property_exists($object, 'device')) {
+            if (!\is_object($object->device)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->device, \true) . '\' is not an object');
             }
             $value = new CustomerDeviceOutput();
             $this->device = $value->fromObject($object->device);

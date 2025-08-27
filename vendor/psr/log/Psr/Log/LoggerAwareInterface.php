@@ -1,6 +1,6 @@
 <?php
 
-namespace Psr\Log;
+namespace Syde\Vendor\Cawl\Psr\Log;
 
 /**
  * Describes a logger-aware instance.

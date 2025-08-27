@@ -1,30 +1,24 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class RangeValidator extends DataObject
 {
-    // Properties
     /**
      * @var int
      */
-    private $maxValue;
-
+    public $maxValue = null;
     /**
      * @var int
      */
-    private $minValue;
-
-    // Methods
+    public $minValue = null;
     /**
      * @return int
      */
@@ -33,13 +27,12 @@ class RangeValidator extends DataObject
         return $this->maxValue;
     }
     /**
-     * @var int
+     * @param int
      */
     public function setMaxValue($value)
     {
         $this->maxValue = $value;
     }
-
     /**
      * @return int
      */
@@ -48,28 +41,26 @@ class RangeValidator extends DataObject
         return $this->minValue;
     }
     /**
-     * @var int
+     * @param int
      */
     public function setMinValue($value)
     {
         $this->minValue = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->maxValue !== null) {
+        if (!\is_null($this->maxValue)) {
             $object->maxValue = $this->maxValue;
         }
-        if ($this->minValue !== null) {
+        if (!\is_null($this->minValue)) {
             $object->minValue = $this->minValue;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -78,10 +69,10 @@ class RangeValidator extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'maxValue')) {
+        if (\property_exists($object, 'maxValue')) {
             $this->maxValue = $object->maxValue;
         }
-        if (property_exists($object, 'minValue')) {
+        if (\property_exists($object, 'minValue')) {
             $this->minValue = $object->minValue;
         }
         return $this;

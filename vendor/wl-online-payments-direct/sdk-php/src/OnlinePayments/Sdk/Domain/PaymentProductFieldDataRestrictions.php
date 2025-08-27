@@ -1,30 +1,24 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class PaymentProductFieldDataRestrictions extends DataObject
 {
-    // Properties
     /**
      * @var bool
      */
-    private $isRequired;
-
+    public $isRequired = null;
     /**
      * @var PaymentProductFieldValidators
      */
-    private $validators;
-
-    // Methods
+    public $validators = null;
     /**
      * @return bool
      */
@@ -33,13 +27,12 @@ class PaymentProductFieldDataRestrictions extends DataObject
         return $this->isRequired;
     }
     /**
-     * @var bool
+     * @param bool
      */
     public function setIsRequired($value)
     {
         $this->isRequired = $value;
     }
-
     /**
      * @return PaymentProductFieldValidators
      */
@@ -48,28 +41,26 @@ class PaymentProductFieldDataRestrictions extends DataObject
         return $this->validators;
     }
     /**
-     * @var PaymentProductFieldValidators
+     * @param PaymentProductFieldValidators
      */
     public function setValidators($value)
     {
         $this->validators = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->isRequired !== null) {
+        if (!\is_null($this->isRequired)) {
             $object->isRequired = $this->isRequired;
         }
-        if ($this->validators !== null) {
+        if (!\is_null($this->validators)) {
             $object->validators = $this->validators->toObject();
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -78,12 +69,12 @@ class PaymentProductFieldDataRestrictions extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'isRequired')) {
+        if (\property_exists($object, 'isRequired')) {
             $this->isRequired = $object->isRequired;
         }
-        if (property_exists($object, 'validators')) {
-            if (!is_object($object->validators)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->validators, true) . '\' is not an object');
+        if (\property_exists($object, 'validators')) {
+            if (!\is_object($object->validators)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->validators, \true) . '\' is not an object');
             }
             $value = new PaymentProductFieldValidators();
             $this->validators = $value->fromObject($object->validators);

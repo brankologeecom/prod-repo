@@ -1,25 +1,20 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class CompletePaymentCardPaymentMethodSpecificInput extends DataObject
 {
-    // Properties
     /**
      * @var CardWithoutCvv
      */
-    private $card;
-
-    // Methods
+    public $card = null;
     /**
      * @return CardWithoutCvv
      */
@@ -28,25 +23,23 @@ class CompletePaymentCardPaymentMethodSpecificInput extends DataObject
         return $this->card;
     }
     /**
-     * @var CardWithoutCvv
+     * @param CardWithoutCvv
      */
     public function setCard($value)
     {
         $this->card = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->card !== null) {
+        if (!\is_null($this->card)) {
             $object->card = $this->card->toObject();
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -55,9 +48,9 @@ class CompletePaymentCardPaymentMethodSpecificInput extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'card')) {
-            if (!is_object($object->card)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->card, true) . '\' is not an object');
+        if (\property_exists($object, 'card')) {
+            if (!\is_object($object->card)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->card, \true) . '\' is not an object');
             }
             $value = new CardWithoutCvv();
             $this->card = $value->fromObject($object->card);

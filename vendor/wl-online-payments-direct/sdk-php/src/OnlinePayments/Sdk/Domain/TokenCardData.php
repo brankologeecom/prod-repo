@@ -1,25 +1,24 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class TokenCardData extends DataObject
 {
-    // Properties
     /**
      * @var CardWithoutCvv
      */
-    private $cardWithoutCvv;
-
-    // Methods
+    public $cardWithoutCvv = null;
+    /**
+     * @var string
+     */
+    public $cobrandSelectionIndicator = null;
     /**
      * @return CardWithoutCvv
      */
@@ -28,25 +27,40 @@ class TokenCardData extends DataObject
         return $this->cardWithoutCvv;
     }
     /**
-     * @var CardWithoutCvv
+     * @param CardWithoutCvv
      */
     public function setCardWithoutCvv($value)
     {
         $this->cardWithoutCvv = $value;
     }
-
+    /**
+     * @return string
+     */
+    public function getCobrandSelectionIndicator()
+    {
+        return $this->cobrandSelectionIndicator;
+    }
+    /**
+     * @param string
+     */
+    public function setCobrandSelectionIndicator($value)
+    {
+        $this->cobrandSelectionIndicator = $value;
+    }
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->cardWithoutCvv !== null) {
+        if (!\is_null($this->cardWithoutCvv)) {
             $object->cardWithoutCvv = $this->cardWithoutCvv->toObject();
+        }
+        if (!\is_null($this->cobrandSelectionIndicator)) {
+            $object->cobrandSelectionIndicator = $this->cobrandSelectionIndicator;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -55,12 +69,15 @@ class TokenCardData extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'cardWithoutCvv')) {
-            if (!is_object($object->cardWithoutCvv)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->cardWithoutCvv, true) . '\' is not an object');
+        if (\property_exists($object, 'cardWithoutCvv')) {
+            if (!\is_object($object->cardWithoutCvv)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->cardWithoutCvv, \true) . '\' is not an object');
             }
             $value = new CardWithoutCvv();
             $this->cardWithoutCvv = $value->fromObject($object->cardWithoutCvv);
+        }
+        if (\property_exists($object, 'cobrandSelectionIndicator')) {
+            $this->cobrandSelectionIndicator = $object->cobrandSelectionIndicator;
         }
         return $this;
     }

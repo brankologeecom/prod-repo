@@ -1,40 +1,32 @@
 <?php
+
 /*
- * This class was auto-generated.
+ * This file was automatically generated.
  */
+namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
 
-namespace OnlinePayments\Sdk\Domain;
-
-use OnlinePayments\Sdk\DataObject;
 use UnexpectedValueException;
-
 /**
  * @package OnlinePayments\Sdk\Domain
  */
 class CardSource extends DataObject
 {
-    // Properties
     /**
      * @var SurchargeCalculationCard
      */
-    private $card;
-
+    public $card = null;
     /**
      * @var string
      */
-    private $encryptedCustomerInput;
-
+    public $encryptedCustomerInput = null;
     /**
      * @var string
      */
-    private $hostedTokenizationId;
-
+    public $hostedTokenizationId = null;
     /**
      * @var string
      */
-    private $token;
-
-    // Methods
+    public $token = null;
     /**
      * @return SurchargeCalculationCard
      */
@@ -43,13 +35,12 @@ class CardSource extends DataObject
         return $this->card;
     }
     /**
-     * @var SurchargeCalculationCard
+     * @param SurchargeCalculationCard
      */
     public function setCard($value)
     {
         $this->card = $value;
     }
-
     /**
      * @return string
      */
@@ -58,13 +49,12 @@ class CardSource extends DataObject
         return $this->encryptedCustomerInput;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setEncryptedCustomerInput($value)
     {
         $this->encryptedCustomerInput = $value;
     }
-
     /**
      * @return string
      */
@@ -73,13 +63,12 @@ class CardSource extends DataObject
         return $this->hostedTokenizationId;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setHostedTokenizationId($value)
     {
         $this->hostedTokenizationId = $value;
     }
-
     /**
      * @return string
      */
@@ -88,34 +77,32 @@ class CardSource extends DataObject
         return $this->token;
     }
     /**
-     * @var string
+     * @param string
      */
     public function setToken($value)
     {
         $this->token = $value;
     }
-
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if ($this->card !== null) {
+        if (!\is_null($this->card)) {
             $object->card = $this->card->toObject();
         }
-        if ($this->encryptedCustomerInput !== null) {
+        if (!\is_null($this->encryptedCustomerInput)) {
             $object->encryptedCustomerInput = $this->encryptedCustomerInput;
         }
-        if ($this->hostedTokenizationId !== null) {
+        if (!\is_null($this->hostedTokenizationId)) {
             $object->hostedTokenizationId = $this->hostedTokenizationId;
         }
-        if ($this->token !== null) {
+        if (!\is_null($this->token)) {
             $object->token = $this->token;
         }
         return $object;
     }
-
     /**
      * @param object $object
      * @return $this
@@ -124,20 +111,20 @@ class CardSource extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (property_exists($object, 'card')) {
-            if (!is_object($object->card)) {
-                throw new UnexpectedValueException('value \'' . print_r($object->card, true) . '\' is not an object');
+        if (\property_exists($object, 'card')) {
+            if (!\is_object($object->card)) {
+                throw new UnexpectedValueException('value \'' . \print_r($object->card, \true) . '\' is not an object');
             }
             $value = new SurchargeCalculationCard();
             $this->card = $value->fromObject($object->card);
         }
-        if (property_exists($object, 'encryptedCustomerInput')) {
+        if (\property_exists($object, 'encryptedCustomerInput')) {
             $this->encryptedCustomerInput = $object->encryptedCustomerInput;
         }
-        if (property_exists($object, 'hostedTokenizationId')) {
+        if (\property_exists($object, 'hostedTokenizationId')) {
             $this->hostedTokenizationId = $object->hostedTokenizationId;
         }
-        if (property_exists($object, 'token')) {
+        if (\property_exists($object, 'token')) {
             $this->token = $object->token;
         }
         return $this;
