@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk;
+namespace OnlinePayments\Sdk;
 
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\DataObject;
+use OnlinePayments\Sdk\Domain\DataObject;
+
 /**
  * Class IdempotenceException
  *
@@ -15,8 +15,10 @@ class IdempotenceException extends ResponseException
 {
     /** @var string */
     private $idempotenceKey;
+
     /** @var string */
     private $idempotenceRequestTimestamp;
+
     /**
      * @param int $httpStatusCode
      * @param DataObject $response
@@ -24,8 +26,13 @@ class IdempotenceException extends ResponseException
      * @param string $idempotenceKey
      * @param string $idempotenceRequestTimestamp;
      */
-    public function __construct($httpStatusCode, DataObject $response, $message = null, $idempotenceKey = '', $idempotenceRequestTimestamp = '')
-    {
+    public function __construct(
+        $httpStatusCode,
+        DataObject $response,
+        $message = null,
+        $idempotenceKey = '',
+        $idempotenceRequestTimestamp = ''
+    ) {
         if ($message == null) {
             $message = 'the payment platform returned a duplicate request error response';
         }
@@ -33,6 +40,7 @@ class IdempotenceException extends ResponseException
         $this->idempotenceKey = $idempotenceKey;
         $this->idempotenceRequestTimestamp = $idempotenceRequestTimestamp;
     }
+
     /**
      * @return string
      */
@@ -40,6 +48,7 @@ class IdempotenceException extends ResponseException
     {
         return $this->idempotenceKey;
     }
+
     /**
      * @return string
      */

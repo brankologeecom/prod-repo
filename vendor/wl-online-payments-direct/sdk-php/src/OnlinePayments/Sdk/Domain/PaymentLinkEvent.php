@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,14 +15,17 @@ class PaymentLinkEvent extends DataObject
      * @var string
      */
     public $dateTime = null;
+
     /**
      * @var string
      */
     public $details = null;
+
     /**
      * @var string
      */
     public $type = null;
+
     /**
      * @return string
      */
@@ -30,6 +33,7 @@ class PaymentLinkEvent extends DataObject
     {
         return $this->dateTime;
     }
+
     /**
      * @param string
      */
@@ -37,6 +41,7 @@ class PaymentLinkEvent extends DataObject
     {
         $this->dateTime = $value;
     }
+
     /**
      * @return string
      */
@@ -44,6 +49,7 @@ class PaymentLinkEvent extends DataObject
     {
         return $this->details;
     }
+
     /**
      * @param string
      */
@@ -51,6 +57,7 @@ class PaymentLinkEvent extends DataObject
     {
         $this->details = $value;
     }
+
     /**
      * @return string
      */
@@ -58,6 +65,7 @@ class PaymentLinkEvent extends DataObject
     {
         return $this->type;
     }
+
     /**
      * @param string
      */
@@ -65,23 +73,25 @@ class PaymentLinkEvent extends DataObject
     {
         $this->type = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->dateTime)) {
+        if (!is_null($this->dateTime)) {
             $object->dateTime = $this->dateTime;
         }
-        if (!\is_null($this->details)) {
+        if (!is_null($this->details)) {
             $object->details = $this->details;
         }
-        if (!\is_null($this->type)) {
+        if (!is_null($this->type)) {
             $object->type = $this->type;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -90,13 +100,13 @@ class PaymentLinkEvent extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'dateTime')) {
+        if (property_exists($object, 'dateTime')) {
             $this->dateTime = $object->dateTime;
         }
-        if (\property_exists($object, 'details')) {
+        if (property_exists($object, 'details')) {
             $this->details = $object->details;
         }
-        if (\property_exists($object, 'type')) {
+        if (property_exists($object, 'type')) {
             $this->type = $object->type;
         }
         return $this;

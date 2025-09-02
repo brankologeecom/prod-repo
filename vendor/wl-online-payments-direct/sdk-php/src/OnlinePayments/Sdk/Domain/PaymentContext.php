@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,14 +15,17 @@ class PaymentContext extends DataObject
      * @var AmountOfMoney
      */
     public $amountOfMoney = null;
+
     /**
      * @var string
      */
     public $countryCode = null;
+
     /**
      * @var bool
      */
     public $isRecurring = null;
+
     /**
      * @return AmountOfMoney
      */
@@ -30,6 +33,7 @@ class PaymentContext extends DataObject
     {
         return $this->amountOfMoney;
     }
+
     /**
      * @param AmountOfMoney
      */
@@ -37,6 +41,7 @@ class PaymentContext extends DataObject
     {
         $this->amountOfMoney = $value;
     }
+
     /**
      * @return string
      */
@@ -44,6 +49,7 @@ class PaymentContext extends DataObject
     {
         return $this->countryCode;
     }
+
     /**
      * @param string
      */
@@ -51,6 +57,7 @@ class PaymentContext extends DataObject
     {
         $this->countryCode = $value;
     }
+
     /**
      * @return bool
      */
@@ -58,6 +65,7 @@ class PaymentContext extends DataObject
     {
         return $this->isRecurring;
     }
+
     /**
      * @param bool
      */
@@ -65,23 +73,25 @@ class PaymentContext extends DataObject
     {
         $this->isRecurring = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->amountOfMoney)) {
+        if (!is_null($this->amountOfMoney)) {
             $object->amountOfMoney = $this->amountOfMoney->toObject();
         }
-        if (!\is_null($this->countryCode)) {
+        if (!is_null($this->countryCode)) {
             $object->countryCode = $this->countryCode;
         }
-        if (!\is_null($this->isRecurring)) {
+        if (!is_null($this->isRecurring)) {
             $object->isRecurring = $this->isRecurring;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -90,17 +100,17 @@ class PaymentContext extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'amountOfMoney')) {
-            if (!\is_object($object->amountOfMoney)) {
-                throw new UnexpectedValueException('value \'' . \print_r($object->amountOfMoney, \true) . '\' is not an object');
+        if (property_exists($object, 'amountOfMoney')) {
+            if (!is_object($object->amountOfMoney)) {
+                throw new UnexpectedValueException('value \'' . print_r($object->amountOfMoney, true) . '\' is not an object');
             }
             $value = new AmountOfMoney();
             $this->amountOfMoney = $value->fromObject($object->amountOfMoney);
         }
-        if (\property_exists($object, 'countryCode')) {
+        if (property_exists($object, 'countryCode')) {
             $this->countryCode = $object->countryCode;
         }
-        if (\property_exists($object, 'isRecurring')) {
+        if (property_exists($object, 'isRecurring')) {
             $this->isRecurring = $object->isRecurring;
         }
         return $this;

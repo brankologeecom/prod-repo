@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,14 +15,17 @@ class DirectoryEntry extends DataObject
      * @var string
      */
     public $issuerId = null;
+
     /**
      * @var string
      */
     public $issuerList = null;
+
     /**
      * @var string
      */
     public $issuerName = null;
+
     /**
      * @return string
      */
@@ -30,6 +33,7 @@ class DirectoryEntry extends DataObject
     {
         return $this->issuerId;
     }
+
     /**
      * @param string
      */
@@ -37,6 +41,7 @@ class DirectoryEntry extends DataObject
     {
         $this->issuerId = $value;
     }
+
     /**
      * @return string
      */
@@ -44,6 +49,7 @@ class DirectoryEntry extends DataObject
     {
         return $this->issuerList;
     }
+
     /**
      * @param string
      */
@@ -51,6 +57,7 @@ class DirectoryEntry extends DataObject
     {
         $this->issuerList = $value;
     }
+
     /**
      * @return string
      */
@@ -58,6 +65,7 @@ class DirectoryEntry extends DataObject
     {
         return $this->issuerName;
     }
+
     /**
      * @param string
      */
@@ -65,23 +73,25 @@ class DirectoryEntry extends DataObject
     {
         $this->issuerName = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->issuerId)) {
+        if (!is_null($this->issuerId)) {
             $object->issuerId = $this->issuerId;
         }
-        if (!\is_null($this->issuerList)) {
+        if (!is_null($this->issuerList)) {
             $object->issuerList = $this->issuerList;
         }
-        if (!\is_null($this->issuerName)) {
+        if (!is_null($this->issuerName)) {
             $object->issuerName = $this->issuerName;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -90,13 +100,13 @@ class DirectoryEntry extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'issuerId')) {
+        if (property_exists($object, 'issuerId')) {
             $this->issuerId = $object->issuerId;
         }
-        if (\property_exists($object, 'issuerList')) {
+        if (property_exists($object, 'issuerList')) {
             $this->issuerList = $object->issuerList;
         }
-        if (\property_exists($object, 'issuerName')) {
+        if (property_exists($object, 'issuerName')) {
             $this->issuerName = $object->issuerName;
         }
         return $this;

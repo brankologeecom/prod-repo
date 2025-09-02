@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,11 +15,13 @@ class PaymentProductFieldFormElement extends DataObject
      * @var string
      */
     public $type = null;
+
     /**
      * @var ValueMappingElement[]
      * @deprecated This field is not used by any payment product
      */
     public $valueMapping = null;
+
     /**
      * @return string
      */
@@ -27,6 +29,7 @@ class PaymentProductFieldFormElement extends DataObject
     {
         return $this->type;
     }
+
     /**
      * @param string
      */
@@ -34,6 +37,7 @@ class PaymentProductFieldFormElement extends DataObject
     {
         $this->type = $value;
     }
+
     /**
      * @return ValueMappingElement[]
      * @deprecated This field is not used by any payment product
@@ -42,6 +46,7 @@ class PaymentProductFieldFormElement extends DataObject
     {
         return $this->valueMapping;
     }
+
     /**
      * @param ValueMappingElement[]
      * @deprecated This field is not used by any payment product
@@ -50,25 +55,27 @@ class PaymentProductFieldFormElement extends DataObject
     {
         $this->valueMapping = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->type)) {
+        if (!is_null($this->type)) {
             $object->type = $this->type;
         }
-        if (!\is_null($this->valueMapping)) {
+        if (!is_null($this->valueMapping)) {
             $object->valueMapping = [];
             foreach ($this->valueMapping as $element) {
-                if (!\is_null($element)) {
+                if (!is_null($element)) {
                     $object->valueMapping[] = $element->toObject();
                 }
             }
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -77,12 +84,12 @@ class PaymentProductFieldFormElement extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'type')) {
+        if (property_exists($object, 'type')) {
             $this->type = $object->type;
         }
-        if (\property_exists($object, 'valueMapping')) {
-            if (!\is_array($object->valueMapping) && !\is_object($object->valueMapping)) {
-                throw new UnexpectedValueException('value \'' . \print_r($object->valueMapping, \true) . '\' is not an array or object');
+        if (property_exists($object, 'valueMapping')) {
+            if (!is_array($object->valueMapping) && !is_object($object->valueMapping)) {
+                throw new UnexpectedValueException('value \'' . print_r($object->valueMapping, true) . '\' is not an array or object');
             }
             $this->valueMapping = [];
             foreach ($object->valueMapping as $element) {

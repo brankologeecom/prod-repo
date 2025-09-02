@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,10 +15,12 @@ class RangeValidator extends DataObject
      * @var int
      */
     public $maxValue = null;
+
     /**
      * @var int
      */
     public $minValue = null;
+
     /**
      * @return int
      */
@@ -26,6 +28,7 @@ class RangeValidator extends DataObject
     {
         return $this->maxValue;
     }
+
     /**
      * @param int
      */
@@ -33,6 +36,7 @@ class RangeValidator extends DataObject
     {
         $this->maxValue = $value;
     }
+
     /**
      * @return int
      */
@@ -40,6 +44,7 @@ class RangeValidator extends DataObject
     {
         return $this->minValue;
     }
+
     /**
      * @param int
      */
@@ -47,20 +52,22 @@ class RangeValidator extends DataObject
     {
         $this->minValue = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->maxValue)) {
+        if (!is_null($this->maxValue)) {
             $object->maxValue = $this->maxValue;
         }
-        if (!\is_null($this->minValue)) {
+        if (!is_null($this->minValue)) {
             $object->minValue = $this->minValue;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -69,10 +76,10 @@ class RangeValidator extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'maxValue')) {
+        if (property_exists($object, 'maxValue')) {
             $this->maxValue = $object->maxValue;
         }
-        if (\property_exists($object, 'minValue')) {
+        if (property_exists($object, 'minValue')) {
             $this->minValue = $object->minValue;
         }
         return $this;

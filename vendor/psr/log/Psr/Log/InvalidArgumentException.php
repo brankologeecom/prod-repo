@@ -1,6 +1,6 @@
 <?php
 
-namespace Syde\Vendor\Cawl\Psr\Log;
+namespace Psr\Log;
 
 class InvalidArgumentException extends \InvalidArgumentException
 {

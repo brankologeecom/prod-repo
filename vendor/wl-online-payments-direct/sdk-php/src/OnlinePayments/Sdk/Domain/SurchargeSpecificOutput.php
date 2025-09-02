@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,14 +15,17 @@ class SurchargeSpecificOutput extends DataObject
      * @var string
      */
     public $mode = null;
+
     /**
      * @var AmountOfMoney
      */
     public $surchargeAmount = null;
+
     /**
      * @var SurchargeRate
      */
     public $surchargeRate = null;
+
     /**
      * @return string
      */
@@ -30,6 +33,7 @@ class SurchargeSpecificOutput extends DataObject
     {
         return $this->mode;
     }
+
     /**
      * @param string
      */
@@ -37,6 +41,7 @@ class SurchargeSpecificOutput extends DataObject
     {
         $this->mode = $value;
     }
+
     /**
      * @return AmountOfMoney
      */
@@ -44,6 +49,7 @@ class SurchargeSpecificOutput extends DataObject
     {
         return $this->surchargeAmount;
     }
+
     /**
      * @param AmountOfMoney
      */
@@ -51,6 +57,7 @@ class SurchargeSpecificOutput extends DataObject
     {
         $this->surchargeAmount = $value;
     }
+
     /**
      * @return SurchargeRate
      */
@@ -58,6 +65,7 @@ class SurchargeSpecificOutput extends DataObject
     {
         return $this->surchargeRate;
     }
+
     /**
      * @param SurchargeRate
      */
@@ -65,23 +73,25 @@ class SurchargeSpecificOutput extends DataObject
     {
         $this->surchargeRate = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->mode)) {
+        if (!is_null($this->mode)) {
             $object->mode = $this->mode;
         }
-        if (!\is_null($this->surchargeAmount)) {
+        if (!is_null($this->surchargeAmount)) {
             $object->surchargeAmount = $this->surchargeAmount->toObject();
         }
-        if (!\is_null($this->surchargeRate)) {
+        if (!is_null($this->surchargeRate)) {
             $object->surchargeRate = $this->surchargeRate->toObject();
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -90,19 +100,19 @@ class SurchargeSpecificOutput extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'mode')) {
+        if (property_exists($object, 'mode')) {
             $this->mode = $object->mode;
         }
-        if (\property_exists($object, 'surchargeAmount')) {
-            if (!\is_object($object->surchargeAmount)) {
-                throw new UnexpectedValueException('value \'' . \print_r($object->surchargeAmount, \true) . '\' is not an object');
+        if (property_exists($object, 'surchargeAmount')) {
+            if (!is_object($object->surchargeAmount)) {
+                throw new UnexpectedValueException('value \'' . print_r($object->surchargeAmount, true) . '\' is not an object');
             }
             $value = new AmountOfMoney();
             $this->surchargeAmount = $value->fromObject($object->surchargeAmount);
         }
-        if (\property_exists($object, 'surchargeRate')) {
-            if (!\is_object($object->surchargeRate)) {
-                throw new UnexpectedValueException('value \'' . \print_r($object->surchargeRate, \true) . '\' is not an object');
+        if (property_exists($object, 'surchargeRate')) {
+            if (!is_object($object->surchargeRate)) {
+                throw new UnexpectedValueException('value \'' . print_r($object->surchargeRate, true) . '\' is not an object');
             }
             $value = new SurchargeRate();
             $this->surchargeRate = $value->fromObject($object->surchargeRate);

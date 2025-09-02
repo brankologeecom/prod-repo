@@ -1,11 +1,11 @@
 <?php
-
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use Exception;
 use stdClass;
 use UnexpectedValueException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\JSON\JSONUtil;
+use OnlinePayments\Sdk\JSON\JSONUtil;
+
 /**
  * Class DataObject
  *
@@ -18,8 +18,9 @@ abstract class DataObject
      */
     public function toJson()
     {
-        return \json_encode($this->toObject());
+        return json_encode($this->toObject());
     }
+
     /**
      * @param string $value
      * @return $this
@@ -30,6 +31,7 @@ abstract class DataObject
         $object = JSONUtil::decode($value);
         return $this->fromObject($object);
     }
+
     /**
      * @return object
      */
@@ -37,6 +39,7 @@ abstract class DataObject
     {
         return new stdClass();
     }
+
     /**
      * @param object $object
      * @return $this
@@ -44,13 +47,14 @@ abstract class DataObject
      */
     public function fromObject($object)
     {
-        if (!\is_object($object)) {
-            throw new UnexpectedValueException('Expected object, got ' . \gettype($object));
+        if (!is_object($object)) {
+            throw new UnexpectedValueException('Expected object, got ' . gettype($object));
         }
         return $this;
     }
+
     public function __set($name, $value)
     {
-        throw new Exception('Cannot add new property ' . $name . ' to instances of class ' . \get_class($this));
+        throw new Exception('Cannot add new property ' . $name . ' to instances of class ' . get_class($this));
     }
 }

@@ -1,9 +1,9 @@
 <?php
-
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication;
+namespace OnlinePayments\Sdk\Communication;
 
 use RuntimeException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\DataObject;
+use OnlinePayments\Sdk\Domain\DataObject;
+
 /**
  * Class ErrorResponseException
  *
@@ -13,10 +13,12 @@ class ErrorResponseException extends RuntimeException
 {
     /** @var int */
     private $httpStatusCode;
+
     /**
      * @var DataObject
      */
     private $errorResponse;
+
     /**
      * @param int $httpStatusCode
      * @param DataObject $errorResponse
@@ -24,13 +26,14 @@ class ErrorResponseException extends RuntimeException
      */
     public function __construct($httpStatusCode, DataObject $errorResponse, $message = null)
     {
-        if (\is_null($message)) {
+        if (is_null($message)) {
             $message = 'The server returned an error.';
         }
         parent::__construct($message);
         $this->httpStatusCode = $httpStatusCode;
         $this->errorResponse = $errorResponse;
     }
+
     /**
      * @return int
      */
@@ -38,6 +41,7 @@ class ErrorResponseException extends RuntimeException
     {
         return $this->httpStatusCode;
     }
+
     /**
      * @return DataObject
      */

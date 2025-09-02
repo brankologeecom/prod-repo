@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,6 +15,7 @@ class CurrencyConversionSpecificInput extends DataObject
      * @var bool
      */
     public $dccEnabled = null;
+
     /**
      * @return bool
      */
@@ -22,6 +23,7 @@ class CurrencyConversionSpecificInput extends DataObject
     {
         return $this->dccEnabled;
     }
+
     /**
      * @param bool
      */
@@ -29,17 +31,19 @@ class CurrencyConversionSpecificInput extends DataObject
     {
         $this->dccEnabled = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->dccEnabled)) {
+        if (!is_null($this->dccEnabled)) {
             $object->dccEnabled = $this->dccEnabled;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -48,7 +52,7 @@ class CurrencyConversionSpecificInput extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'dccEnabled')) {
+        if (property_exists($object, 'dccEnabled')) {
             $this->dccEnabled = $object->dccEnabled;
         }
         return $this;

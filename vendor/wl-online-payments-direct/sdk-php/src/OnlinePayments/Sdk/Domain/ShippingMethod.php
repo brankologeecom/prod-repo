@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,18 +15,22 @@ class ShippingMethod extends DataObject
      * @var string
      */
     public $details = null;
+
     /**
      * @var string
      */
     public $name = null;
+
     /**
      * @var int
      */
     public $speed = null;
+
     /**
      * @var string
      */
     public $type = null;
+
     /**
      * @return string
      */
@@ -34,6 +38,7 @@ class ShippingMethod extends DataObject
     {
         return $this->details;
     }
+
     /**
      * @param string
      */
@@ -41,6 +46,7 @@ class ShippingMethod extends DataObject
     {
         $this->details = $value;
     }
+
     /**
      * @return string
      */
@@ -48,6 +54,7 @@ class ShippingMethod extends DataObject
     {
         return $this->name;
     }
+
     /**
      * @param string
      */
@@ -55,6 +62,7 @@ class ShippingMethod extends DataObject
     {
         $this->name = $value;
     }
+
     /**
      * @return int
      */
@@ -62,6 +70,7 @@ class ShippingMethod extends DataObject
     {
         return $this->speed;
     }
+
     /**
      * @param int
      */
@@ -69,6 +78,7 @@ class ShippingMethod extends DataObject
     {
         $this->speed = $value;
     }
+
     /**
      * @return string
      */
@@ -76,6 +86,7 @@ class ShippingMethod extends DataObject
     {
         return $this->type;
     }
+
     /**
      * @param string
      */
@@ -83,26 +94,28 @@ class ShippingMethod extends DataObject
     {
         $this->type = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->details)) {
+        if (!is_null($this->details)) {
             $object->details = $this->details;
         }
-        if (!\is_null($this->name)) {
+        if (!is_null($this->name)) {
             $object->name = $this->name;
         }
-        if (!\is_null($this->speed)) {
+        if (!is_null($this->speed)) {
             $object->speed = $this->speed;
         }
-        if (!\is_null($this->type)) {
+        if (!is_null($this->type)) {
             $object->type = $this->type;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -111,16 +124,16 @@ class ShippingMethod extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'details')) {
+        if (property_exists($object, 'details')) {
             $this->details = $object->details;
         }
-        if (\property_exists($object, 'name')) {
+        if (property_exists($object, 'name')) {
             $this->name = $object->name;
         }
-        if (\property_exists($object, 'speed')) {
+        if (property_exists($object, 'speed')) {
             $this->speed = $object->speed;
         }
-        if (\property_exists($object, 'type')) {
+        if (property_exists($object, 'type')) {
             $this->type = $object->type;
         }
         return $this;

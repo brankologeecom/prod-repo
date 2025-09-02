@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,10 +15,12 @@ class MobilePaymentData extends DataObject
      * @var string
      */
     public $dpan = null;
+
     /**
      * @var string
      */
     public $expiryDate = null;
+
     /**
      * @return string
      */
@@ -26,6 +28,7 @@ class MobilePaymentData extends DataObject
     {
         return $this->dpan;
     }
+
     /**
      * @param string
      */
@@ -33,6 +36,7 @@ class MobilePaymentData extends DataObject
     {
         $this->dpan = $value;
     }
+
     /**
      * @return string
      */
@@ -40,6 +44,7 @@ class MobilePaymentData extends DataObject
     {
         return $this->expiryDate;
     }
+
     /**
      * @param string
      */
@@ -47,20 +52,22 @@ class MobilePaymentData extends DataObject
     {
         $this->expiryDate = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->dpan)) {
+        if (!is_null($this->dpan)) {
             $object->dpan = $this->dpan;
         }
-        if (!\is_null($this->expiryDate)) {
+        if (!is_null($this->expiryDate)) {
             $object->expiryDate = $this->expiryDate;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -69,10 +76,10 @@ class MobilePaymentData extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'dpan')) {
+        if (property_exists($object, 'dpan')) {
             $this->dpan = $object->dpan;
         }
-        if (\property_exists($object, 'expiryDate')) {
+        if (property_exists($object, 'expiryDate')) {
             $this->expiryDate = $object->expiryDate;
         }
         return $this;

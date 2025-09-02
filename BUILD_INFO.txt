@@ -1,1 +1,1 @@
-Built from Worldline-Plugins/cawl-plugin-woocomerce-PRE-RELEASE@master on Wed Aug 27 08:59:40 UTC 2025
+Built from Worldline-Plugins/plugin-prestashop-8-PRE-RELEASE@v2.0.12 on Tue Sep  2 11:30:06 UTC 2025

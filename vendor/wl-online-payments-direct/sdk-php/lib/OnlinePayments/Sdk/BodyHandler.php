@@ -1,6 +1,5 @@
 <?php
-
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk;
+namespace OnlinePayments\Sdk;
 
 /**
  * Class BodyHandler
@@ -12,29 +11,32 @@ namespace Syde\Vendor\Cawl\OnlinePayments\Sdk;
 class BodyHandler
 {
     /** @var bool */
-    private $initialized = \false;
+    private $initialized = false;
+
     /**
      * Initializes this body handler if not done yet, then calls doHandleBodyPart.
      * @param string $bodyPart
      * @param array $headers
      */
-    public final function handleBodyPart($bodyPart, $headers)
+    final public function handleBodyPart($bodyPart, $headers)
     {
         if (!$this->initialized) {
             $this->initialize($headers);
-            $this->initialized = \true;
+            $this->initialized = true;
         }
         $this->doHandleBodyPart($bodyPart);
     }
+
     /**
      * Calls doCleanup, then marks this body handler as not initialized.
      * Afterwards this instance can be reused again.
      */
-    public final function close()
+    final public function close()
     {
         $this->doCleanup();
-        $this->initialized = \false;
+        $this->initialized = false;
     }
+
     /**
      * Can be used to initialize this body handler based on the given headers.
      * The default implementation does nothing.
@@ -43,6 +45,7 @@ class BodyHandler
     protected function initialize($headers)
     {
     }
+
     /**
      * Can be used to handle a single body part.
      * The default implementation does nothing.
@@ -51,6 +54,7 @@ class BodyHandler
     protected function doHandleBodyPart($bodyPart)
     {
     }
+
     /**
      * Can be used to do cleanup resources allocated by this body handler.
      * The default implementation does nothing.

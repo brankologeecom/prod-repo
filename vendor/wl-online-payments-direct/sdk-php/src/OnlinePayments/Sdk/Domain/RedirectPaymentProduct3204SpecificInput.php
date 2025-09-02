@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,6 +15,7 @@ class RedirectPaymentProduct3204SpecificInput extends DataObject
      * @var string
      */
     public $blikCode = null;
+
     /**
      * @return string
      */
@@ -22,6 +23,7 @@ class RedirectPaymentProduct3204SpecificInput extends DataObject
     {
         return $this->blikCode;
     }
+
     /**
      * @param string
      */
@@ -29,17 +31,19 @@ class RedirectPaymentProduct3204SpecificInput extends DataObject
     {
         $this->blikCode = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->blikCode)) {
+        if (!is_null($this->blikCode)) {
             $object->blikCode = $this->blikCode;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -48,7 +52,7 @@ class RedirectPaymentProduct3204SpecificInput extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'blikCode')) {
+        if (property_exists($object, 'blikCode')) {
             $this->blikCode = $object->blikCode;
         }
         return $this;

@@ -1,15 +1,15 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\Products;
+namespace OnlinePayments\Sdk\Merchant\Products;
 
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\ApiResource;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\CallContext;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\ErrorResponseException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\ResponseClassMap;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\ExceptionFactory;
+use OnlinePayments\Sdk\ApiResource;
+use OnlinePayments\Sdk\CallContext;
+use OnlinePayments\Sdk\Communication\ErrorResponseException;
+use OnlinePayments\Sdk\Communication\ResponseClassMap;
+use OnlinePayments\Sdk\ExceptionFactory;
+
 /**
  * Products client.
  */
@@ -17,20 +17,32 @@ class ProductsClient extends ApiResource implements ProductsClientInterface
 {
     /** @var ExceptionFactory|null */
     private $responseExceptionFactory = null;
+
     /**
      * @inheritdoc
      */
     public function getPaymentProducts(GetPaymentProductsParams $query, CallContext $callContext = null)
     {
         $responseClassMap = new ResponseClassMap();
-        $responseClassMap->defaultSuccessResponseClassName = 'Syde\\Vendor\\Cawl\\OnlinePayments\\Sdk\\Domain\\GetPaymentProductsResponse';
-        $responseClassMap->defaultErrorResponseClassName = 'Syde\\Vendor\\Cawl\\OnlinePayments\\Sdk\\Domain\\ErrorResponse';
+        $responseClassMap->defaultSuccessResponseClassName = '\OnlinePayments\Sdk\Domain\GetPaymentProductsResponse';
+        $responseClassMap->defaultErrorResponseClassName = '\OnlinePayments\Sdk\Domain\ErrorResponse';
         try {
-            return $this->getCommunicator()->get($responseClassMap, $this->instantiateUri('/v2/{merchantId}/products'), $this->getClientMetaInfo(), $query, $callContext);
+            return $this->getCommunicator()->get(
+                $responseClassMap,
+                $this->instantiateUri('/v2/{merchantId}/products'),
+                $this->getClientMetaInfo(),
+                $query,
+                $callContext
+            );
         } catch (ErrorResponseException $e) {
-            throw $this->getResponseExceptionFactory()->createException($e->getHttpStatusCode(), $e->getErrorResponse(), $callContext);
+            throw $this->getResponseExceptionFactory()->createException(
+                $e->getHttpStatusCode(),
+                $e->getErrorResponse(),
+                $callContext
+            );
         }
     }
+
     /**
      * @inheritdoc
      */
@@ -38,14 +50,25 @@ class ProductsClient extends ApiResource implements ProductsClientInterface
     {
         $this->context['paymentProductId'] = $paymentProductId;
         $responseClassMap = new ResponseClassMap();
-        $responseClassMap->defaultSuccessResponseClassName = 'Syde\\Vendor\\Cawl\\OnlinePayments\\Sdk\\Domain\\PaymentProduct';
-        $responseClassMap->defaultErrorResponseClassName = 'Syde\\Vendor\\Cawl\\OnlinePayments\\Sdk\\Domain\\ErrorResponse';
+        $responseClassMap->defaultSuccessResponseClassName = '\OnlinePayments\Sdk\Domain\PaymentProduct';
+        $responseClassMap->defaultErrorResponseClassName = '\OnlinePayments\Sdk\Domain\ErrorResponse';
         try {
-            return $this->getCommunicator()->get($responseClassMap, $this->instantiateUri('/v2/{merchantId}/products/{paymentProductId}'), $this->getClientMetaInfo(), $query, $callContext);
+            return $this->getCommunicator()->get(
+                $responseClassMap,
+                $this->instantiateUri('/v2/{merchantId}/products/{paymentProductId}'),
+                $this->getClientMetaInfo(),
+                $query,
+                $callContext
+            );
         } catch (ErrorResponseException $e) {
-            throw $this->getResponseExceptionFactory()->createException($e->getHttpStatusCode(), $e->getErrorResponse(), $callContext);
+            throw $this->getResponseExceptionFactory()->createException(
+                $e->getHttpStatusCode(),
+                $e->getErrorResponse(),
+                $callContext
+            );
         }
     }
+
     /**
      * @inheritdoc
      */
@@ -53,14 +76,25 @@ class ProductsClient extends ApiResource implements ProductsClientInterface
     {
         $this->context['paymentProductId'] = $paymentProductId;
         $responseClassMap = new ResponseClassMap();
-        $responseClassMap->defaultSuccessResponseClassName = 'Syde\\Vendor\\Cawl\\OnlinePayments\\Sdk\\Domain\\PaymentProductNetworksResponse';
-        $responseClassMap->defaultErrorResponseClassName = 'Syde\\Vendor\\Cawl\\OnlinePayments\\Sdk\\Domain\\ErrorResponse';
+        $responseClassMap->defaultSuccessResponseClassName = '\OnlinePayments\Sdk\Domain\PaymentProductNetworksResponse';
+        $responseClassMap->defaultErrorResponseClassName = '\OnlinePayments\Sdk\Domain\ErrorResponse';
         try {
-            return $this->getCommunicator()->get($responseClassMap, $this->instantiateUri('/v2/{merchantId}/products/{paymentProductId}/networks'), $this->getClientMetaInfo(), $query, $callContext);
+            return $this->getCommunicator()->get(
+                $responseClassMap,
+                $this->instantiateUri('/v2/{merchantId}/products/{paymentProductId}/networks'),
+                $this->getClientMetaInfo(),
+                $query,
+                $callContext
+            );
         } catch (ErrorResponseException $e) {
-            throw $this->getResponseExceptionFactory()->createException($e->getHttpStatusCode(), $e->getErrorResponse(), $callContext);
+            throw $this->getResponseExceptionFactory()->createException(
+                $e->getHttpStatusCode(),
+                $e->getErrorResponse(),
+                $callContext
+            );
         }
     }
+
     /**
      * @inheritdoc
      */
@@ -68,18 +102,29 @@ class ProductsClient extends ApiResource implements ProductsClientInterface
     {
         $this->context['paymentProductId'] = $paymentProductId;
         $responseClassMap = new ResponseClassMap();
-        $responseClassMap->defaultSuccessResponseClassName = 'Syde\\Vendor\\Cawl\\OnlinePayments\\Sdk\\Domain\\ProductDirectory';
-        $responseClassMap->defaultErrorResponseClassName = 'Syde\\Vendor\\Cawl\\OnlinePayments\\Sdk\\Domain\\ErrorResponse';
+        $responseClassMap->defaultSuccessResponseClassName = '\OnlinePayments\Sdk\Domain\ProductDirectory';
+        $responseClassMap->defaultErrorResponseClassName = '\OnlinePayments\Sdk\Domain\ErrorResponse';
         try {
-            return $this->getCommunicator()->get($responseClassMap, $this->instantiateUri('/v2/{merchantId}/products/{paymentProductId}/directory'), $this->getClientMetaInfo(), $query, $callContext);
+            return $this->getCommunicator()->get(
+                $responseClassMap,
+                $this->instantiateUri('/v2/{merchantId}/products/{paymentProductId}/directory'),
+                $this->getClientMetaInfo(),
+                $query,
+                $callContext
+            );
         } catch (ErrorResponseException $e) {
-            throw $this->getResponseExceptionFactory()->createException($e->getHttpStatusCode(), $e->getErrorResponse(), $callContext);
+            throw $this->getResponseExceptionFactory()->createException(
+                $e->getHttpStatusCode(),
+                $e->getErrorResponse(),
+                $callContext
+            );
         }
     }
+
     /** @return ExceptionFactory */
     private function getResponseExceptionFactory()
     {
-        if (\is_null($this->responseExceptionFactory)) {
+        if (is_null($this->responseExceptionFactory)) {
             $this->responseExceptionFactory = new ExceptionFactory();
         }
         return $this->responseExceptionFactory;

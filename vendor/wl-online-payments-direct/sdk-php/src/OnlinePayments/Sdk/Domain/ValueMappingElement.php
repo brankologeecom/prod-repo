@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,10 +15,12 @@ class ValueMappingElement extends DataObject
      * @var PaymentProductFieldDisplayElement[]
      */
     public $displayElements = null;
+
     /**
      * @var string
      */
     public $value = null;
+
     /**
      * @return PaymentProductFieldDisplayElement[]
      */
@@ -26,6 +28,7 @@ class ValueMappingElement extends DataObject
     {
         return $this->displayElements;
     }
+
     /**
      * @param PaymentProductFieldDisplayElement[]
      */
@@ -33,6 +36,7 @@ class ValueMappingElement extends DataObject
     {
         $this->displayElements = $value;
     }
+
     /**
      * @return string
      */
@@ -40,6 +44,7 @@ class ValueMappingElement extends DataObject
     {
         return $this->value;
     }
+
     /**
      * @param string
      */
@@ -47,25 +52,27 @@ class ValueMappingElement extends DataObject
     {
         $this->value = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->displayElements)) {
+        if (!is_null($this->displayElements)) {
             $object->displayElements = [];
             foreach ($this->displayElements as $element) {
-                if (!\is_null($element)) {
+                if (!is_null($element)) {
                     $object->displayElements[] = $element->toObject();
                 }
             }
         }
-        if (!\is_null($this->value)) {
+        if (!is_null($this->value)) {
             $object->value = $this->value;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -74,9 +81,9 @@ class ValueMappingElement extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'displayElements')) {
-            if (!\is_array($object->displayElements) && !\is_object($object->displayElements)) {
-                throw new UnexpectedValueException('value \'' . \print_r($object->displayElements, \true) . '\' is not an array or object');
+        if (property_exists($object, 'displayElements')) {
+            if (!is_array($object->displayElements) && !is_object($object->displayElements)) {
+                throw new UnexpectedValueException('value \'' . print_r($object->displayElements, true) . '\' is not an array or object');
             }
             $this->displayElements = [];
             foreach ($object->displayElements as $element) {
@@ -84,7 +91,7 @@ class ValueMappingElement extends DataObject
                 $this->displayElements[] = $value->fromObject($element);
             }
         }
-        if (\property_exists($object, 'value')) {
+        if (property_exists($object, 'value')) {
             $this->value = $object->value;
         }
         return $this;

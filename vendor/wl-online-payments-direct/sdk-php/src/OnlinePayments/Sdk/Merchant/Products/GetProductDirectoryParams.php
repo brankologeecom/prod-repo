@@ -1,11 +1,12 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\Products;
+namespace OnlinePayments\Sdk\Merchant\Products;
 
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\RequestObject;
+
+use OnlinePayments\Sdk\Communication\RequestObject;
+
 /**
  * Query parameters for Get payment product directory
  *
@@ -17,10 +18,12 @@ class GetProductDirectoryParams extends RequestObject
      * @var string
      */
     public $countryCode;
+
     /**
      * @var string
      */
     public $currencyCode;
+
     /**
      * @return string
      */
@@ -28,6 +31,7 @@ class GetProductDirectoryParams extends RequestObject
     {
         return $this->countryCode;
     }
+
     /**
      * @param string
      */
@@ -35,16 +39,18 @@ class GetProductDirectoryParams extends RequestObject
     {
         $this->countryCode = $value;
     }
+
     /**
      * @param string
      */
     public function addCountryCode($value)
     {
-        if (\is_null($this->countryCode)) {
+        if (is_null($this->countryCode)) {
             $this->countryCode = [];
         }
         $this->countryCode[] = $value;
     }
+
     /**
      * @return string
      */
@@ -52,6 +58,7 @@ class GetProductDirectoryParams extends RequestObject
     {
         return $this->currencyCode;
     }
+
     /**
      * @param string
      */
@@ -59,16 +66,18 @@ class GetProductDirectoryParams extends RequestObject
     {
         $this->currencyCode = $value;
     }
+
     /**
      * @param string
      */
     public function addCurrencyCode($value)
     {
-        if (\is_null($this->currencyCode)) {
+        if (is_null($this->currencyCode)) {
             $this->currencyCode = [];
         }
         $this->currencyCode[] = $value;
     }
+
     /**
      * @return array
      */

@@ -1,9 +1,9 @@
 <?php
-
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Webhooks;
+namespace OnlinePayments\Sdk\Webhooks;
 
 use Exception;
 use RuntimeException;
+
 /**
  * Class SignatureValidationException
  *

@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,14 +15,17 @@ class CustomerToken extends DataObject
      * @var Address
      */
     public $billingAddress = null;
+
     /**
      * @var CompanyInformation
      */
     public $companyInformation = null;
+
     /**
      * @var PersonalInformationToken
      */
     public $personalInformation = null;
+
     /**
      * @return Address
      */
@@ -30,6 +33,7 @@ class CustomerToken extends DataObject
     {
         return $this->billingAddress;
     }
+
     /**
      * @param Address
      */
@@ -37,6 +41,7 @@ class CustomerToken extends DataObject
     {
         $this->billingAddress = $value;
     }
+
     /**
      * @return CompanyInformation
      */
@@ -44,6 +49,7 @@ class CustomerToken extends DataObject
     {
         return $this->companyInformation;
     }
+
     /**
      * @param CompanyInformation
      */
@@ -51,6 +57,7 @@ class CustomerToken extends DataObject
     {
         $this->companyInformation = $value;
     }
+
     /**
      * @return PersonalInformationToken
      */
@@ -58,6 +65,7 @@ class CustomerToken extends DataObject
     {
         return $this->personalInformation;
     }
+
     /**
      * @param PersonalInformationToken
      */
@@ -65,23 +73,25 @@ class CustomerToken extends DataObject
     {
         $this->personalInformation = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->billingAddress)) {
+        if (!is_null($this->billingAddress)) {
             $object->billingAddress = $this->billingAddress->toObject();
         }
-        if (!\is_null($this->companyInformation)) {
+        if (!is_null($this->companyInformation)) {
             $object->companyInformation = $this->companyInformation->toObject();
         }
-        if (!\is_null($this->personalInformation)) {
+        if (!is_null($this->personalInformation)) {
             $object->personalInformation = $this->personalInformation->toObject();
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -90,23 +100,23 @@ class CustomerToken extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'billingAddress')) {
-            if (!\is_object($object->billingAddress)) {
-                throw new UnexpectedValueException('value \'' . \print_r($object->billingAddress, \true) . '\' is not an object');
+        if (property_exists($object, 'billingAddress')) {
+            if (!is_object($object->billingAddress)) {
+                throw new UnexpectedValueException('value \'' . print_r($object->billingAddress, true) . '\' is not an object');
             }
             $value = new Address();
             $this->billingAddress = $value->fromObject($object->billingAddress);
         }
-        if (\property_exists($object, 'companyInformation')) {
-            if (!\is_object($object->companyInformation)) {
-                throw new UnexpectedValueException('value \'' . \print_r($object->companyInformation, \true) . '\' is not an object');
+        if (property_exists($object, 'companyInformation')) {
+            if (!is_object($object->companyInformation)) {
+                throw new UnexpectedValueException('value \'' . print_r($object->companyInformation, true) . '\' is not an object');
             }
             $value = new CompanyInformation();
             $this->companyInformation = $value->fromObject($object->companyInformation);
         }
-        if (\property_exists($object, 'personalInformation')) {
-            if (!\is_object($object->personalInformation)) {
-                throw new UnexpectedValueException('value \'' . \print_r($object->personalInformation, \true) . '\' is not an object');
+        if (property_exists($object, 'personalInformation')) {
+            if (!is_object($object->personalInformation)) {
+                throw new UnexpectedValueException('value \'' . print_r($object->personalInformation, true) . '\' is not an object');
             }
             $value = new PersonalInformationToken();
             $this->personalInformation = $value->fromObject($object->personalInformation);

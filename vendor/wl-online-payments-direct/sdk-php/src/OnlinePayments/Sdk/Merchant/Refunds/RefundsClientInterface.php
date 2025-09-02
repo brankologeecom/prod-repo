@@ -1,19 +1,19 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\Refunds;
+namespace OnlinePayments\Sdk\Merchant\Refunds;
 
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\ApiException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\AuthorizationException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\CallContext;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\InvalidResponseException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\RefundsResponse;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\IdempotenceException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\PlatformException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\ReferenceException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\ValidationException;
+use OnlinePayments\Sdk\ApiException;
+use OnlinePayments\Sdk\AuthorizationException;
+use OnlinePayments\Sdk\CallContext;
+use OnlinePayments\Sdk\Communication\InvalidResponseException;
+use OnlinePayments\Sdk\Domain\RefundsResponse;
+use OnlinePayments\Sdk\IdempotenceException;
+use OnlinePayments\Sdk\PlatformException;
+use OnlinePayments\Sdk\ReferenceException;
+use OnlinePayments\Sdk\ValidationException;
+
 /**
  * Refunds client interface.
  */

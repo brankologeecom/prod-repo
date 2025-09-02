@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,22 +15,27 @@ class RateDetails extends DataObject
      * @var float
      */
     public $exchangeRate = null;
+
     /**
      * @var float
      */
     public $invertedExchangeRate = null;
+
     /**
      * @var float
      */
     public $markUpRate = null;
+
     /**
      * @var string
      */
     public $quotationDateTime = null;
+
     /**
      * @var string
      */
     public $source = null;
+
     /**
      * @return float
      */
@@ -38,6 +43,7 @@ class RateDetails extends DataObject
     {
         return $this->exchangeRate;
     }
+
     /**
      * @param float
      */
@@ -45,6 +51,7 @@ class RateDetails extends DataObject
     {
         $this->exchangeRate = $value;
     }
+
     /**
      * @return float
      */
@@ -52,6 +59,7 @@ class RateDetails extends DataObject
     {
         return $this->invertedExchangeRate;
     }
+
     /**
      * @param float
      */
@@ -59,6 +67,7 @@ class RateDetails extends DataObject
     {
         $this->invertedExchangeRate = $value;
     }
+
     /**
      * @return float
      */
@@ -66,6 +75,7 @@ class RateDetails extends DataObject
     {
         return $this->markUpRate;
     }
+
     /**
      * @param float
      */
@@ -73,6 +83,7 @@ class RateDetails extends DataObject
     {
         $this->markUpRate = $value;
     }
+
     /**
      * @return string
      */
@@ -80,6 +91,7 @@ class RateDetails extends DataObject
     {
         return $this->quotationDateTime;
     }
+
     /**
      * @param string
      */
@@ -87,6 +99,7 @@ class RateDetails extends DataObject
     {
         $this->quotationDateTime = $value;
     }
+
     /**
      * @return string
      */
@@ -94,6 +107,7 @@ class RateDetails extends DataObject
     {
         return $this->source;
     }
+
     /**
      * @param string
      */
@@ -101,29 +115,31 @@ class RateDetails extends DataObject
     {
         $this->source = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->exchangeRate)) {
+        if (!is_null($this->exchangeRate)) {
             $object->exchangeRate = $this->exchangeRate;
         }
-        if (!\is_null($this->invertedExchangeRate)) {
+        if (!is_null($this->invertedExchangeRate)) {
             $object->invertedExchangeRate = $this->invertedExchangeRate;
         }
-        if (!\is_null($this->markUpRate)) {
+        if (!is_null($this->markUpRate)) {
             $object->markUpRate = $this->markUpRate;
         }
-        if (!\is_null($this->quotationDateTime)) {
+        if (!is_null($this->quotationDateTime)) {
             $object->quotationDateTime = $this->quotationDateTime;
         }
-        if (!\is_null($this->source)) {
+        if (!is_null($this->source)) {
             $object->source = $this->source;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -132,19 +148,19 @@ class RateDetails extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'exchangeRate')) {
+        if (property_exists($object, 'exchangeRate')) {
             $this->exchangeRate = $object->exchangeRate;
         }
-        if (\property_exists($object, 'invertedExchangeRate')) {
+        if (property_exists($object, 'invertedExchangeRate')) {
             $this->invertedExchangeRate = $object->invertedExchangeRate;
         }
-        if (\property_exists($object, 'markUpRate')) {
+        if (property_exists($object, 'markUpRate')) {
             $this->markUpRate = $object->markUpRate;
         }
-        if (\property_exists($object, 'quotationDateTime')) {
+        if (property_exists($object, 'quotationDateTime')) {
             $this->quotationDateTime = $object->quotationDateTime;
         }
-        if (\property_exists($object, 'source')) {
+        if (property_exists($object, 'source')) {
             $this->source = $object->source;
         }
         return $this;

@@ -1,21 +1,21 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\Mandates;
+namespace OnlinePayments\Sdk\Merchant\Mandates;
 
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\ApiException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\AuthorizationException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\CallContext;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\InvalidResponseException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\CreateMandateRequest;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\CreateMandateResponse;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\GetMandateResponse;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\IdempotenceException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\PlatformException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\ReferenceException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\ValidationException;
+use OnlinePayments\Sdk\ApiException;
+use OnlinePayments\Sdk\AuthorizationException;
+use OnlinePayments\Sdk\CallContext;
+use OnlinePayments\Sdk\Communication\InvalidResponseException;
+use OnlinePayments\Sdk\Domain\CreateMandateRequest;
+use OnlinePayments\Sdk\Domain\CreateMandateResponse;
+use OnlinePayments\Sdk\Domain\GetMandateResponse;
+use OnlinePayments\Sdk\IdempotenceException;
+use OnlinePayments\Sdk\PlatformException;
+use OnlinePayments\Sdk\ReferenceException;
+use OnlinePayments\Sdk\ValidationException;
+
 /**
  * Mandates client interface.
  */
@@ -37,6 +37,7 @@ interface MandatesClientInterface
      * @throws InvalidResponseException
      */
     function createMandate(CreateMandateRequest $body, CallContext $callContext = null);
+
     /**
      * Resource /v2/{merchantId}/mandates/{uniqueMandateReference} - Get mandate
      *
@@ -53,6 +54,7 @@ interface MandatesClientInterface
      * @throws InvalidResponseException
      */
     function getMandate($uniqueMandateReference, CallContext $callContext = null);
+
     /**
      * Resource /v2/{merchantId}/mandates/{uniqueMandateReference}/block - Block mandate
      *
@@ -69,6 +71,7 @@ interface MandatesClientInterface
      * @throws InvalidResponseException
      */
     function blockMandate($uniqueMandateReference, CallContext $callContext = null);
+
     /**
      * Resource /v2/{merchantId}/mandates/{uniqueMandateReference}/unblock - Unblock mandate
      *
@@ -85,6 +88,7 @@ interface MandatesClientInterface
      * @throws InvalidResponseException
      */
     function unblockMandate($uniqueMandateReference, CallContext $callContext = null);
+
     /**
      * Resource /v2/{merchantId}/mandates/{uniqueMandateReference}/revoke - Revoke mandate
      *

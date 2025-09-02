@@ -1,11 +1,12 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\Products;
+namespace OnlinePayments\Sdk\Merchant\Products;
 
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\RequestObject;
+
+use OnlinePayments\Sdk\Communication\RequestObject;
+
 /**
  * Query parameters for Get payment product networks
  *
@@ -17,18 +18,22 @@ class GetPaymentProductNetworksParams extends RequestObject
      * @var string
      */
     public $countryCode;
+
     /**
      * @var string
      */
     public $currencyCode;
+
     /**
      * @var int
      */
     public $amount;
+
     /**
      * @var bool
      */
     public $isRecurring;
+
     /**
      * @return string
      */
@@ -36,6 +41,7 @@ class GetPaymentProductNetworksParams extends RequestObject
     {
         return $this->countryCode;
     }
+
     /**
      * @param string
      */
@@ -43,16 +49,18 @@ class GetPaymentProductNetworksParams extends RequestObject
     {
         $this->countryCode = $value;
     }
+
     /**
      * @param string
      */
     public function addCountryCode($value)
     {
-        if (\is_null($this->countryCode)) {
+        if (is_null($this->countryCode)) {
             $this->countryCode = [];
         }
         $this->countryCode[] = $value;
     }
+
     /**
      * @return string
      */
@@ -60,6 +68,7 @@ class GetPaymentProductNetworksParams extends RequestObject
     {
         return $this->currencyCode;
     }
+
     /**
      * @param string
      */
@@ -67,16 +76,18 @@ class GetPaymentProductNetworksParams extends RequestObject
     {
         $this->currencyCode = $value;
     }
+
     /**
      * @param string
      */
     public function addCurrencyCode($value)
     {
-        if (\is_null($this->currencyCode)) {
+        if (is_null($this->currencyCode)) {
             $this->currencyCode = [];
         }
         $this->currencyCode[] = $value;
     }
+
     /**
      * @return int
      */
@@ -84,6 +95,7 @@ class GetPaymentProductNetworksParams extends RequestObject
     {
         return $this->amount;
     }
+
     /**
      * @param int
      */
@@ -91,16 +103,18 @@ class GetPaymentProductNetworksParams extends RequestObject
     {
         $this->amount = $value;
     }
+
     /**
      * @param int
      */
     public function addAmount($value)
     {
-        if (\is_null($this->amount)) {
+        if (is_null($this->amount)) {
             $this->amount = [];
         }
         $this->amount[] = $value;
     }
+
     /**
      * @return bool
      */
@@ -108,6 +122,7 @@ class GetPaymentProductNetworksParams extends RequestObject
     {
         return $this->isRecurring;
     }
+
     /**
      * @param bool
      */
@@ -115,16 +130,18 @@ class GetPaymentProductNetworksParams extends RequestObject
     {
         $this->isRecurring = $value;
     }
+
     /**
      * @param bool
      */
     public function addIsRecurring($value)
     {
-        if (\is_null($this->isRecurring)) {
+        if (is_null($this->isRecurring)) {
             $this->isRecurring = [];
         }
         $this->isRecurring[] = $value;
     }
+
     /**
      * @return array
      */

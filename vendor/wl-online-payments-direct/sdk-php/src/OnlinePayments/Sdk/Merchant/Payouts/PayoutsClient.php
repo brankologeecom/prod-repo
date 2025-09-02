@@ -1,16 +1,16 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\Payouts;
+namespace OnlinePayments\Sdk\Merchant\Payouts;
 
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\ApiResource;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\CallContext;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\ErrorResponseException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\ResponseClassMap;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\CreatePayoutRequest;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\ExceptionFactory;
+use OnlinePayments\Sdk\ApiResource;
+use OnlinePayments\Sdk\CallContext;
+use OnlinePayments\Sdk\Communication\ErrorResponseException;
+use OnlinePayments\Sdk\Communication\ResponseClassMap;
+use OnlinePayments\Sdk\Domain\CreatePayoutRequest;
+use OnlinePayments\Sdk\ExceptionFactory;
+
 /**
  * Payouts client.
  */
@@ -18,6 +18,7 @@ class PayoutsClient extends ApiResource implements PayoutsClientInterface
 {
     /** @var ExceptionFactory|null */
     private $responseExceptionFactory = null;
+
     /**
      * @inheritdoc
      */
@@ -25,32 +26,55 @@ class PayoutsClient extends ApiResource implements PayoutsClientInterface
     {
         $this->context['payoutId'] = $payoutId;
         $responseClassMap = new ResponseClassMap();
-        $responseClassMap->defaultSuccessResponseClassName = 'Syde\\Vendor\\Cawl\\OnlinePayments\\Sdk\\Domain\\PayoutResponse';
-        $responseClassMap->defaultErrorResponseClassName = 'Syde\\Vendor\\Cawl\\OnlinePayments\\Sdk\\Domain\\ErrorResponse';
+        $responseClassMap->defaultSuccessResponseClassName = '\OnlinePayments\Sdk\Domain\PayoutResponse';
+        $responseClassMap->defaultErrorResponseClassName = '\OnlinePayments\Sdk\Domain\ErrorResponse';
         try {
-            return $this->getCommunicator()->get($responseClassMap, $this->instantiateUri('/v2/{merchantId}/payouts/{payoutId}'), $this->getClientMetaInfo(), null, $callContext);
+            return $this->getCommunicator()->get(
+                $responseClassMap,
+                $this->instantiateUri('/v2/{merchantId}/payouts/{payoutId}'),
+                $this->getClientMetaInfo(),
+                null,
+                $callContext
+            );
         } catch (ErrorResponseException $e) {
-            throw $this->getResponseExceptionFactory()->createException($e->getHttpStatusCode(), $e->getErrorResponse(), $callContext);
+            throw $this->getResponseExceptionFactory()->createException(
+                $e->getHttpStatusCode(),
+                $e->getErrorResponse(),
+                $callContext
+            );
         }
     }
+
     /**
      * @inheritdoc
      */
     public function createPayout(CreatePayoutRequest $body, CallContext $callContext = null)
     {
         $responseClassMap = new ResponseClassMap();
-        $responseClassMap->defaultSuccessResponseClassName = 'Syde\\Vendor\\Cawl\\OnlinePayments\\Sdk\\Domain\\PayoutResponse';
-        $responseClassMap->defaultErrorResponseClassName = 'Syde\\Vendor\\Cawl\\OnlinePayments\\Sdk\\Domain\\PayoutErrorResponse';
+        $responseClassMap->defaultSuccessResponseClassName = '\OnlinePayments\Sdk\Domain\PayoutResponse';
+        $responseClassMap->defaultErrorResponseClassName = '\OnlinePayments\Sdk\Domain\PayoutErrorResponse';
         try {
-            return $this->getCommunicator()->post($responseClassMap, $this->instantiateUri('/v2/{merchantId}/payouts'), $this->getClientMetaInfo(), $body, null, $callContext);
+            return $this->getCommunicator()->post(
+                $responseClassMap,
+                $this->instantiateUri('/v2/{merchantId}/payouts'),
+                $this->getClientMetaInfo(),
+                $body,
+                null,
+                $callContext
+            );
         } catch (ErrorResponseException $e) {
-            throw $this->getResponseExceptionFactory()->createException($e->getHttpStatusCode(), $e->getErrorResponse(), $callContext);
+            throw $this->getResponseExceptionFactory()->createException(
+                $e->getHttpStatusCode(),
+                $e->getErrorResponse(),
+                $callContext
+            );
         }
     }
+
     /** @return ExceptionFactory */
     private function getResponseExceptionFactory()
     {
-        if (\is_null($this->responseExceptionFactory)) {
+        if (is_null($this->responseExceptionFactory)) {
             $this->responseExceptionFactory = new ExceptionFactory();
         }
         return $this->responseExceptionFactory;

@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,6 +15,7 @@ class SurchargeForPaymentLink extends DataObject
      * @var string
      */
     public $surchargeMode = null;
+
     /**
      * @return string
      */
@@ -22,6 +23,7 @@ class SurchargeForPaymentLink extends DataObject
     {
         return $this->surchargeMode;
     }
+
     /**
      * @param string
      */
@@ -29,17 +31,19 @@ class SurchargeForPaymentLink extends DataObject
     {
         $this->surchargeMode = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->surchargeMode)) {
+        if (!is_null($this->surchargeMode)) {
             $object->surchargeMode = $this->surchargeMode;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -48,7 +52,7 @@ class SurchargeForPaymentLink extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'surchargeMode')) {
+        if (property_exists($object, 'surchargeMode')) {
             $this->surchargeMode = $object->surchargeMode;
         }
         return $this;

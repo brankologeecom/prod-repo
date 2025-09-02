@@ -1,9 +1,9 @@
 <?php
-
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk;
+namespace OnlinePayments\Sdk;
 
 use UnexpectedValueException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\ShoppingCartExtension;
+use OnlinePayments\Sdk\Domain\ShoppingCartExtension;
+
 /**
  * Class CommunicatorConfiguration
  *
@@ -15,34 +15,42 @@ class CommunicatorConfiguration
      * @var string
      */
     private $apiKeyId;
+
     /**
      * @var string
      */
     private $apiSecret;
+
     /**
      * @var string
      */
     private $apiEndpoint;
+
     /**
      * @var int
      */
     private $connectTimeout;
+
     /**
      * @var int
      */
     private $readTimeout;
+
     /**
      * @var ProxyConfiguration|null
      */
     private $proxyConfiguration;
+
     /**
      * @var string
      */
     private $integrator;
+
     /**
      * @var ShoppingCartExtension|null
      */
     private $shoppingCartExtension = null;
+
     /**
      * @param string $apiKeyId
      * @param string $apiSecret
@@ -52,9 +60,16 @@ class CommunicatorConfiguration
      * @param int $connectTimeout
      * @param int $readTimeout
      */
-    public function __construct($apiKeyId, $apiSecret, $apiEndpoint, $integrator, ProxyConfiguration $proxyConfiguration = null, $connectTimeout = -1, $readTimeout = -1)
+    public function __construct(
+        $apiKeyId,
+        $apiSecret,
+        $apiEndpoint,
+        $integrator,
+        ProxyConfiguration $proxyConfiguration = null,
+        $connectTimeout = -1,
+        $readTimeout = -1)
     {
-        $apiEndpoint = \rtrim($apiEndpoint, '/');
+        $apiEndpoint = rtrim($apiEndpoint, '/');
         $this->validateApiEndpoint($apiEndpoint);
         $this->validateIntegrator($integrator);
         $this->apiKeyId = $apiKeyId;
@@ -65,10 +80,11 @@ class CommunicatorConfiguration
         $this->connectTimeout = $connectTimeout;
         $this->readTimeout = $readTimeout;
     }
+
     private function validateApiEndpoint($apiEndpoint)
     {
-        $url = \parse_url($apiEndpoint);
-        if ($url === \false) {
+        $url = parse_url($apiEndpoint);
+        if ($url === false) {
             throw new UnexpectedValueException('apiEndpoint is not a valid URL');
         } elseif (isset($url['path']) && $url['path'] !== '') {
             throw new UnexpectedValueException('apiEndpoint should not contain a path');
@@ -76,12 +92,14 @@ class CommunicatorConfiguration
             throw new UnexpectedValueException('apiEndpoint should not contain user info, query or fragment');
         }
     }
+
     private function validateIntegrator($integrator)
     {
-        if (\is_null($integrator) || \strlen(\trim($integrator)) == 0) {
+        if (is_null($integrator) || strlen(trim($integrator)) == 0) {
             throw new UnexpectedValueException("integrator is required");
         }
     }
+
     /**
      * @return string An API key used for authorization.
      */
@@ -89,6 +107,7 @@ class CommunicatorConfiguration
     {
         return $this->apiKeyId;
     }
+
     /**
      * @param string $apiKeyId
      */
@@ -96,6 +115,7 @@ class CommunicatorConfiguration
     {
         $this->apiKeyId = $apiKeyId;
     }
+
     /**
      * @return string A API key secret used for authorization.
      */
@@ -103,6 +123,7 @@ class CommunicatorConfiguration
     {
         return $this->apiSecret;
     }
+
     /**
      * @param string $apiSecret
      */
@@ -110,6 +131,7 @@ class CommunicatorConfiguration
     {
         $this->apiSecret = $apiSecret;
     }
+
     /**
      * @return string
      */
@@ -117,6 +139,7 @@ class CommunicatorConfiguration
     {
         return $this->apiEndpoint;
     }
+
     /**
      * @param string $apiEndpoint
      */
@@ -125,6 +148,7 @@ class CommunicatorConfiguration
         $this->validateApiEndpoint($apiEndpoint);
         $this->apiEndpoint = $apiEndpoint;
     }
+
     /**
      * @return ProxyConfiguration|null
      */
@@ -132,6 +156,7 @@ class CommunicatorConfiguration
     {
         return $this->proxyConfiguration;
     }
+
     /**
      * @param ProxyConfiguration|null $proxyConfiguration
      */
@@ -139,6 +164,7 @@ class CommunicatorConfiguration
     {
         $this->proxyConfiguration = $proxyConfiguration;
     }
+
     /**
      * @return int
      */
@@ -146,6 +172,7 @@ class CommunicatorConfiguration
     {
         return $this->connectTimeout;
     }
+
     /**
      * @param int $connectTimeout
      */
@@ -153,6 +180,7 @@ class CommunicatorConfiguration
     {
         $this->connectTimeout = $connectTimeout;
     }
+
     /**
      * @return int
      */
@@ -160,6 +188,7 @@ class CommunicatorConfiguration
     {
         return $this->readTimeout;
     }
+
     /**
      * @param int $readTimeout
      */
@@ -167,6 +196,7 @@ class CommunicatorConfiguration
     {
         $this->readTimeout = $readTimeout;
     }
+
     /**
      * @return string
      */
@@ -174,6 +204,7 @@ class CommunicatorConfiguration
     {
         return $this->integrator;
     }
+
     /**
      * @param string $integrator
      */
@@ -182,6 +213,7 @@ class CommunicatorConfiguration
         $this->validateIntegrator($integrator);
         $this->integrator = $integrator;
     }
+
     /**
      * @return ShoppingCartExtension|null
      */
@@ -189,6 +221,7 @@ class CommunicatorConfiguration
     {
         return $this->shoppingCartExtension;
     }
+
     /**
      * @param ShoppingCartExtension|null $shoppingCartExtension
      */

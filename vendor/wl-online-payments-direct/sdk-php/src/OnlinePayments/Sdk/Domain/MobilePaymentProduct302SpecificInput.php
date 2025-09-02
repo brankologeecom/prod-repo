@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,6 +15,7 @@ class MobilePaymentProduct302SpecificInput extends DataObject
      * @var ApplePayRecurringPaymentRequest
      */
     public $applePayRecurringPaymentRequest = null;
+
     /**
      * @return ApplePayRecurringPaymentRequest
      */
@@ -22,6 +23,7 @@ class MobilePaymentProduct302SpecificInput extends DataObject
     {
         return $this->applePayRecurringPaymentRequest;
     }
+
     /**
      * @param ApplePayRecurringPaymentRequest
      */
@@ -29,17 +31,19 @@ class MobilePaymentProduct302SpecificInput extends DataObject
     {
         $this->applePayRecurringPaymentRequest = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->applePayRecurringPaymentRequest)) {
+        if (!is_null($this->applePayRecurringPaymentRequest)) {
             $object->applePayRecurringPaymentRequest = $this->applePayRecurringPaymentRequest->toObject();
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -48,9 +52,9 @@ class MobilePaymentProduct302SpecificInput extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'applePayRecurringPaymentRequest')) {
-            if (!\is_object($object->applePayRecurringPaymentRequest)) {
-                throw new UnexpectedValueException('value \'' . \print_r($object->applePayRecurringPaymentRequest, \true) . '\' is not an object');
+        if (property_exists($object, 'applePayRecurringPaymentRequest')) {
+            if (!is_object($object->applePayRecurringPaymentRequest)) {
+                throw new UnexpectedValueException('value \'' . print_r($object->applePayRecurringPaymentRequest, true) . '\' is not an object');
             }
             $value = new ApplePayRecurringPaymentRequest();
             $this->applePayRecurringPaymentRequest = $value->fromObject($object->applePayRecurringPaymentRequest);

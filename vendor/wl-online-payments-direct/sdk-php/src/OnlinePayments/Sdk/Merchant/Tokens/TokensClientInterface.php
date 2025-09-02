@@ -1,21 +1,21 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\Tokens;
+namespace OnlinePayments\Sdk\Merchant\Tokens;
 
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\ApiException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\AuthorizationException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\CallContext;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\InvalidResponseException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\CreateTokenRequest;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\CreatedTokenResponse;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\TokenResponse;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\IdempotenceException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\PlatformException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\ReferenceException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\ValidationException;
+use OnlinePayments\Sdk\ApiException;
+use OnlinePayments\Sdk\AuthorizationException;
+use OnlinePayments\Sdk\CallContext;
+use OnlinePayments\Sdk\Communication\InvalidResponseException;
+use OnlinePayments\Sdk\Domain\CreateTokenRequest;
+use OnlinePayments\Sdk\Domain\CreatedTokenResponse;
+use OnlinePayments\Sdk\Domain\TokenResponse;
+use OnlinePayments\Sdk\IdempotenceException;
+use OnlinePayments\Sdk\PlatformException;
+use OnlinePayments\Sdk\ReferenceException;
+use OnlinePayments\Sdk\ValidationException;
+
 /**
  * Tokens client interface.
  */
@@ -37,6 +37,7 @@ interface TokensClientInterface
      * @throws InvalidResponseException
      */
     function getToken($tokenId, CallContext $callContext = null);
+
     /**
      * Resource /v2/{merchantId}/tokens/{tokenId} - Delete token
      *
@@ -53,6 +54,7 @@ interface TokensClientInterface
      * @throws InvalidResponseException
      */
     function deleteToken($tokenId, CallContext $callContext = null);
+
     /**
      * Resource /v2/{merchantId}/tokens - Create token
      *

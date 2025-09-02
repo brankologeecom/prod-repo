@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,22 +15,27 @@ class DecryptedPaymentData extends DataObject
      * @var string
      */
     public $cardholderName = null;
+
     /**
      * @var string
      */
     public $cryptogram = null;
+
     /**
      * @var string
      */
     public $dpan = null;
+
     /**
      * @var int
      */
     public $eci = null;
+
     /**
      * @var string
      */
     public $expiryDate = null;
+
     /**
      * @return string
      */
@@ -38,6 +43,7 @@ class DecryptedPaymentData extends DataObject
     {
         return $this->cardholderName;
     }
+
     /**
      * @param string
      */
@@ -45,6 +51,7 @@ class DecryptedPaymentData extends DataObject
     {
         $this->cardholderName = $value;
     }
+
     /**
      * @return string
      */
@@ -52,6 +59,7 @@ class DecryptedPaymentData extends DataObject
     {
         return $this->cryptogram;
     }
+
     /**
      * @param string
      */
@@ -59,6 +67,7 @@ class DecryptedPaymentData extends DataObject
     {
         $this->cryptogram = $value;
     }
+
     /**
      * @return string
      */
@@ -66,6 +75,7 @@ class DecryptedPaymentData extends DataObject
     {
         return $this->dpan;
     }
+
     /**
      * @param string
      */
@@ -73,6 +83,7 @@ class DecryptedPaymentData extends DataObject
     {
         $this->dpan = $value;
     }
+
     /**
      * @return int
      */
@@ -80,6 +91,7 @@ class DecryptedPaymentData extends DataObject
     {
         return $this->eci;
     }
+
     /**
      * @param int
      */
@@ -87,6 +99,7 @@ class DecryptedPaymentData extends DataObject
     {
         $this->eci = $value;
     }
+
     /**
      * @return string
      */
@@ -94,6 +107,7 @@ class DecryptedPaymentData extends DataObject
     {
         return $this->expiryDate;
     }
+
     /**
      * @param string
      */
@@ -101,29 +115,31 @@ class DecryptedPaymentData extends DataObject
     {
         $this->expiryDate = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->cardholderName)) {
+        if (!is_null($this->cardholderName)) {
             $object->cardholderName = $this->cardholderName;
         }
-        if (!\is_null($this->cryptogram)) {
+        if (!is_null($this->cryptogram)) {
             $object->cryptogram = $this->cryptogram;
         }
-        if (!\is_null($this->dpan)) {
+        if (!is_null($this->dpan)) {
             $object->dpan = $this->dpan;
         }
-        if (!\is_null($this->eci)) {
+        if (!is_null($this->eci)) {
             $object->eci = $this->eci;
         }
-        if (!\is_null($this->expiryDate)) {
+        if (!is_null($this->expiryDate)) {
             $object->expiryDate = $this->expiryDate;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -132,19 +148,19 @@ class DecryptedPaymentData extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'cardholderName')) {
+        if (property_exists($object, 'cardholderName')) {
             $this->cardholderName = $object->cardholderName;
         }
-        if (\property_exists($object, 'cryptogram')) {
+        if (property_exists($object, 'cryptogram')) {
             $this->cryptogram = $object->cryptogram;
         }
-        if (\property_exists($object, 'dpan')) {
+        if (property_exists($object, 'dpan')) {
             $this->dpan = $object->dpan;
         }
-        if (\property_exists($object, 'eci')) {
+        if (property_exists($object, 'eci')) {
             $this->eci = $object->eci;
         }
-        if (\property_exists($object, 'expiryDate')) {
+        if (property_exists($object, 'expiryDate')) {
             $this->expiryDate = $object->expiryDate;
         }
         return $this;

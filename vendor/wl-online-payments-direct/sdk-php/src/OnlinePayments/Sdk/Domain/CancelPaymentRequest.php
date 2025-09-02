@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,10 +15,12 @@ class CancelPaymentRequest extends DataObject
      * @var AmountOfMoney
      */
     public $amountOfMoney = null;
+
     /**
      * @var bool
      */
     public $isFinal = null;
+
     /**
      * @return AmountOfMoney
      */
@@ -26,6 +28,7 @@ class CancelPaymentRequest extends DataObject
     {
         return $this->amountOfMoney;
     }
+
     /**
      * @param AmountOfMoney
      */
@@ -33,6 +36,7 @@ class CancelPaymentRequest extends DataObject
     {
         $this->amountOfMoney = $value;
     }
+
     /**
      * @return bool
      */
@@ -40,6 +44,7 @@ class CancelPaymentRequest extends DataObject
     {
         return $this->isFinal;
     }
+
     /**
      * @param bool
      */
@@ -47,20 +52,22 @@ class CancelPaymentRequest extends DataObject
     {
         $this->isFinal = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->amountOfMoney)) {
+        if (!is_null($this->amountOfMoney)) {
             $object->amountOfMoney = $this->amountOfMoney->toObject();
         }
-        if (!\is_null($this->isFinal)) {
+        if (!is_null($this->isFinal)) {
             $object->isFinal = $this->isFinal;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -69,14 +76,14 @@ class CancelPaymentRequest extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'amountOfMoney')) {
-            if (!\is_object($object->amountOfMoney)) {
-                throw new UnexpectedValueException('value \'' . \print_r($object->amountOfMoney, \true) . '\' is not an object');
+        if (property_exists($object, 'amountOfMoney')) {
+            if (!is_object($object->amountOfMoney)) {
+                throw new UnexpectedValueException('value \'' . print_r($object->amountOfMoney, true) . '\' is not an object');
             }
             $value = new AmountOfMoney();
             $this->amountOfMoney = $value->fromObject($object->amountOfMoney);
         }
-        if (\property_exists($object, 'isFinal')) {
+        if (property_exists($object, 'isFinal')) {
             $this->isFinal = $object->isFinal;
         }
         return $this;

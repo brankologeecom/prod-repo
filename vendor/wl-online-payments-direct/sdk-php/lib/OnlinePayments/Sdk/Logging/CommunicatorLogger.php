@@ -1,8 +1,8 @@
 <?php
-
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Logging;
+namespace OnlinePayments\Sdk\Logging;
 
 use Exception;
+
 /**
  * Class CommunicatorLogger
  *
@@ -14,6 +14,7 @@ interface CommunicatorLogger
      * @param string $message
      */
     public function log($message);
+
     /**
      * @param string $message
      * @param Exception $exception

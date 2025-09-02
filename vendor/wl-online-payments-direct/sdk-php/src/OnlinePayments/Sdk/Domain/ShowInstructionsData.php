@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,6 +15,7 @@ class ShowInstructionsData extends DataObject
      * @var string
      */
     public $showData = null;
+
     /**
      * @return string
      */
@@ -22,6 +23,7 @@ class ShowInstructionsData extends DataObject
     {
         return $this->showData;
     }
+
     /**
      * @param string
      */
@@ -29,17 +31,19 @@ class ShowInstructionsData extends DataObject
     {
         $this->showData = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->showData)) {
+        if (!is_null($this->showData)) {
             $object->showData = $this->showData;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -48,7 +52,7 @@ class ShowInstructionsData extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'showData')) {
+        if (property_exists($object, 'showData')) {
             $this->showData = $object->showData;
         }
         return $this;

@@ -1,8 +1,8 @@
 <?php
-
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Webhooks;
+namespace OnlinePayments\Sdk\Webhooks;
 
 use RuntimeException;
+
 /**
  * Class ApiVersionMismatchException
  *
@@ -12,8 +12,10 @@ class ApiVersionMismatchException extends RuntimeException
 {
     /** @var string */
     private $eventApiVersion;
+
     /** @var string */
     private $sdkApiVersion;
+
     /**
      * @param string $eventApiVersion
      * @param string $sdkApiVersion
@@ -24,6 +26,7 @@ class ApiVersionMismatchException extends RuntimeException
         $this->eventApiVersion = $eventApiVersion;
         $this->sdkApiVersion = $sdkApiVersion;
     }
+
     /**
      * @return string
      */
@@ -31,6 +34,7 @@ class ApiVersionMismatchException extends RuntimeException
     {
         return $this->eventApiVersion;
     }
+
     /**
      * @return string
      */

@@ -1,8 +1,8 @@
 <?php
-
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Webhooks;
+namespace OnlinePayments\Sdk\Webhooks;
 
 use Exception;
+
 /**
  * Class SecretKeyNotAvailableException
  *
@@ -12,6 +12,7 @@ class SecretKeyNotAvailableException extends SignatureValidationException
 {
     /** @var string */
     private $keyId;
+
     /**
      * @param string $keyId
      * @param string|null $message
@@ -22,6 +23,7 @@ class SecretKeyNotAvailableException extends SignatureValidationException
         parent::__construct($message, $previous);
         $this->keyId = $keyId;
     }
+
     /**
      * @return string
      */

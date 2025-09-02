@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,10 +15,12 @@ class RefundRedirectMethodSpecificOutput extends DataObject
      * @var int
      */
     public $totalAmountPaid = null;
+
     /**
      * @var int
      */
     public $totalAmountRefunded = null;
+
     /**
      * @return int
      */
@@ -26,6 +28,7 @@ class RefundRedirectMethodSpecificOutput extends DataObject
     {
         return $this->totalAmountPaid;
     }
+
     /**
      * @param int
      */
@@ -33,6 +36,7 @@ class RefundRedirectMethodSpecificOutput extends DataObject
     {
         $this->totalAmountPaid = $value;
     }
+
     /**
      * @return int
      */
@@ -40,6 +44,7 @@ class RefundRedirectMethodSpecificOutput extends DataObject
     {
         return $this->totalAmountRefunded;
     }
+
     /**
      * @param int
      */
@@ -47,20 +52,22 @@ class RefundRedirectMethodSpecificOutput extends DataObject
     {
         $this->totalAmountRefunded = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->totalAmountPaid)) {
+        if (!is_null($this->totalAmountPaid)) {
             $object->totalAmountPaid = $this->totalAmountPaid;
         }
-        if (!\is_null($this->totalAmountRefunded)) {
+        if (!is_null($this->totalAmountRefunded)) {
             $object->totalAmountRefunded = $this->totalAmountRefunded;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -69,10 +76,10 @@ class RefundRedirectMethodSpecificOutput extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'totalAmountPaid')) {
+        if (property_exists($object, 'totalAmountPaid')) {
             $this->totalAmountPaid = $object->totalAmountPaid;
         }
-        if (\property_exists($object, 'totalAmountRefunded')) {
+        if (property_exists($object, 'totalAmountRefunded')) {
             $this->totalAmountRefunded = $object->totalAmountRefunded;
         }
         return $this;

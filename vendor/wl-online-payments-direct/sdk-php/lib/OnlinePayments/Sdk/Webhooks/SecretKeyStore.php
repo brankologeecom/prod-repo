@@ -1,6 +1,5 @@
 <?php
-
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Webhooks;
+namespace OnlinePayments\Sdk\Webhooks;
 
 /**
  * Class SecretKeyStore

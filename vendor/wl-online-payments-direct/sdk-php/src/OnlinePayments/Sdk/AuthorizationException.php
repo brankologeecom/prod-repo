@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk;
+namespace OnlinePayments\Sdk;
 
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\DataObject;
+use OnlinePayments\Sdk\Domain\DataObject;
+
 /**
  * Class AuthorizationException
  *
@@ -20,7 +20,7 @@ class AuthorizationException extends ResponseException
      */
     public function __construct($httpStatusCode, DataObject $response, $message = null)
     {
-        if (\is_null($message)) {
+        if (is_null($message)) {
             $message = 'the payment platform returned an authorization error response';
         }
         parent::__construct($httpStatusCode, $response, $message);

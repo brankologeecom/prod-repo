@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,6 +15,7 @@ class RedirectPaymentProduct5402SpecificInput extends DataObject
      * @var bool
      */
     public $completeRemainingPaymentAmount = null;
+
     /**
      * @return bool
      */
@@ -22,6 +23,7 @@ class RedirectPaymentProduct5402SpecificInput extends DataObject
     {
         return $this->completeRemainingPaymentAmount;
     }
+
     /**
      * @param bool
      */
@@ -29,17 +31,19 @@ class RedirectPaymentProduct5402SpecificInput extends DataObject
     {
         $this->completeRemainingPaymentAmount = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->completeRemainingPaymentAmount)) {
+        if (!is_null($this->completeRemainingPaymentAmount)) {
             $object->completeRemainingPaymentAmount = $this->completeRemainingPaymentAmount;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -48,7 +52,7 @@ class RedirectPaymentProduct5402SpecificInput extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'completeRemainingPaymentAmount')) {
+        if (property_exists($object, 'completeRemainingPaymentAmount')) {
             $this->completeRemainingPaymentAmount = $object->completeRemainingPaymentAmount;
         }
         return $this;

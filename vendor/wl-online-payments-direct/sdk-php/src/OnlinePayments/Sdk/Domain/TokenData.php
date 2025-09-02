@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,10 +15,12 @@ class TokenData extends DataObject
      * @var Card
      */
     public $card = null;
+
     /**
      * @var string
      */
     public $cobrandSelectionIndicator = null;
+
     /**
      * @return Card
      */
@@ -26,6 +28,7 @@ class TokenData extends DataObject
     {
         return $this->card;
     }
+
     /**
      * @param Card
      */
@@ -33,6 +36,7 @@ class TokenData extends DataObject
     {
         $this->card = $value;
     }
+
     /**
      * @return string
      */
@@ -40,6 +44,7 @@ class TokenData extends DataObject
     {
         return $this->cobrandSelectionIndicator;
     }
+
     /**
      * @param string
      */
@@ -47,20 +52,22 @@ class TokenData extends DataObject
     {
         $this->cobrandSelectionIndicator = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->card)) {
+        if (!is_null($this->card)) {
             $object->card = $this->card->toObject();
         }
-        if (!\is_null($this->cobrandSelectionIndicator)) {
+        if (!is_null($this->cobrandSelectionIndicator)) {
             $object->cobrandSelectionIndicator = $this->cobrandSelectionIndicator;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -69,14 +76,14 @@ class TokenData extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'card')) {
-            if (!\is_object($object->card)) {
-                throw new UnexpectedValueException('value \'' . \print_r($object->card, \true) . '\' is not an object');
+        if (property_exists($object, 'card')) {
+            if (!is_object($object->card)) {
+                throw new UnexpectedValueException('value \'' . print_r($object->card, true) . '\' is not an object');
             }
             $value = new Card();
             $this->card = $value->fromObject($object->card);
         }
-        if (\property_exists($object, 'cobrandSelectionIndicator')) {
+        if (property_exists($object, 'cobrandSelectionIndicator')) {
             $this->cobrandSelectionIndicator = $object->cobrandSelectionIndicator;
         }
         return $this;

@@ -1,22 +1,22 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\Products;
+namespace OnlinePayments\Sdk\Merchant\Products;
 
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\ApiException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\AuthorizationException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\CallContext;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\InvalidResponseException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\GetPaymentProductsResponse;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\PaymentProduct;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\PaymentProductNetworksResponse;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\ProductDirectory;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\IdempotenceException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\PlatformException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\ReferenceException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\ValidationException;
+use OnlinePayments\Sdk\ApiException;
+use OnlinePayments\Sdk\AuthorizationException;
+use OnlinePayments\Sdk\CallContext;
+use OnlinePayments\Sdk\Communication\InvalidResponseException;
+use OnlinePayments\Sdk\Domain\GetPaymentProductsResponse;
+use OnlinePayments\Sdk\Domain\PaymentProduct;
+use OnlinePayments\Sdk\Domain\PaymentProductNetworksResponse;
+use OnlinePayments\Sdk\Domain\ProductDirectory;
+use OnlinePayments\Sdk\IdempotenceException;
+use OnlinePayments\Sdk\PlatformException;
+use OnlinePayments\Sdk\ReferenceException;
+use OnlinePayments\Sdk\ValidationException;
+
 /**
  * Products client interface.
  */
@@ -38,6 +38,7 @@ interface ProductsClientInterface
      * @throws InvalidResponseException
      */
     function getPaymentProducts(GetPaymentProductsParams $query, CallContext $callContext = null);
+
     /**
      * Resource /v2/{merchantId}/products/{paymentProductId} - Get payment product
      *
@@ -55,6 +56,7 @@ interface ProductsClientInterface
      * @throws InvalidResponseException
      */
     function getPaymentProduct($paymentProductId, GetPaymentProductParams $query, CallContext $callContext = null);
+
     /**
      * Resource /v2/{merchantId}/products/{paymentProductId}/networks - Get payment product networks
      *
@@ -72,6 +74,7 @@ interface ProductsClientInterface
      * @throws InvalidResponseException
      */
     function getPaymentProductNetworks($paymentProductId, GetPaymentProductNetworksParams $query, CallContext $callContext = null);
+
     /**
      * Resource /v2/{merchantId}/products/{paymentProductId}/directory - Get payment product directory
      *

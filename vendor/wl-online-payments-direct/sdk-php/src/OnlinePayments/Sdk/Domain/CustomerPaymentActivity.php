@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,14 +15,17 @@ class CustomerPaymentActivity extends DataObject
      * @var int
      */
     public $numberOfPaymentAttemptsLast24Hours = null;
+
     /**
      * @var int
      */
     public $numberOfPaymentAttemptsLastYear = null;
+
     /**
      * @var int
      */
     public $numberOfPurchasesLast6Months = null;
+
     /**
      * @return int
      */
@@ -30,6 +33,7 @@ class CustomerPaymentActivity extends DataObject
     {
         return $this->numberOfPaymentAttemptsLast24Hours;
     }
+
     /**
      * @param int
      */
@@ -37,6 +41,7 @@ class CustomerPaymentActivity extends DataObject
     {
         $this->numberOfPaymentAttemptsLast24Hours = $value;
     }
+
     /**
      * @return int
      */
@@ -44,6 +49,7 @@ class CustomerPaymentActivity extends DataObject
     {
         return $this->numberOfPaymentAttemptsLastYear;
     }
+
     /**
      * @param int
      */
@@ -51,6 +57,7 @@ class CustomerPaymentActivity extends DataObject
     {
         $this->numberOfPaymentAttemptsLastYear = $value;
     }
+
     /**
      * @return int
      */
@@ -58,6 +65,7 @@ class CustomerPaymentActivity extends DataObject
     {
         return $this->numberOfPurchasesLast6Months;
     }
+
     /**
      * @param int
      */
@@ -65,23 +73,25 @@ class CustomerPaymentActivity extends DataObject
     {
         $this->numberOfPurchasesLast6Months = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->numberOfPaymentAttemptsLast24Hours)) {
+        if (!is_null($this->numberOfPaymentAttemptsLast24Hours)) {
             $object->numberOfPaymentAttemptsLast24Hours = $this->numberOfPaymentAttemptsLast24Hours;
         }
-        if (!\is_null($this->numberOfPaymentAttemptsLastYear)) {
+        if (!is_null($this->numberOfPaymentAttemptsLastYear)) {
             $object->numberOfPaymentAttemptsLastYear = $this->numberOfPaymentAttemptsLastYear;
         }
-        if (!\is_null($this->numberOfPurchasesLast6Months)) {
+        if (!is_null($this->numberOfPurchasesLast6Months)) {
             $object->numberOfPurchasesLast6Months = $this->numberOfPurchasesLast6Months;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -90,13 +100,13 @@ class CustomerPaymentActivity extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'numberOfPaymentAttemptsLast24Hours')) {
+        if (property_exists($object, 'numberOfPaymentAttemptsLast24Hours')) {
             $this->numberOfPaymentAttemptsLast24Hours = $object->numberOfPaymentAttemptsLast24Hours;
         }
-        if (\property_exists($object, 'numberOfPaymentAttemptsLastYear')) {
+        if (property_exists($object, 'numberOfPaymentAttemptsLastYear')) {
             $this->numberOfPaymentAttemptsLastYear = $object->numberOfPaymentAttemptsLastYear;
         }
-        if (\property_exists($object, 'numberOfPurchasesLast6Months')) {
+        if (property_exists($object, 'numberOfPurchasesLast6Months')) {
             $this->numberOfPurchasesLast6Months = $object->numberOfPurchasesLast6Months;
         }
         return $this;

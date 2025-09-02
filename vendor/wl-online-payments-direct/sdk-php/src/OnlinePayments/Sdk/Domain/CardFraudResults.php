@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,14 +15,17 @@ class CardFraudResults extends DataObject
      * @var string
      */
     public $avsResult = null;
+
     /**
      * @var string
      */
     public $cvvResult = null;
+
     /**
      * @var string
      */
     public $fraudServiceResult = null;
+
     /**
      * @return string
      */
@@ -30,6 +33,7 @@ class CardFraudResults extends DataObject
     {
         return $this->avsResult;
     }
+
     /**
      * @param string
      */
@@ -37,6 +41,7 @@ class CardFraudResults extends DataObject
     {
         $this->avsResult = $value;
     }
+
     /**
      * @return string
      */
@@ -44,6 +49,7 @@ class CardFraudResults extends DataObject
     {
         return $this->cvvResult;
     }
+
     /**
      * @param string
      */
@@ -51,6 +57,7 @@ class CardFraudResults extends DataObject
     {
         $this->cvvResult = $value;
     }
+
     /**
      * @return string
      */
@@ -58,6 +65,7 @@ class CardFraudResults extends DataObject
     {
         return $this->fraudServiceResult;
     }
+
     /**
      * @param string
      */
@@ -65,23 +73,25 @@ class CardFraudResults extends DataObject
     {
         $this->fraudServiceResult = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->avsResult)) {
+        if (!is_null($this->avsResult)) {
             $object->avsResult = $this->avsResult;
         }
-        if (!\is_null($this->cvvResult)) {
+        if (!is_null($this->cvvResult)) {
             $object->cvvResult = $this->cvvResult;
         }
-        if (!\is_null($this->fraudServiceResult)) {
+        if (!is_null($this->fraudServiceResult)) {
             $object->fraudServiceResult = $this->fraudServiceResult;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -90,13 +100,13 @@ class CardFraudResults extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'avsResult')) {
+        if (property_exists($object, 'avsResult')) {
             $this->avsResult = $object->avsResult;
         }
-        if (\property_exists($object, 'cvvResult')) {
+        if (property_exists($object, 'cvvResult')) {
             $this->cvvResult = $object->cvvResult;
         }
-        if (\property_exists($object, 'fraudServiceResult')) {
+        if (property_exists($object, 'fraudServiceResult')) {
             $this->fraudServiceResult = $object->fraudServiceResult;
         }
         return $this;

@@ -1,2358 +1,140 @@
 {
     "packages": [
         {
-            "name": "composer\/installers",
-            "version": "v2.3.0",
-            "version_normalized": "2.3.0.0",
+            "name": "alcohol/iso4217",
+            "version": "3.1.5",
+            "version_normalized": "3.1.5.0",
             "source": {
                 "type": "git",
-                "url": "https:\/\/github.com\/composer\/installers.git",
-                "reference": "12fb2dfe5e16183de69e784a7b84046c43d97e8e"
+                "url": "https://github.com/alcohol/iso4217.git",
+                "reference": "3a764b8d8f1d5ea7506620a21f42909a7d6a4832"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/composer\/installers\/zipball\/12fb2dfe5e16183de69e784a7b84046c43d97e8e",
-                "reference": "12fb2dfe5e16183de69e784a7b84046c43d97e8e",
+                "url": "https://api.github.com/repos/alcohol/iso4217/zipball/3a764b8d8f1d5ea7506620a21f42909a7d6a4832",
+                "reference": "3a764b8d8f1d5ea7506620a21f42909a7d6a4832",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "^1.0 || ^2.0",
-                "php": "^7.2 || ^8.0"
+                "php": "^5.4 || ^7.0"
             },
             "require-dev": {
-                "composer\/composer": "^1.10.27 || ^2.7",
-                "composer\/semver": "^1.7.2 || ^3.4.0",
-                "phpstan\/phpstan": "^1.11",
-                "phpstan\/phpstan-phpunit": "^1",
-                "symfony\/phpunit-bridge": "^7.1.1",
-                "symfony\/process": "^5 || ^6 || ^7"
+                "phpunit/php-invoker": "@stable",
+                "phpunit/phpunit": "^4.8.36 || ^5.7 || ^6.5"
             },
-            "time": "2024-06-24T20:46:46+00:00",
-            "type": "composer-plugin",
+            "time": "2019-10-30T10:03:42+00:00",
+            "type": "library",
             "extra": {
-                "class": "Composer\\Installers\\Plugin",
                 "branch-alias": {
-                    "dev-main": "2.x-dev"
-                },
-                "plugin-modifies-install-path": true
+                    "dev-master": "3.x-dev"
+                }
             },
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "Composer\\Installers\\": "src\/Composer\/Installers"
+                    "Alcohol\\": "."
                 }
             },
-            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "authors": [
                 {
-                    "name": "Kyle Robinson Young",
-                    "email": "kyle@dontkry.com",
-                    "homepage": "https:\/\/github.com\/shama"
+                    "name": "Rob Bast",
+                    "email": "rob.bast@gmail.com"
                 }
             ],
-            "description": "A multi-framework Composer library installer",
-            "homepage": "https:\/\/composer.github.io\/installers\/",
+            "description": "ISO 4217 PHP Library",
+            "homepage": "http://alcohol.github.io/iso4217/",
             "keywords": [
-                "Dolibarr",
-                "Eliasis",
-                "Hurad",
-                "ImageCMS",
-                "Kanboard",
-                "Lan Management System",
-                "MODX Evo",
-                "MantisBT",
-                "Mautic",
-                "Maya",
-                "OXID",
-                "Plentymarkets",
-                "Porto",
-                "RadPHP",
-                "SMF",
-                "Starbug",
-                "Thelia",
-                "Whmcs",
-                "WolfCMS",
-                "agl",
-                "annotatecms",
-                "attogram",
-                "bitrix",
-                "cakephp",
-                "chef",
-                "cockpit",
-                "codeigniter",
-                "concrete5",
-                "concreteCMS",
-                "croogo",
-                "dokuwiki",
-                "drupal",
-                "eZ Platform",
-                "elgg",
-                "expressionengine",
-                "fuelphp",
-                "grav",
-                "installer",
-                "itop",
-                "known",
-                "kohana",
-                "laravel",
-                "lavalite",
-                "lithium",
-                "magento",
-                "majima",
-                "mako",
-                "matomo",
-                "mediawiki",
-                "miaoxing",
-                "modulework",
-                "modx",
-                "moodle",
-                "osclass",
-                "pantheon",
-                "phpbb",
-                "piwik",
-                "ppi",
-                "processwire",
-                "puppet",
-                "pxcms",
-                "reindex",
-                "roundcube",
-                "shopware",
-                "silverstripe",
-                "sydes",
-                "sylius",
-                "tastyigniter",
-                "wordpress",
-                "yawik",
-                "zend",
-                "zikula"
+                "4217",
+                "ISO 4217",
+                "currencies",
+                "iso",
+                "library"
             ],
             "support": {
-                "issues": "https:\/\/github.com\/composer\/installers\/issues",
-                "source": "https:\/\/github.com\/composer\/installers\/tree\/v2.3.0"
+                "issues": "https://github.com/alcohol/iso4217/issues",
+                "source": "https://github.com/alcohol/iso4217"
             },
-            "funding": [
-                {
-                    "url": "https:\/\/packagist.com",
-                    "type": "custom"
-                },
-                {
-                    "url": "https:\/\/github.com\/composer",
-                    "type": "github"
-                },
-                {
-                    "url": "https:\/\/tidelift.com\/funding\/github\/packagist\/composer\/composer",
-                    "type": "tidelift"
-                }
-            ],
-            "install-path": ".\/installers"
+            "install-path": "../alcohol/iso4217"
         },
         {
-            "name": "dhii\/package-interface",
-            "version": "v0.1.0-alpha4",
-            "version_normalized": "0.1.0.0-alpha4",
+            "name": "doctrine/deprecations",
+            "version": "v1.1.1",
+            "version_normalized": "1.1.1.0",
             "source": {
                 "type": "git",
-                "url": "https:\/\/github.com\/Dhii\/package-interface.git",
-                "reference": "bcc73f4285eead9b482dbb89662b723abf49298b"
+                "url": "https://github.com/doctrine/deprecations.git",
+                "reference": "612a3ee5ab0d5dd97b7cf3874a6efe24325efac3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/Dhii\/package-interface\/zipball\/bcc73f4285eead9b482dbb89662b723abf49298b",
-                "reference": "bcc73f4285eead9b482dbb89662b723abf49298b",
+                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/612a3ee5ab0d5dd97b7cf3874a6efe24325efac3",
+                "reference": "612a3ee5ab0d5dd97b7cf3874a6efe24325efac3",
                 "shasum": ""
             },
             "require": {
-                "dhii\/validation-interface": "^0.3-alpha1",
-                "php": "^7.1 | ^8.0"
+                "php": "^7.1 || ^8.0"
             },
             "require-dev": {
-                "phpunit\/phpunit": "^7.0 | ^8.0 | ^9.0",
-                "slevomat\/coding-standard": "^6.0",
-                "symfony\/polyfill-php80": "^1.19",
-                "vimeo\/psalm": "^4.4.0"
+                "doctrine/coding-standard": "^9",
+                "phpstan/phpstan": "1.4.10 || 1.10.15",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
+                "psalm/plugin-phpunit": "0.18.4",
+                "psr/log": "^1 || ^2 || ^3",
+                "vimeo/psalm": "4.30.0 || 5.12.0"
             },
-            "time": "2021-12-08T15:57:36+00:00",
+            "suggest": {
+                "psr/log": "Allows logging deprecations via PSR-3 logger implementation"
+            },
+            "time": "2023-06-03T09:27:29+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Dhii\\Package\\": "src"
+                    "Doctrine\\Deprecations\\": "lib/Doctrine/Deprecations"
                 }
             },
-            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "authors": [
-                {
-                    "name": "Anton Ukhanev",
-                    "email": "xedin.unknown@gmail.com"
-                }
-            ],
-            "description": "Interfaces for package-related interop",
+            "description": "A small layer on top of trigger_error(E_USER_DEPRECATED) or PSR-3 logging with options to disable all deprecations or selectively for packages.",
+            "homepage": "https://www.doctrine-project.org/",
             "support": {
-                "issues": "https:\/\/github.com\/Dhii\/package-interface\/issues",
-                "source": "https:\/\/github.com\/Dhii\/package-interface\/tree\/v0.1.0-alpha4"
+                "issues": "https://github.com/doctrine/deprecations/issues",
+                "source": "https://github.com/doctrine/deprecations/tree/v1.1.1"
             },
-            "install-path": "..\/dhii\/package-interface"
+            "install-path": "../doctrine/deprecations"
         },
         {
-            "name": "dhii\/services",
-            "version": "v0.1.1-alpha3",
-            "version_normalized": "0.1.1.0-alpha3",
+            "name": "ircmaxell/random-lib",
+            "version": "v1.2.0",
+            "version_normalized": "1.2.0.0",
             "source": {
                 "type": "git",
-                "url": "https:\/\/github.com\/Dhii\/services.git",
-                "reference": "1a17b6b2cb2fdef0c0b541c8992188d9740746ce"
+                "url": "https://github.com/ircmaxell/RandomLib.git",
+                "reference": "e9e0204f40e49fa4419946c677eccd3fa25b8cf4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/Dhii\/services\/zipball\/1a17b6b2cb2fdef0c0b541c8992188d9740746ce",
-                "reference": "1a17b6b2cb2fdef0c0b541c8992188d9740746ce",
+                "url": "https://api.github.com/repos/ircmaxell/RandomLib/zipball/e9e0204f40e49fa4419946c677eccd3fa25b8cf4",
+                "reference": "e9e0204f40e49fa4419946c677eccd3fa25b8cf4",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1 | ^8.0",
-                "psr\/container": "^1.0"
+                "ircmaxell/security-lib": "^1.1",
+                "php": ">=5.3.2"
             },
             "require-dev": {
-                "codeclimate\/php-test-reporter": "<=0.3.2",
-                "phpunit\/phpunit": "^7.0 | ^8.0 | ^9.0",
-                "slevomat\/coding-standard": "^6.0",
-                "vimeo\/psalm": "^4.8"
-            },
-            "time": "2023-01-31T23:49:37+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Dhii\\Services\\": "src"
-                }
-            },
-            "notification-url": "https:\/\/packagist.org\/downloads\/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dhii Team",
-                    "email": "development@dhii.co"
-                }
-            ],
-            "description": "A collection of useful DI service implementations.",
-            "support": {
-                "issues": "https:\/\/github.com\/Dhii\/services\/issues",
-                "source": "https:\/\/github.com\/Dhii\/services\/tree\/v0.1.1-alpha3"
-            },
-            "install-path": "..\/dhii\/services"
-        },
-        {
-            "name": "dhii\/validation-interface",
-            "version": "v0.3.0-alpha3",
-            "version_normalized": "0.3.0.0-alpha3",
-            "source": {
-                "type": "git",
-                "url": "https:\/\/github.com\/Dhii\/validation-interface.git",
-                "reference": "0e73c7bf3d2421ceb79331c60a9bc1b1d5eb65a6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/Dhii\/validation-interface\/zipball\/0e73c7bf3d2421ceb79331c60a9bc1b1d5eb65a6",
-                "reference": "0e73c7bf3d2421ceb79331c60a9bc1b1d5eb65a6",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1 | ^8.0"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^7.0 | ^8.0 | ^9.0",
-                "slevomat\/coding-standard": "^6.0",
-                "symfony\/polyfill-mbstring": "1.20",
-                "symfony\/polyfill-php80": "^1.19",
-                "vimeo\/psalm": "^3.11.7 | ^4.0"
-            },
-            "time": "2021-01-14T16:19:20+00:00",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-develop": "0.3.x-dev"
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Dhii\\Validation\\": "src\/"
-                }
-            },
-            "notification-url": "https:\/\/packagist.org\/downloads\/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Anton Ukhanev",
-                    "email": "xedin.unknown@gmail.com"
-                }
-            ],
-            "description": "A base interface for validators",
-            "support": {
-                "issues": "https:\/\/github.com\/Dhii\/validation-interface\/issues",
-                "source": "https:\/\/github.com\/Dhii\/validation-interface\/tree\/v0.3.0-alpha3"
-            },
-            "install-path": "..\/dhii\/validation-interface"
-        },
-        {
-            "name": "dhii\/validator",
-            "version": "v0.1.0-alpha1",
-            "version_normalized": "0.1.0.0-alpha1",
-            "source": {
-                "type": "git",
-                "url": "https:\/\/github.com\/Dhii\/validator.git",
-                "reference": "e10fba08398e33e123ada3d5fe0d147a72525cc2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/Dhii\/validator\/zipball\/e10fba08398e33e123ada3d5fe0d147a72525cc2",
-                "reference": "e10fba08398e33e123ada3d5fe0d147a72525cc2",
-                "shasum": ""
-            },
-            "require": {
-                "dhii\/validation-interface": "^0.3.0-alpha3",
-                "php": "^7.1 | ^8.0"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^7.1 | ^8.0 | ^9.0",
-                "slevomat\/coding-standard": "^6.0",
-                "vimeo\/psalm": "^3.11.7 | ^4.0"
-            },
-            "time": "2021-01-14T22:19:45+00:00",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-initial": "0.1.x-dev"
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Dhii\\Validator\\": "src"
-                }
-            },
-            "notification-url": "https:\/\/packagist.org\/downloads\/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Anton Ukhanev",
-                    "email": "xedin.unknown@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A thin, standards-compliant validator implementation.",
-            "support": {
-                "issues": "https:\/\/github.com\/Dhii\/validator\/issues",
-                "source": "https:\/\/github.com\/Dhii\/validator\/tree\/v0.1.0-alpha1"
-            },
-            "install-path": "..\/dhii\/validator"
-        },
-        {
-            "name": "dhii\/versions",
-            "version": "v0.1.0-alpha3",
-            "version_normalized": "0.1.0.0-alpha3",
-            "source": {
-                "type": "git",
-                "url": "https:\/\/github.com\/Dhii\/versions.git",
-                "reference": "120b22b248d0b46e41bac93bf3394516c9d55730"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/Dhii\/versions\/zipball\/120b22b248d0b46e41bac93bf3394516c9d55730",
-                "reference": "120b22b248d0b46e41bac93bf3394516c9d55730",
-                "shasum": ""
-            },
-            "require": {
-                "dhii\/package-interface": "^0.1.0-alpha3",
-                "php": "^7.1 | ^8.0"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^7.0 | ^8.0 | ^9.0",
-                "slevomat\/coding-standard": "^6.0",
-                "symfony\/polyfill-php80": "^1.19",
-                "vimeo\/psalm": "^4.4.0"
-            },
-            "time": "2021-12-08T16:54:50+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Dhii\\Versions\\": "src"
-                }
-            },
-            "notification-url": "https:\/\/packagist.org\/downloads\/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Anton Ukhanev",
-                    "email": "xedin.unknown@gmail.com"
-                }
-            ],
-            "description": "Implementation for dealing with SemVer-compliant versions",
-            "support": {
-                "issues": "https:\/\/github.com\/Dhii\/versions\/issues",
-                "source": "https:\/\/github.com\/Dhii\/versions\/tree\/v0.1.0-alpha3"
-            },
-            "install-path": "..\/dhii\/versions"
-        },
-        {
-            "name": "inpsyde\/assets",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/assets",
-                "reference": "eeda9fcdf6bdc08fbe51e795fcae4d9889a69062"
-            },
-            "require": {
-                "ext-dom": "*",
-                "ext-json": "*",
-                "inpsyde\/wp-context": "dev-main",
-                "php": ">=7.2"
-            },
-            "require-dev": {
-                "brain\/monkey": "^2.5.0",
-                "inpsyde\/php-coding-standards": "dev-main",
-                "johnpbloch\/wordpress-core": ">=6.2",
-                "mikey179\/vfsstream": "^1.6.8",
-                "php-stubs\/wordpress-stubs": ">=6.2@stable",
-                "phpunit\/phpunit": "^8.5.14 || ^9.0",
-                "vimeo\/psalm": "@stable"
-            },
-            "type": "library",
-            "extra": {
-                "wordpress-install-dir": "vendor\/wordpress\/wordpress"
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Inpsyde\\Assets\\": "src\/"
-                },
-                "files": [
-                    "inc\/functions.php",
-                    "inc\/bootstrap.php"
-                ]
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Inpsyde\\Assets\\Tests\\Unit\\": "tests\/phpunit\/Unit\/"
-                }
-            },
-            "scripts": {
-                "cs": [
-                    "@php .\/vendor\/squizlabs\/php_codesniffer\/bin\/phpcs"
-                ],
-                "psalm": [
-                    "@php .\/vendor\/bin\/psalm --output-format=compact --no-cache"
-                ],
-                "tests": [
-                    "@php .\/vendor\/phpunit\/phpunit\/phpunit"
-                ],
-                "tests:no-cov": [
-                    "@php .\/vendor\/phpunit\/phpunit\/phpunit --no-coverage"
-                ],
-                "tests:codecov": [
-                    "@php .\/vendor\/phpunit\/phpunit\/phpunit --coverage-clover coverage.xml"
-                ],
-                "qa": [
-                    "@cs",
-                    "@tests:no-cov"
-                ]
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Inpsyde",
-                    "email": "hello@inpsyde.com",
-                    "homepage": "https:\/\/inpsyde.com",
-                    "role": "Company"
-                },
-                {
-                    "name": "Christian Leucht",
-                    "email": "c.leucht@inpsyde.com",
-                    "homepage": "https:\/\/www.chrico.info",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Package to manage assets in WordPress.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/inpsyde\/assets"
-        },
-        {
-            "name": "inpsyde\/logger",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/logger",
-                "reference": "0a3e87936dee4f92fdac7a2ad3445e142df40759"
-            },
-            "require": {
-                "inpsyde\/modularity": "dev-main",
-                "php": "^7.2 | ^8.0",
-                "psr\/container": "^1.0 | ^2.0",
-                "psr\/log": "^1.1"
-            },
-            "require-dev": {
-                "brain\/monkey": "^2",
-                "inpsyde\/php-coding-standards": "dev-main",
-                "php-stubs\/woocommerce-stubs": "^5.0",
-                "php-stubs\/wordpress-stubs": ">=5.0",
-                "phpunit\/phpunit": "^8.0",
-                "vimeo\/psalm": "^4.6"
-            },
-            "type": "inpsyde-module",
-            "extra": {
-                "installer-disable": true
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\Logger\\": "src\/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\Logger\\Tests\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Inpsyde GmbH",
-                    "homepage": "https:\/\/inpsyde.com\/",
-                    "email": "hello@inpsyde.com",
-                    "role": "Company"
-                },
-                {
-                    "name": "Aleksas Pantechovskis",
-                    "email": "alex.pantec@gmail.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Kirill Braslavskyi",
-                    "email": "strangerkir@gmail.com",
-                    "role": "developer"
-                }
-            ],
-            "description": "Logger module for inpsyde\/modularity based on WooCommerce logger",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/logger"
-        },
-        {
-            "name": "inpsyde\/modularity",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/modularity",
-                "reference": "085ba5357bb9a1671b27b4cdc90dda129302ea1d"
-            },
-            "require": {
-                "ext-json": "*",
-                "php": ">=7.4 <8.4",
-                "psr\/container": "^1.1.0 || ^2"
-            },
-            "require-dev": {
-                "brain\/monkey": "^2.6.1",
-                "inpsyde\/php-coding-standards": "dev-main",
-                "inpsyde\/wp-stubs-versions": "dev-main",
-                "mikey179\/vfsstream": "^v1.6.11",
-                "phpunit\/phpunit": "^9.6.19",
-                "roots\/wordpress-no-content": "@dev",
-                "vimeo\/psalm": "^5.24.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.x-dev"
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\Modularity\\": "src\/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\Modularity\\Tests\\": "tests\/src\/",
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\Modularity\\Tests\\Unit\\": "tests\/unit\/"
-                }
-            },
-            "scripts": {
-                "cs": [
-                    "@php .\/vendor\/squizlabs\/php_codesniffer\/bin\/phpcs"
-                ],
-                "psalm": [
-                    "@php .\/vendor\/vimeo\/psalm\/psalm --no-suggestions --report-show-info=false --find-unused-psalm-suppress --no-diff --no-cache --no-file-cache --output-format=compact"
-                ],
-                "tests": [
-                    "@php .\/vendor\/phpunit\/phpunit\/phpunit --no-coverage"
-                ],
-                "tests:coverage": [
-                    "@php .\/vendor\/phpunit\/phpunit\/phpunit"
-                ],
-                "qa": [
-                    "@cs",
-                    "@psalm",
-                    "@tests"
-                ]
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com",
-                    "homepage": "https:\/\/syde.com\/",
-                    "role": "Company"
-                }
-            ],
-            "description": "Modular PSR-11 implementation for WordPress plugins, themes or libraries.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/inpsyde\/modularity"
-        },
-        {
-            "name": "inpsyde\/payment-gateway",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/payment-gateway",
-                "reference": "66dc64b706751b3a3c5dc29156ac18ed3220a269"
-            },
-            "require": {
-                "inpsyde\/modularity": "dev-main",
-                "php": "^7.4 | ^8.0"
-            },
-            "require-dev": {
-                "brain\/monkey": "^2.0",
-                "brainmaestro\/composer-git-hooks": "^2.8",
-                "inpsyde\/composer-assets-compiler": "dev-main",
-                "inpsyde\/ddev-tools": "dev-main",
-                "inpsyde\/php-coding-standards": "dev-main",
-                "mockery\/mockery": "^1.3",
-                "php-stubs\/woocommerce-stubs": "^5.0@stable",
-                "php-stubs\/wordpress-stubs": "^5.0@stable",
-                "phpunit\/phpunit": "^8.0 | ^9.0",
-                "vimeo\/psalm": "^4.3"
-            },
-            "type": "inpsyde-module",
-            "extra": {
-                "hooks": {
-                    "pre-commit": [
-                        "vendor\/bin\/phpcbf -q --parallel=24; exit 0"
-                    ]
-                },
-                "wp-translation-downloader": {
-                    "auto-run": false,
-                    "languageRootDir": ".\/",
-                    "languages": [
-                        "de_DE",
-                        "en_US"
-                    ],
-                    "api": {
-                        "names": {
-                            "inpsyde\/*": "https:\/\/translate.inpsyde.com\/products\/api\/translations\/%projectName%"
-                        }
-                    },
-                    "directories": {
-                        "names": {
-                            "inpsyde\/*": "languages\/"
-                        }
-                    }
-                },
-                "composer-asset-compiler": {
-                    "auto-run": false,
-                    "dependencies": "install",
-                    "script": "build",
-                    "default-env": {
-                        "WEBPACK_ENV": "production"
-                    }
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\PaymentGateway\\": "src\/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\PaymentGateway\\Test\\": "tests\/PHPUnit\/Helper"
-                }
-            },
-            "scripts": {
-                "phpcs": [
-                    "@php .\/vendor\/bin\/phpcs -n -s --parallel=24"
-                ],
-                "phpcs:phpcbf": [
-                    "@php .\/vendor\/bin\/phpcbf  --parallel=24;exit 0"
-                ],
-                "phpcs:interactive": [
-                    "@php .\/vendor\/bin\/phpcs -a"
-                ],
-                "phpcs:dev": [
-                    "@cs:phpcbf",
-                    "@cs:interactive"
-                ],
-                "phpunit": [
-                    "vendor\/bin\/phpunit"
-                ],
-                "test": [
-                    "@phpunit"
-                ],
-                "cghooks": [
-                    "vendor\/bin\/cghooks"
-                ],
-                "post-install-cmd": [
-                    "@cghooks add --ignore-lock"
-                ],
-                "post-update-cmd": [
-                    "@cghooks update"
-                ]
-            },
-            "license": [
-                "GPL-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Inpsyde GmbH",
-                    "homepage": "https:\/\/inpsyde.com\/",
-                    "email": "hello@inpsyde.com",
-                    "role": "Company"
-                }
-            ],
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/payment-gateway"
-        },
-        {
-            "name": "inpsyde\/psr-18-wp-http-client",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/psr-18-wp-http-client",
-                "reference": "ee9c5caad51932d44cdeaf947184297f450423dc"
-            },
-            "require": {
-                "php": "^7.0 | ^8.0",
-                "psr\/http-client": "^1.0",
-                "psr\/http-factory": "^1.0",
-                "psr\/http-message": "^1.0"
-            },
-            "provide": {
-                "psr\/http-client-implementation": "^1.0"
-            },
-            "require-dev": {
-                "brain\/monkey": "2.*",
-                "inpsyde\/php-coding-standards": "dev-main",
-                "johnpbloch\/wordpress-core": "^5.0",
-                "phpunit\/phpunit": "^6.0 | ^7.0 | ^8.0 | ^9.0",
-                "squizlabs\/php_codesniffer": "^3.4",
-                "voku\/httpful": "^2.4"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-develop": "0.1.x-dev"
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\Wp\\HttpClient\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\Wp\\HttpClient\\Test\\Func\\": "tests\/functional"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Inpsyde GmbH",
-                    "email": "hello@inpsyde.com",
-                    "role": "Company"
-                },
-                {
-                    "name": "Anton Ukhanev",
-                    "email": "xedin.unknown@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A PSR-18 compatible wrapper for WordPress HTTP requests",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/inpsyde\/psr-18-wp-http-client"
-        },
-        {
-            "name": "inpsyde\/transformer",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/transformer",
-                "reference": "cb6cadf76b8629b708d226e6cd6ae17ddfd6e5aa"
-            },
-            "require-dev": {
-                "brianium\/paratest": "^6.0",
-                "inpsyde\/monkery-test-case": "^6.0",
-                "phpunit\/phpunit": "^9.5",
-                "spatie\/phpunit-watcher": "^1.10"
-            },
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\Transformer\\": "src\/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\Transformer\\Tests\\": "tests\/PHPUnit\/Helper"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "description": "Transforms object types using middleware-enabled transformation functions",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/inpsyde\/transformer"
-        },
-        {
-            "name": "inpsyde\/worldline-apple-pay-gateway",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/apple-pay-gateway",
-                "reference": "b851052429188d9e679001fa9b6a9f276f01273f"
-            },
-            "require": {
-                "dhii\/services": "^0.1.1-alpha3",
-                "inpsyde\/assets": "dev-main",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.1"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\ApplePayGateway\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\ApplePayGateway\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-apple-pay-gateway"
-        },
-        {
-            "name": "inpsyde\/worldline-bank-transfer-gateway",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/bank-transfer-gateway",
-                "reference": "fb218707866f34dc091a8b4993b1d8987bf2f8cf"
-            },
-            "require": {
-                "dhii\/services": "^0.1.1-alpha3",
-                "inpsyde\/assets": "dev-main",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.1"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\BankTransferGateway\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\BankTransferGateway\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-bank-transfer-gateway"
-        },
-        {
-            "name": "inpsyde\/worldline-checkout",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/checkout",
-                "reference": "87b5a2e0fdbd54f8c44e24066d6bc446caa703b0"
-            },
-            "require": {
-                "dhii\/services": "^0.1.1-alpha3",
-                "inpsyde\/assets": "dev-main",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.1"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\Checkout\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\Checkout\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-checkout"
-        },
-        {
-            "name": "inpsyde\/worldline-config",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/config",
-                "reference": "8cce07c2c5a261b429165321c3da74ee47c53ddf"
-            },
-            "require": {
-                "dhii\/services": "^0.1.0-alpha2",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.0"
-            },
-            "require-dev": {
-                "php-stubs\/woocommerce-stubs": "^5.0",
-                "php-stubs\/wordpress-stubs": "^5.0",
-                "phpunit\/phpunit": "^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\Config\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\Config\\Tests\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-config"
-        },
-        {
-            "name": "inpsyde\/worldline-cvco-gateway",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/cvco-gateway",
-                "reference": "304c1bc5d19f0e881f69e1fae6d1cb8ae15d51f3"
-            },
-            "require": {
-                "dhii\/services": "^0.1.1-alpha3",
-                "inpsyde\/assets": "dev-main",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.1"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\CVCOGateway\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\CVCOGateway\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-cvco-gateway"
-        },
-        {
-            "name": "inpsyde\/worldline-documentation",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/documentation",
-                "reference": "d5a76a452d9d283d766c3bd4c22e9c079c7ecf3d"
-            },
-            "require": {
-                "dhii\/services": "^0.1.1-alpha3",
-                "inpsyde\/assets": "dev-main",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.1"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\Documentation\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\Documentation\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-documentation"
-        },
-        {
-            "name": "inpsyde\/worldline-eps-gateway",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/eps-gateway",
-                "reference": "aab24274ef8a8ab45ac873a9e9dec0cad2360952"
-            },
-            "require": {
-                "dhii\/services": "^0.1.1-alpha3",
-                "inpsyde\/assets": "dev-main",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.1"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\EpsGateway\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\EpsGateway\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-eps-gateway"
-        },
-        {
-            "name": "inpsyde\/worldline-google-pay-gateway",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/google-pay-gateway",
-                "reference": "1f84479f27d1c1be5095442f9a9289220bd0fc59"
-            },
-            "require": {
-                "dhii\/services": "^0.1.1-alpha3",
-                "inpsyde\/assets": "dev-main",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.1"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\GooglePayGateway\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\GooglePayGateway\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-google-pay-gateway"
-        },
-        {
-            "name": "inpsyde\/worldline-hosted-tokenization-gateway",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/hosted-tokenization-gateway",
-                "reference": "294b02408a01e196d136f725532dd8e95b8df965"
-            },
-            "require": {
-                "dhii\/services": "^0.1.1-alpha3",
-                "inpsyde\/assets": "dev-main",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.1"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\HostedTokenizationGateway\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\HostedTokenizationGateway\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-hosted-tokenization-gateway"
-        },
-        {
-            "name": "inpsyde\/worldline-ideal-gateway",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/ideal-gateway",
-                "reference": "fc513809b3456312301f1b3b1c03976b5acff7f9"
-            },
-            "require": {
-                "dhii\/services": "^0.1.1-alpha3",
-                "inpsyde\/assets": "dev-main",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.1"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\IdealGateway\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\IdealGateway\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-ideal-gateway"
-        },
-        {
-            "name": "inpsyde\/worldline-klarna-gateway",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/klarna-gateway",
-                "reference": "ef5e0f947be78520745f1ffae565e37d82713175"
-            },
-            "require": {
-                "dhii\/services": "^0.1.1-alpha3",
-                "inpsyde\/assets": "*",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.1"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\KlarnaGateway\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\KlarnaGateway\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-klarna-gateway"
-        },
-        {
-            "name": "inpsyde\/worldline-logging",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/worldline-logging",
-                "reference": "1df85333b29a07b021bfe79a562f465dbb2193f7"
-            },
-            "require": {
-                "dhii\/services": "^0.1.0-alpha2",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.0"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\WorldlineLogging\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\WorldlineLogging\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-logging"
-        },
-        {
-            "name": "inpsyde\/worldline-mealvouchers-gateway",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/mealvouchers-gateway",
-                "reference": "6cf0c3698d71007ea866ec57f69ae6331f3e622d"
-            },
-            "require": {
-                "dhii\/services": "^0.1.1-alpha3",
-                "inpsyde\/assets": "*",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.1"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\MealvouchersGateway\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\MealvouchersGateway\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-mealvouchers-gateway"
-        },
-        {
-            "name": "inpsyde\/worldline-payment-gateway",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/worldline-payment-gateway",
-                "reference": "184f57538e830f2d8ae584666d09ea36d757bd8d"
-            },
-            "require": {
-                "dhii\/services": "^0.1.0-alpha2",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.0"
-            },
-            "require-dev": {
-                "brain\/monkey": "^2.6",
-                "phpunit\/phpunit": "^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\WorldlinePaymentGateway\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\WorldlinePaymentGateway\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-payment-gateway"
-        },
-        {
-            "name": "inpsyde\/worldline-paypal-gateway",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/paypal-gateway",
-                "reference": "797d75735414b76ba83d6a803bcb0b953e57460b"
-            },
-            "require": {
-                "dhii\/services": "^0.1.1-alpha3",
-                "inpsyde\/assets": "dev-main",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.1"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\PayPalGateway\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\PayPalGateway\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-paypal-gateway"
-        },
-        {
-            "name": "inpsyde\/worldline-postfinance-gateway",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/postfinance",
-                "reference": "a7cccb834eda6ab7ef85a4a77402490b1e772f13"
-            },
-            "require": {
-                "dhii\/services": "^0.1.1-alpha3",
-                "inpsyde\/assets": "dev-main",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.1"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\PostfinanceGateway\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\PostfinanceGateway\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-postfinance-gateway"
-        },
-        {
-            "name": "inpsyde\/worldline-product-type",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/worldline-product-type",
-                "reference": "b7ed011a6e7fdf22de01cc834fb4257ff45f99f8"
-            },
-            "require": {
-                "dhii\/services": "^0.1.0-alpha2",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\ProductType\\": "src"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Marija",
-                    "email": "marija.ivic@logeecom.com"
-                }
-            ],
-            "description": "Worldline Product Type Module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-product-type"
-        },
-        {
-            "name": "inpsyde\/worldline-return-page",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/return-page",
-                "reference": "46510cde1c25272279c5f66bb92ec9fedef1fb26"
-            },
-            "require": {
-                "dhii\/services": "^0.1.0-alpha2",
-                "inpsyde\/assets": "*",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.0"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\ReturnPage\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\ReturnPage\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-return-page"
-        },
-        {
-            "name": "inpsyde\/worldline-twint-gateway",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/twint-gateway",
-                "reference": "c0286f24536cf6dab7800e32e5796996f3be93f9"
-            },
-            "require": {
-                "dhii\/services": "^0.1.1-alpha3",
-                "inpsyde\/assets": "dev-main",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.1"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\TwintGateway\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\TwintGateway\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline TWINT gateway module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-twint-gateway"
-        },
-        {
-            "name": "inpsyde\/worldline-uninstall",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/uninstall",
-                "reference": "ecabbbcee029f21d8c3a972e06eb662ed2ee3973"
-            },
-            "require": {
-                "dhii\/services": "^0.1.0-alpha2",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.0"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^8.0 | ^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\Uninstall\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\Uninstall\\Tests\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline Uninstall Module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-uninstall"
-        },
-        {
-            "name": "inpsyde\/worldline-uri",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/uri",
-                "reference": "87fbfcd39d2e00457817fd955e21097589bd1700"
-            },
-            "require": {
-                "dhii\/services": "^0.1.0-alpha2",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.0",
-                "psr\/http-message": "^1.0"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^8.0 | ^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\Uri\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\Uri\\Tests\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline Uri",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-uri"
-        },
-        {
-            "name": "inpsyde\/worldline-utils",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/utils",
-                "reference": "138f699da5fa6e3eb83c2b0c19034403e1c685a6"
-            },
-            "require": {
-                "dhii\/services": "^0.1.0-alpha2",
-                "php": ">=7.4"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^8.0 | ^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\Utils\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\Utils\\Tests\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline Utils",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-utils"
-        },
-        {
-            "name": "inpsyde\/worldline-vaulting",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/vaulting",
-                "reference": "dc9e26dfc73b4ecb976db4fc4345da71bf41e97f"
-            },
-            "require": {
-                "dhii\/services": "^0.1.1-alpha3",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.1"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\Vaulting\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\Vaulting\\Tests\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-vaulting"
-        },
-        {
-            "name": "inpsyde\/worldline-wc-support",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/wc-support",
-                "reference": "536109e1efa2997e218897b5f077aa193865bcba"
-            },
-            "require": {
-                "dhii\/services": "^0.1.0",
-                "inpsyde\/modularity": "dev-main",
-                "php": ">=7.4",
-                "psr\/container": "^1.1"
-            },
-            "require-dev": {
-                "phpunit\/phpunit": "^9.0"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\WcSupport\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\WcSupport\\Tests\\": "tests\/php"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "WooCommerce support features",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-wc-support"
-        },
-        {
-            "name": "inpsyde\/worldline-webhooks",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/webhooks",
-                "reference": "91b94af7c172613fd00ac87a79273f6f970c5e64"
-            },
-            "require": {
-                "dhii\/services": "^0.1.0-alpha2",
-                "dhii\/validator": "^0.1",
-                "inpsyde\/modularity": "dev-main",
-                "php": "^7.2 | ^8.0",
-                "psr\/container": "^1.0",
-                "psr\/http-server-handler": "^1.0.0",
-                "psr\/http-server-middleware": "^1.0.0"
-            },
-            "require-dev": {
-                "brain\/monkey": "^2",
-                "inpsyde\/php-coding-standards": "dev-main",
-                "php-stubs\/woocommerce-stubs": "^5.0",
-                "php-stubs\/wordpress-stubs": "^5.0",
-                "phpunit\/phpunit": "^8.0 | ^9.0",
-                "vimeo\/psalm": "^4.6"
-            },
-            "type": "inpsyde-module",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\Webhooks\\": "src\/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce\\Webhooks\\Tests\\": "tests\/php\/"
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Syde GmbH",
-                    "email": "hello@syde.com"
-                }
-            ],
-            "description": "Worldline webhooks module",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/..\/modules\/inpsyde\/worldline-webhooks"
-        },
-        {
-            "name": "inpsyde\/wp-context",
-            "version": "dev-main",
-            "version_normalized": "dev-main",
-            "dist": {
-                "type": "path",
-                "url": ".\/modules.local\/wp-context",
-                "reference": "6c2a042db65a119feded3bc974edb0aa740967db"
-            },
-            "require": {
-                "php": ">=7.1"
-            },
-            "require-dev": {
-                "brain\/monkey": "^2.6.1",
-                "inpsyde\/php-coding-standards": "dev-main",
-                "inpsyde\/wp-stubs": "dev-main",
-                "mockery\/mockery": "~1.3.6",
-                "phpunit\/phpunit": "~7.5.20 || ^8",
-                "vimeo\/psalm": "^4.27.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "1.x-dev"
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\": "src\/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Inpsyde\\Tests\\": "tests\/"
-                }
-            },
-            "scripts": {
-                "cs": [
-                    "@php .\/vendor\/squizlabs\/php_codesniffer\/bin\/phpcs"
-                ],
-                "psalm": [
-                    "@php .\/vendor\/vimeo\/psalm\/psalm --no-cache --output-format=compact"
-                ],
-                "tests": [
-                    "@php .\/vendor\/phpunit\/phpunit\/phpunit"
-                ],
-                "tests:no-cov": [
-                    "@php .\/vendor\/phpunit\/phpunit\/phpunit --no-coverage"
-                ],
-                "phpcompat": [
-                    "@php .\/vendor\/squizlabs\/php_codesniffer\/bin\/phpcs -p . --standard=PHPCompatibility --ignore=*\/vendor\/* --extensions=php --basepath=.\/ --runtime-set testVersion 7.1-"
-                ],
-                "qa": [
-                    "@cs",
-                    "@phpcompat",
-                    "@psalm",
-                    "@tests:no-cov"
-                ]
-            },
-            "license": [
-                "gpl-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Inpsyde GmbH",
-                    "homepage": "https:\/\/inpsyde.com\/",
-                    "email": "hello@inpsyde.com",
-                    "role": "Company"
-                },
-                {
-                    "name": "Giuseppe Mazzapica",
-                    "email": "g.mazzapica@inpsyde.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A single-class utility to check the running context in WordPress sites.",
-            "transport-options": {
-                "symlink": false,
-                "relative": true
-            },
-            "install-path": "..\/inpsyde\/wp-context"
-        },
-        {
-            "name": "oomphinc\/composer-installers-extender",
-            "version": "2.0.1",
-            "version_normalized": "2.0.1.0",
-            "source": {
-                "type": "git",
-                "url": "https:\/\/github.com\/oomphinc\/composer-installers-extender.git",
-                "reference": "cbf4b6f9a24153b785d09eee755b995ba87bd5f9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/oomphinc\/composer-installers-extender\/zipball\/cbf4b6f9a24153b785d09eee755b995ba87bd5f9",
-                "reference": "cbf4b6f9a24153b785d09eee755b995ba87bd5f9",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.1 || ^2.0",
-                "composer\/installers": "^1.0 || ^2.0",
-                "php": ">=7.1"
-            },
-            "require-dev": {
-                "composer\/composer": "^2.0",
-                "phpunit\/phpunit": "^7.2",
-                "squizlabs\/php_codesniffer": "^3.3"
-            },
-            "time": "2021-12-15T12:32:42+00:00",
-            "type": "composer-plugin",
-            "extra": {
-                "class": "OomphInc\\ComposerInstallersExtender\\Plugin"
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "OomphInc\\ComposerInstallersExtender\\": "src\/"
-                }
-            },
-            "notification-url": "https:\/\/packagist.org\/downloads\/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Stephen Beemsterboer",
-                    "email": "stephen@oomphinc.com",
-                    "homepage": "https:\/\/github.com\/balbuf"
-                },
-                {
-                    "name": "Nathan Dentzau",
-                    "email": "nate@oomphinc.com",
-                    "homepage": "http:\/\/oomph.is\/ndentzau"
-                }
-            ],
-            "description": "Extend the composer\/installers plugin to accept any arbitrary package type.",
-            "homepage": "http:\/\/www.oomphinc.com\/",
-            "support": {
-                "issues": "https:\/\/github.com\/oomphinc\/composer-installers-extender\/issues",
-                "source": "https:\/\/github.com\/oomphinc\/composer-installers-extender\/tree\/2.0.1"
-            },
-            "install-path": "..\/oomphinc\/composer-installers-extender"
-        },
-        {
-            "name": "psr\/container",
-            "version": "1.1.2",
-            "version_normalized": "1.1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https:\/\/github.com\/php-fig\/container.git",
-                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/php-fig\/container\/zipball\/513e0666f7216c7459170d56df27dfcefe1689ea",
-                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.4.0"
-            },
-            "time": "2021-11-05T16:50:12+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Psr\\Container\\": "src\/"
-                }
-            },
-            "notification-url": "https:\/\/packagist.org\/downloads\/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "https:\/\/www.php-fig.org\/"
-                }
-            ],
-            "description": "Common Container Interface (PHP FIG PSR-11)",
-            "homepage": "https:\/\/github.com\/php-fig\/container",
-            "keywords": [
-                "PSR-11",
-                "container",
-                "container-interface",
-                "container-interop",
-                "psr"
-            ],
-            "support": {
-                "issues": "https:\/\/github.com\/php-fig\/container\/issues",
-                "source": "https:\/\/github.com\/php-fig\/container\/tree\/1.1.2"
-            },
-            "install-path": "..\/psr\/container"
-        },
-        {
-            "name": "psr\/http-client",
-            "version": "1.0.3",
-            "version_normalized": "1.0.3.0",
-            "source": {
-                "type": "git",
-                "url": "https:\/\/github.com\/php-fig\/http-client.git",
-                "reference": "bb5906edc1c324c9a05aa0873d40117941e5fa90"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/php-fig\/http-client\/zipball\/bb5906edc1c324c9a05aa0873d40117941e5fa90",
-                "reference": "bb5906edc1c324c9a05aa0873d40117941e5fa90",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.0 || ^8.0",
-                "psr\/http-message": "^1.0 || ^2.0"
-            },
-            "time": "2023-09-23T14:17:50+00:00",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Psr\\Http\\Client\\": "src\/"
-                }
-            },
-            "notification-url": "https:\/\/packagist.org\/downloads\/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "https:\/\/www.php-fig.org\/"
-                }
-            ],
-            "description": "Common interface for HTTP clients",
-            "homepage": "https:\/\/github.com\/php-fig\/http-client",
-            "keywords": [
-                "http",
-                "http-client",
-                "psr",
-                "psr-18"
-            ],
-            "support": {
-                "source": "https:\/\/github.com\/php-fig\/http-client"
-            },
-            "install-path": "..\/psr\/http-client"
-        },
-        {
-            "name": "psr\/http-factory",
-            "version": "1.1.0",
-            "version_normalized": "1.1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https:\/\/github.com\/php-fig\/http-factory.git",
-                "reference": "2b4765fddfe3b508ac62f829e852b1501d3f6e8a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/php-fig\/http-factory\/zipball\/2b4765fddfe3b508ac62f829e852b1501d3f6e8a",
-                "reference": "2b4765fddfe3b508ac62f829e852b1501d3f6e8a",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1",
-                "psr\/http-message": "^1.0 || ^2.0"
-            },
-            "time": "2024-04-15T12:06:14+00:00",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Psr\\Http\\Message\\": "src\/"
-                }
-            },
-            "notification-url": "https:\/\/packagist.org\/downloads\/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "https:\/\/www.php-fig.org\/"
-                }
-            ],
-            "description": "PSR-17: Common interfaces for PSR-7 HTTP message factories",
-            "keywords": [
-                "factory",
-                "http",
-                "message",
-                "psr",
-                "psr-17",
-                "psr-7",
-                "request",
-                "response"
-            ],
-            "support": {
-                "source": "https:\/\/github.com\/php-fig\/http-factory"
-            },
-            "install-path": "..\/psr\/http-factory"
-        },
-        {
-            "name": "psr\/http-message",
-            "version": "1.1",
-            "version_normalized": "1.1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https:\/\/github.com\/php-fig\/http-message.git",
-                "reference": "cb6ce4845ce34a8ad9e68117c10ee90a29919eba"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/php-fig\/http-message\/zipball\/cb6ce4845ce34a8ad9e68117c10ee90a29919eba",
-                "reference": "cb6ce4845ce34a8ad9e68117c10ee90a29919eba",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.2 || ^8.0"
-            },
-            "time": "2023-04-04T09:50:52+00:00",
+                "friendsofphp/php-cs-fixer": "^1.11",
+                "mikey179/vfsstream": "^1.6",
+                "phpunit/phpunit": "^4.8|^5.0"
+            },
+            "time": "2016-09-07T15:52:06+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2361,55 +143,57 @@
             },
             "installation-source": "dist",
             "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Psr\\Http\\Message\\": "src\/"
+                "psr-0": {
+                    "RandomLib": "lib"
                 }
             },
-            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "authors": [
                 {
-                    "name": "PHP-FIG",
-                    "homepage": "http:\/\/www.php-fig.org\/"
+                    "name": "Anthony Ferrara",
+                    "email": "ircmaxell@ircmaxell.com",
+                    "homepage": "http://blog.ircmaxell.com"
                 }
             ],
-            "description": "Common interface for HTTP messages",
-            "homepage": "https:\/\/github.com\/php-fig\/http-message",
+            "description": "A Library For Generating Secure Random Numbers",
+            "homepage": "https://github.com/ircmaxell/RandomLib",
             "keywords": [
-                "http",
-                "http-message",
-                "psr",
-                "psr-7",
-                "request",
-                "response"
+                "cryptography",
+                "random",
+                "random-numbers",
+                "random-strings"
             ],
             "support": {
-                "source": "https:\/\/github.com\/php-fig\/http-message\/tree\/1.1"
+                "issues": "https://github.com/ircmaxell/RandomLib/issues",
+                "source": "https://github.com/ircmaxell/RandomLib/tree/master"
             },
-            "install-path": "..\/psr\/http-message"
+            "install-path": "../ircmaxell/random-lib"
         },
         {
-            "name": "psr\/http-server-handler",
-            "version": "1.0.2",
-            "version_normalized": "1.0.2.0",
+            "name": "ircmaxell/security-lib",
+            "version": "v1.1.0",
+            "version_normalized": "1.1.0.0",
             "source": {
                 "type": "git",
-                "url": "https:\/\/github.com\/php-fig\/http-server-handler.git",
-                "reference": "84c4fb66179be4caaf8e97bd239203245302e7d4"
+                "url": "https://github.com/ircmaxell/SecurityLib.git",
+                "reference": "f3db6de12c20c9bcd1aa3db4353a1bbe0e44e1b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/php-fig\/http-server-handler\/zipball\/84c4fb66179be4caaf8e97bd239203245302e7d4",
-                "reference": "84c4fb66179be4caaf8e97bd239203245302e7d4",
+                "url": "https://api.github.com/repos/ircmaxell/SecurityLib/zipball/f3db6de12c20c9bcd1aa3db4353a1bbe0e44e1b5",
+                "reference": "f3db6de12c20c9bcd1aa3db4353a1bbe0e44e1b5",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.0",
-                "psr\/http-message": "^1.0 || ^2.0"
+                "php": ">=5.3.2"
             },
-            "time": "2023-04-10T20:06:20+00:00",
+            "require-dev": {
+                "mikey179/vfsstream": "1.1.*"
+            },
+            "time": "2015-03-20T14:31:23+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2418,109 +202,540 @@
             },
             "installation-source": "dist",
             "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Psr\\Http\\Server\\": "src\/"
+                "psr-0": {
+                    "SecurityLib": "lib"
                 }
             },
-            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "authors": [
                 {
-                    "name": "PHP-FIG",
-                    "homepage": "https:\/\/www.php-fig.org\/"
+                    "name": "Anthony Ferrara",
+                    "email": "ircmaxell@ircmaxell.com",
+                    "homepage": "http://blog.ircmaxell.com"
                 }
             ],
-            "description": "Common interface for HTTP server-side request handler",
-            "keywords": [
-                "handler",
-                "http",
-                "http-interop",
-                "psr",
-                "psr-15",
-                "psr-7",
-                "request",
-                "response",
-                "server"
-            ],
+            "description": "A Base Security Library",
+            "homepage": "https://github.com/ircmaxell/SecurityLib",
             "support": {
-                "source": "https:\/\/github.com\/php-fig\/http-server-handler\/tree\/1.0.2"
+                "issues": "https://github.com/ircmaxell/SecurityLib/issues",
+                "source": "https://github.com/ircmaxell/SecurityLib/tree/master"
             },
-            "install-path": "..\/psr\/http-server-handler"
+            "install-path": "../ircmaxell/security-lib"
         },
         {
-            "name": "psr\/http-server-middleware",
-            "version": "1.0.2",
-            "version_normalized": "1.0.2.0",
+            "name": "monolog/monolog",
+            "version": "2.9.1",
+            "version_normalized": "2.9.1.0",
             "source": {
                 "type": "git",
-                "url": "https:\/\/github.com\/php-fig\/http-server-middleware.git",
-                "reference": "c1481f747daaa6a0782775cd6a8c26a1bf4a3829"
+                "url": "https://github.com/Seldaek/monolog.git",
+                "reference": "f259e2b15fb95494c83f52d3caad003bbf5ffaa1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/php-fig\/http-server-middleware\/zipball\/c1481f747daaa6a0782775cd6a8c26a1bf4a3829",
-                "reference": "c1481f747daaa6a0782775cd6a8c26a1bf4a3829",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/f259e2b15fb95494c83f52d3caad003bbf5ffaa1",
+                "reference": "f259e2b15fb95494c83f52d3caad003bbf5ffaa1",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.0",
-                "psr\/http-message": "^1.0 || ^2.0",
-                "psr\/http-server-handler": "^1.0"
+                "php": ">=7.2",
+                "psr/log": "^1.0.1 || ^2.0 || ^3.0"
             },
-            "time": "2023-04-11T06:14:47+00:00",
+            "provide": {
+                "psr/log-implementation": "1.0.0 || 2.0.0 || 3.0.0"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "^2.4.9 || ^3.0",
+                "doctrine/couchdb": "~1.0@dev",
+                "elasticsearch/elasticsearch": "^7 || ^8",
+                "ext-json": "*",
+                "graylog2/gelf-php": "^1.4.2 || ^2@dev",
+                "guzzlehttp/guzzle": "^7.4",
+                "guzzlehttp/psr7": "^2.2",
+                "mongodb/mongodb": "^1.8",
+                "php-amqplib/php-amqplib": "~2.4 || ^3",
+                "phpspec/prophecy": "^1.15",
+                "phpstan/phpstan": "^0.12.91",
+                "phpunit/phpunit": "^8.5.14",
+                "predis/predis": "^1.1 || ^2.0",
+                "rollbar/rollbar": "^1.3 || ^2 || ^3",
+                "ruflin/elastica": "^7",
+                "swiftmailer/swiftmailer": "^5.3|^6.0",
+                "symfony/mailer": "^5.4 || ^6",
+                "symfony/mime": "^5.4 || ^6"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+                "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+                "elasticsearch/elasticsearch": "Allow sending log messages to an Elasticsearch server via official client",
+                "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+                "ext-curl": "Required to send log messages using the IFTTTHandler, the LogglyHandler, the SendGridHandler, the SlackWebhookHandler or the TelegramBotHandler",
+                "ext-mbstring": "Allow to work properly with unicode symbols",
+                "ext-mongodb": "Allow sending log messages to a MongoDB server (via driver)",
+                "ext-openssl": "Required to send log messages using SSL",
+                "ext-sockets": "Allow sending log messages to a Syslog server (via UDP driver)",
+                "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+                "mongodb/mongodb": "Allow sending log messages to a MongoDB server (via library)",
+                "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
+                "rollbar/rollbar": "Allow sending log messages to Rollbar",
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
+            },
+            "time": "2023-02-06T13:44:46+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-main": "2.x-dev"
                 }
             },
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Psr\\Http\\Server\\": "src\/"
+                    "Monolog\\": "src/Monolog"
                 }
             },
-            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "authors": [
                 {
-                    "name": "PHP-FIG",
-                    "homepage": "https:\/\/www.php-fig.org\/"
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "https://seld.be"
                 }
             ],
-            "description": "Common interface for HTTP server-side middleware",
+            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+            "homepage": "https://github.com/Seldaek/monolog",
             "keywords": [
-                "http",
-                "http-interop",
-                "middleware",
-                "psr",
-                "psr-15",
-                "psr-7",
-                "request",
-                "response"
+                "log",
+                "logging",
+                "psr-3"
             ],
             "support": {
-                "issues": "https:\/\/github.com\/php-fig\/http-server-middleware\/issues",
-                "source": "https:\/\/github.com\/php-fig\/http-server-middleware\/tree\/1.0.2"
+                "issues": "https://github.com/Seldaek/monolog/issues",
+                "source": "https://github.com/Seldaek/monolog/tree/2.9.1"
             },
-            "install-path": "..\/psr\/http-server-middleware"
+            "funding": [
+                {
+                    "url": "https://github.com/Seldaek",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/monolog/monolog",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../monolog/monolog"
         },
         {
-            "name": "psr\/log",
+            "name": "phpdocumentor/reflection-common",
+            "version": "2.2.0",
+            "version_normalized": "2.2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpDocumentor/ReflectionCommon.git",
+                "reference": "1d01c49d4ed62f25aa84a747ad35d5a16924662b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionCommon/zipball/1d01c49d4ed62f25aa84a747ad35d5a16924662b",
+                "reference": "1d01c49d4ed62f25aa84a747ad35d5a16924662b",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "time": "2020-06-27T09:03:43+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "phpDocumentor\\Reflection\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jaap van Otterdijk",
+                    "email": "opensource@ijaap.nl"
+                }
+            ],
+            "description": "Common reflection classes used by phpdocumentor to reflect the code structure",
+            "homepage": "http://www.phpdoc.org",
+            "keywords": [
+                "FQSEN",
+                "phpDocumentor",
+                "phpdoc",
+                "reflection",
+                "static analysis"
+            ],
+            "support": {
+                "issues": "https://github.com/phpDocumentor/ReflectionCommon/issues",
+                "source": "https://github.com/phpDocumentor/ReflectionCommon/tree/2.x"
+            },
+            "install-path": "../phpdocumentor/reflection-common"
+        },
+        {
+            "name": "phpdocumentor/reflection-docblock",
+            "version": "5.3.0",
+            "version_normalized": "5.3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
+                "reference": "622548b623e81ca6d78b721c5e029f4ce664f170"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/622548b623e81ca6d78b721c5e029f4ce664f170",
+                "reference": "622548b623e81ca6d78b721c5e029f4ce664f170",
+                "shasum": ""
+            },
+            "require": {
+                "ext-filter": "*",
+                "php": "^7.2 || ^8.0",
+                "phpdocumentor/reflection-common": "^2.2",
+                "phpdocumentor/type-resolver": "^1.3",
+                "webmozart/assert": "^1.9.1"
+            },
+            "require-dev": {
+                "mockery/mockery": "~1.3.2",
+                "psalm/phar": "^4.8"
+            },
+            "time": "2021-10-19T17:43:47+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "phpDocumentor\\Reflection\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike van Riel",
+                    "email": "me@mikevanriel.com"
+                },
+                {
+                    "name": "Jaap van Otterdijk",
+                    "email": "account@ijaap.nl"
+                }
+            ],
+            "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
+            "support": {
+                "issues": "https://github.com/phpDocumentor/ReflectionDocBlock/issues",
+                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.3.0"
+            },
+            "install-path": "../phpdocumentor/reflection-docblock"
+        },
+        {
+            "name": "phpdocumentor/type-resolver",
+            "version": "1.7.3",
+            "version_normalized": "1.7.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpDocumentor/TypeResolver.git",
+                "reference": "3219c6ee25c9ea71e3d9bbaf39c67c9ebd499419"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/3219c6ee25c9ea71e3d9bbaf39c67c9ebd499419",
+                "reference": "3219c6ee25c9ea71e3d9bbaf39c67c9ebd499419",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/deprecations": "^1.0",
+                "php": "^7.4 || ^8.0",
+                "phpdocumentor/reflection-common": "^2.0",
+                "phpstan/phpdoc-parser": "^1.13"
+            },
+            "require-dev": {
+                "ext-tokenizer": "*",
+                "phpbench/phpbench": "^1.2",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan": "^1.8",
+                "phpstan/phpstan-phpunit": "^1.1",
+                "phpunit/phpunit": "^9.5",
+                "rector/rector": "^0.13.9",
+                "vimeo/psalm": "^4.25"
+            },
+            "time": "2023-08-12T11:01:26+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "phpDocumentor\\Reflection\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike van Riel",
+                    "email": "me@mikevanriel.com"
+                }
+            ],
+            "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
+            "support": {
+                "issues": "https://github.com/phpDocumentor/TypeResolver/issues",
+                "source": "https://github.com/phpDocumentor/TypeResolver/tree/1.7.3"
+            },
+            "install-path": "../phpdocumentor/type-resolver"
+        },
+        {
+            "name": "phpstan/phpdoc-parser",
+            "version": "1.23.1",
+            "version_normalized": "1.23.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpdoc-parser.git",
+                "reference": "846ae76eef31c6d7790fac9bc399ecee45160b26"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/846ae76eef31c6d7790fac9bc399ecee45160b26",
+                "reference": "846ae76eef31c6d7790fac9bc399ecee45160b26",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^2.0",
+                "nikic/php-parser": "^4.15",
+                "php-parallel-lint/php-parallel-lint": "^1.2",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^1.5",
+                "phpstan/phpstan-phpunit": "^1.1",
+                "phpstan/phpstan-strict-rules": "^1.0",
+                "phpunit/phpunit": "^9.5",
+                "symfony/process": "^5.2"
+            },
+            "time": "2023-08-03T16:32:59+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "PHPStan\\PhpDocParser\\": [
+                        "src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPDoc parser with support for nullable, intersection and generic types",
+            "support": {
+                "issues": "https://github.com/phpstan/phpdoc-parser/issues",
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.23.1"
+            },
+            "install-path": "../phpstan/phpdoc-parser"
+        },
+        {
+            "name": "prestashop/decimal",
+            "version": "1.5.0",
+            "version_normalized": "1.5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PrestaShop/decimal.git",
+                "reference": "b5afdcc4b03140f838bb7b256aec6c21fd83951b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PrestaShop/decimal/zipball/b5afdcc4b03140f838bb7b256aec6c21fd83951b",
+                "reference": "b5afdcc4b03140f838bb7b256aec6c21fd83951b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12.99",
+                "phpunit/phpunit": "8.*",
+                "prestashop/php-dev-tools": "^4.1"
+            },
+            "time": "2022-02-02T09:04:37+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "PrestaShop\\Decimal\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PrestaShop SA",
+                    "email": "contact@prestashop.com"
+                }
+            ],
+            "description": "Object-oriented wrapper/shim for BC Math PHP extension. Allows for arbitrary-precision math operations.",
+            "homepage": "https://github.com/prestashop/decimal",
+            "keywords": [
+                "bcmath",
+                "decimal",
+                "math",
+                "precision",
+                "prestashop"
+            ],
+            "support": {
+                "issues": "https://github.com/PrestaShop/decimal/issues",
+                "source": "https://github.com/PrestaShop/decimal/tree/1.5.0"
+            },
+            "install-path": "../prestashop/decimal"
+        },
+        {
+            "name": "prestashop/module-lib-cache-directory-provider",
+            "version": "v1.0.0",
+            "version_normalized": "1.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PrestaShopCorp/module-lib-cache-directory-provider.git",
+                "reference": "34a577b66a7e52ae16d6f40efd1db17290bad453"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PrestaShopCorp/module-lib-cache-directory-provider/zipball/34a577b66a7e52ae16d6f40efd1db17290bad453",
+                "reference": "34a577b66a7e52ae16d6f40efd1db17290bad453",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.7"
+            },
+            "time": "2020-09-08T14:13:23+00:00",
+            "type": "project",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "PrestaShop\\ModuleLibCacheDirectoryProvider\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "AFL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "PrestaShop SA",
+                    "email": "contact@prestashop.com"
+                }
+            ],
+            "description": "Cache directory provider to use on prestashop modules",
+            "keywords": [
+                "composer",
+                "modules",
+                "package",
+                "prestashop"
+            ],
+            "support": {
+                "issues": "https://github.com/PrestaShopCorp/module-lib-cache-directory-provider/issues",
+                "source": "https://github.com/PrestaShopCorp/module-lib-cache-directory-provider/tree/master"
+            },
+            "install-path": "../prestashop/module-lib-cache-directory-provider"
+        },
+        {
+            "name": "prestashop/module-lib-service-container",
+            "version": "v2.0",
+            "version_normalized": "2.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PrestaShopCorp/module-lib-service-container.git",
+                "reference": "5525b56513d9ddad6e4232dfd93a24e028efdca7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PrestaShopCorp/module-lib-service-container/zipball/5525b56513d9ddad6e4232dfd93a24e028efdca7",
+                "reference": "5525b56513d9ddad6e4232dfd93a24e028efdca7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0",
+                "prestashop/module-lib-cache-directory-provider": "^1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.7"
+            },
+            "suggest": {
+                "symfony/config": "Needed when the running PrestaShop does not already run with Symfony",
+                "symfony/dependency-injection": "Needed when the running PrestaShop does not already run with Symfony",
+                "symfony/expression-language": "Needed when the running PrestaShop does not already run with Symfony",
+                "symfony/yaml": "Needed when the running PrestaShop does not already run with Symfony"
+            },
+            "time": "2022-06-20T08:30:47+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "PrestaShop\\ModuleLibServiceContainer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "AFL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "PrestaShop SA",
+                    "email": "contact@prestashop.com"
+                }
+            ],
+            "description": "Service container to use on prestashop modules",
+            "keywords": [
+                "composer",
+                "modules",
+                "package",
+                "prestashop"
+            ],
+            "support": {
+                "issues": "https://github.com/PrestaShopCorp/module-lib-service-container/issues",
+                "source": "https://github.com/PrestaShopCorp/module-lib-service-container/tree/v2.0"
+            },
+            "install-path": "../prestashop/module-lib-service-container"
+        },
+        {
+            "name": "psr/log",
             "version": "1.1.4",
             "version_normalized": "1.1.4.0",
             "source": {
                 "type": "git",
-                "url": "https:\/\/github.com\/php-fig\/log.git",
+                "url": "https://github.com/php-fig/log.git",
                 "reference": "d49695b909c3b7628b6289db5479a1c204601f11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/php-fig\/log\/zipball\/d49695b909c3b7628b6289db5479a1c204601f11",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/d49695b909c3b7628b6289db5479a1c204601f11",
                 "reference": "d49695b909c3b7628b6289db5479a1c204601f11",
                 "shasum": ""
             },
@@ -2537,158 +752,423 @@
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Psr\\Log\\": "Psr\/Log\/"
+                    "Psr\\Log\\": "Psr/Log/"
                 }
             },
-            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "https:\/\/www.php-fig.org\/"
+                    "homepage": "https://www.php-fig.org/"
                 }
             ],
             "description": "Common interface for logging libraries",
-            "homepage": "https:\/\/github.com\/php-fig\/log",
+            "homepage": "https://github.com/php-fig/log",
             "keywords": [
                 "log",
                 "psr",
                 "psr-3"
             ],
             "support": {
-                "source": "https:\/\/github.com\/php-fig\/log\/tree\/1.1.4"
+                "source": "https://github.com/php-fig/log/tree/1.1.4"
             },
-            "install-path": "..\/psr\/log"
+            "install-path": "../psr/log"
         },
         {
-            "name": "robtimus\/multipart",
-            "version": "1.0.1",
-            "version_normalized": "1.0.1.0",
+            "name": "symfony/deprecation-contracts",
+            "version": "v2.5.2",
+            "version_normalized": "2.5.2.0",
             "source": {
                 "type": "git",
-                "url": "https:\/\/github.com\/robtimus\/php-multipart.git",
-                "reference": "98977024f1261185d139c9df0aaecbf28cb131f4"
+                "url": "https://github.com/symfony/deprecation-contracts.git",
+                "reference": "e8b495ea28c1d97b5e0c121748d6f9b53d075c66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/robtimus\/php-multipart\/zipball\/98977024f1261185d139c9df0aaecbf28cb131f4",
-                "reference": "98977024f1261185d139c9df0aaecbf28cb131f4",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/e8b495ea28c1d97b5e0c121748d6f9b53d075c66",
+                "reference": "e8b495ea28c1d97b5e0c121748d6f9b53d075c66",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4"
+                "php": ">=7.1"
             },
-            "require-dev": {
-                "phpunit\/phpunit": "~4"
-            },
-            "time": "2023-01-16T18:51:47+00:00",
+            "time": "2022-01-02T09:53:40+00:00",
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "2.5-dev"
+                },
+                "thanks": {
+                    "name": "symfony/contracts",
+                    "url": "https://github.com/symfony/contracts"
+                }
+            },
             "installation-source": "dist",
             "autoload": {
-                "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Robtimus\\Multipart\\": [
-                        "src\/Robtimus\/Multipart"
-                    ]
-                }
+                "files": [
+                    "function.php"
+                ]
             },
-            "notification-url": "https:\/\/packagist.org\/downloads\/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Rob Spoor",
-                    "email": "robtimus@users.noreply.github.com"
-                }
-            ],
-            "description": "A library to support (streaming) multiparts",
-            "homepage": "https:\/\/github.com\/robtimus\/php-multipart",
-            "keywords": [
-                "multipart",
-                "streaming"
-            ],
-            "support": {
-                "issues": "https:\/\/github.com\/robtimus\/php-multipart\/issues",
-                "source": "https:\/\/github.com\/robtimus\/php-multipart\/tree\/1.0.1"
-            },
-            "install-path": "..\/robtimus\/multipart"
-        },
-        {
-            "name": "sniccowp\/php-scoper-wordpress-excludes",
-            "version": "6.8.1",
-            "version_normalized": "6.8.1.0",
-            "source": {
-                "type": "git",
-                "url": "https:\/\/github.com\/snicco\/php-scoper-wordpress-excludes.git",
-                "reference": "c2c18f89a9aa2d7ef1998d233b9ed00d0deff5dd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/snicco\/php-scoper-wordpress-excludes\/zipball\/c2c18f89a9aa2d7ef1998d233b9ed00d0deff5dd",
-                "reference": "c2c18f89a9aa2d7ef1998d233b9ed00d0deff5dd",
-                "shasum": ""
-            },
-            "require-dev": {
-                "php": "^7.4",
-                "php-stubs\/wordpress-globals": "0.2.0",
-                "php-stubs\/wordpress-stubs": "6.8.1",
-                "sniccowp\/php-scoper-excludes": "dev-master"
-            },
-            "time": "2025-05-03T00:01:53+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "authors": [
                 {
-                    "name": "Calvin Alkan",
-                    "email": "calvin@snicco.de"
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
                 },
                 {
-                    "name": "Marlon Alkan",
-                    "email": "marlon@snicco.de"
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
-            "description": "A list of all WordPress core classes, functions and constants. Meant to be used with the PHP-Scoper exclusion functionality.",
-            "keywords": [
-                "php-scoper",
-                "scoping WordPress",
-                "wordpress"
-            ],
+            "description": "A generic function and convention to trigger deprecation notices",
+            "homepage": "https://symfony.com",
             "support": {
-                "issues": "https:\/\/github.com\/snicco\/php-scoper-wordpress-excludes\/issues",
-                "source": "https:\/\/github.com\/snicco\/php-scoper-wordpress-excludes\/tree\/6.8.1"
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v2.5.2"
             },
-            "install-path": "..\/sniccowp\/php-scoper-wordpress-excludes"
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/deprecation-contracts"
         },
         {
-            "name": "symfony\/polyfill-php80",
-            "version": "v1.32.0",
-            "version_normalized": "1.32.0.0",
+            "name": "symfony/filesystem",
+            "version": "v4.4.42",
+            "version_normalized": "4.4.42.0",
             "source": {
                 "type": "git",
-                "url": "https:\/\/github.com\/symfony\/polyfill-php80.git",
-                "reference": "0cc9dd0f17f61d8131e7df6b84bd344899fe2608"
+                "url": "https://github.com/symfony/filesystem.git",
+                "reference": "815412ee8971209bd4c1eecd5f4f481eacd44bf5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/symfony\/polyfill-php80\/zipball\/0cc9dd0f17f61d8131e7df6b84bd344899fe2608",
-                "reference": "0cc9dd0f17f61d8131e7df6b84bd344899fe2608",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/815412ee8971209bd4c1eecd5f4f481eacd44bf5",
+                "reference": "815412ee8971209bd4c1eecd5f4f481eacd44bf5",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2"
+                "php": ">=7.1.3",
+                "symfony/polyfill-ctype": "~1.8",
+                "symfony/polyfill-php80": "^1.16"
             },
-            "time": "2025-01-02T08:10:11+00:00",
+            "time": "2022-05-20T08:49:14+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Filesystem\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides basic utilities for the filesystem",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/filesystem/tree/v4.4.42"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/filesystem"
+        },
+        {
+            "name": "symfony/inflector",
+            "version": "v5.4.21",
+            "version_normalized": "5.4.21.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/inflector.git",
+                "reference": "d56964e2b19253ba331a829c20d911dd27aa61b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/inflector/zipball/d56964e2b19253ba331a829c20d911dd27aa61b6",
+                "reference": "d56964e2b19253ba331a829c20d911dd27aa61b6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/deprecation-contracts": "^2.1|^3",
+                "symfony/polyfill-php80": "^1.16",
+                "symfony/string": "^5.3.10|^6.0"
+            },
+            "time": "2023-02-14T08:03:56+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Inflector\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Converts words between their singular and plural forms (English only)",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "inflection",
+                "pluralize",
+                "singularize",
+                "string",
+                "symfony",
+                "words"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/inflector/tree/v5.4.21"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "abandoned": "EnglishInflector from the String component",
+            "install-path": "../symfony/inflector"
+        },
+        {
+            "name": "symfony/lock",
+            "version": "v3.4.47",
+            "version_normalized": "3.4.47.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/lock.git",
+                "reference": "8d451ed419a3d5d503bd491437b447fd4c549ceb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/lock/zipball/8d451ed419a3d5d503bd491437b447fd4c549ceb",
+                "reference": "8d451ed419a3d5d503bd491437b447fd4c549ceb",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8",
+                "psr/log": "~1.0",
+                "symfony/polyfill-php70": "~1.0"
+            },
+            "require-dev": {
+                "predis/predis": "~1.0"
+            },
+            "time": "2020-10-24T10:57:07+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Lock\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jérémy Derussé",
+                    "email": "jeremy@derusse.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Lock Component",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "cas",
+                "flock",
+                "locking",
+                "mutex",
+                "redlock",
+                "semaphore"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/lock/tree/v3.4.47"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/lock"
+        },
+        {
+            "name": "symfony/options-resolver",
+            "version": "v4.4.44",
+            "version_normalized": "4.4.44.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/options-resolver.git",
+                "reference": "583f56160f716dd435f1cd721fd14b548f4bb510"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/583f56160f716dd435f1cd721fd14b548f4bb510",
+                "reference": "583f56160f716dd435f1cd721fd14b548f4bb510",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.3",
+                "symfony/polyfill-php80": "^1.16"
+            },
+            "time": "2022-07-20T09:59:04+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\OptionsResolver\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides an improved replacement for the array_replace PHP function",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "config",
+                "configuration",
+                "options"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/options-resolver/tree/v4.4.44"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/options-resolver"
+        },
+        {
+            "name": "symfony/polyfill-ctype",
+            "version": "v1.27.0",
+            "version_normalized": "1.27.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-ctype.git",
+                "reference": "5bbc823adecdae860bb64756d639ecfec17b050a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/5bbc823adecdae860bb64756d639ecfec17b050a",
+                "reference": "5bbc823adecdae860bb64756d639ecfec17b050a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "provide": {
+                "ext-ctype": "*"
+            },
+            "suggest": {
+                "ext-ctype": "For best performance"
+            },
+            "time": "2022-11-03T14:55:06+00:00",
             "type": "library",
             "extra": {
+                "branch-alias": {
+                    "dev-main": "1.27-dev"
+                },
                 "thanks": {
-                    "url": "https:\/\/github.com\/symfony\/polyfill",
-                    "name": "symfony\/polyfill"
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
                 }
             },
             "installation-source": "dist",
@@ -2697,13 +1177,419 @@
                     "bootstrap.php"
                 ],
                 "psr-4": {
-                    "Syde\\Vendor\\Cawl\\Symfony\\Polyfill\\Php80\\": ""
+                    "Symfony\\Polyfill\\Ctype\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gert de Pagter",
+                    "email": "BackEndTea@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for ctype functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "ctype",
+                "polyfill",
+                "portable"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.27.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/polyfill-ctype"
+        },
+        {
+            "name": "symfony/polyfill-intl-grapheme",
+            "version": "v1.27.0",
+            "version_normalized": "1.27.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-intl-grapheme.git",
+                "reference": "511a08c03c1960e08a883f4cffcacd219b758354"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-grapheme/zipball/511a08c03c1960e08a883f4cffcacd219b758354",
+                "reference": "511a08c03c1960e08a883f4cffcacd219b758354",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "suggest": {
+                "ext-intl": "For best performance"
+            },
+            "time": "2022-11-03T14:55:06+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.27-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Intl\\Grapheme\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for intl's grapheme_* functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "grapheme",
+                "intl",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-intl-grapheme/tree/v1.27.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/polyfill-intl-grapheme"
+        },
+        {
+            "name": "symfony/polyfill-intl-normalizer",
+            "version": "v1.27.0",
+            "version_normalized": "1.27.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
+                "reference": "19bd1e4fcd5b91116f14d8533c57831ed00571b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/19bd1e4fcd5b91116f14d8533c57831ed00571b6",
+                "reference": "19bd1e4fcd5b91116f14d8533c57831ed00571b6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "suggest": {
+                "ext-intl": "For best performance"
+            },
+            "time": "2022-11-03T14:55:06+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.27-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Intl\\Normalizer\\": ""
                 },
                 "classmap": [
-                    "Resources\/stubs"
+                    "Resources/stubs"
                 ]
             },
-            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for intl's Normalizer class and related functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "intl",
+                "normalizer",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.27.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/polyfill-intl-normalizer"
+        },
+        {
+            "name": "symfony/polyfill-mbstring",
+            "version": "v1.27.0",
+            "version_normalized": "1.27.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "8ad114f6b39e2c98a8b0e3bd907732c207c2b534"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/8ad114f6b39e2c98a8b0e3bd907732c207c2b534",
+                "reference": "8ad114f6b39e2c98a8b0e3bd907732c207c2b534",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "provide": {
+                "ext-mbstring": "*"
+            },
+            "suggest": {
+                "ext-mbstring": "For best performance"
+            },
+            "time": "2022-11-03T14:55:06+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.27-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Mbstring extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.27.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/polyfill-mbstring"
+        },
+        {
+            "name": "symfony/polyfill-php70",
+            "version": "v1.20.0",
+            "version_normalized": "1.20.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php70.git",
+                "reference": "5f03a781d984aae42cebd18e7912fa80f02ee644"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php70/zipball/5f03a781d984aae42cebd18e7912fa80f02ee644",
+                "reference": "5f03a781d984aae42cebd18e7912fa80f02ee644",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "time": "2020-10-23T14:02:19+00:00",
+            "type": "metapackage",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.20-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 7.0+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php70/tree/v1.20.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": null
+        },
+        {
+            "name": "symfony/polyfill-php80",
+            "version": "v1.27.0",
+            "version_normalized": "1.27.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php80.git",
+                "reference": "7a6ff3f1959bb01aefccb463a0f2cd3d3d2fd936"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/7a6ff3f1959bb01aefccb463a0f2cd3d3d2fd936",
+                "reference": "7a6ff3f1959bb01aefccb463a0f2cd3d3d2fd936",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "time": "2022-11-03T14:55:06+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.27-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php80\\": ""
+                },
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2718,11 +1604,11 @@
                 },
                 {
                     "name": "Symfony Community",
-                    "homepage": "https:\/\/symfony.com\/contributors"
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
-            "homepage": "https:\/\/symfony.com",
+            "homepage": "https://symfony.com",
             "keywords": [
                 "compatibility",
                 "polyfill",
@@ -2730,61 +1616,744 @@
                 "shim"
             ],
             "support": {
-                "source": "https:\/\/github.com\/symfony\/polyfill-php80\/tree\/v1.32.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.27.0"
             },
             "funding": [
                 {
-                    "url": "https:\/\/symfony.com\/sponsor",
+                    "url": "https://symfony.com/sponsor",
                     "type": "custom"
                 },
                 {
-                    "url": "https:\/\/github.com\/fabpot",
+                    "url": "https://github.com/fabpot",
                     "type": "github"
                 },
                 {
-                    "url": "https:\/\/tidelift.com\/funding\/github\/packagist\/symfony\/symfony",
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
                     "type": "tidelift"
                 }
             ],
-            "install-path": "..\/symfony\/polyfill-php80"
+            "install-path": "../symfony/polyfill-php80"
         },
         {
-            "name": "wl-online-payments-direct\/sdk-php",
-            "version": "6.1.0",
-            "version_normalized": "6.1.0.0",
+            "name": "symfony/property-access",
+            "version": "v4.4.44",
+            "version_normalized": "4.4.44.0",
             "source": {
                 "type": "git",
-                "url": "https:\/\/github.com\/wl-online-payments-direct\/sdk-php.git",
-                "reference": "0e5bfb4671e090a7b837dcf4fd9c31669711e890"
+                "url": "https://github.com/symfony/property-access.git",
+                "reference": "d49682f6f0764df725c95128213a38f7e0a9f358"
             },
             "dist": {
                 "type": "zip",
-                "url": "https:\/\/api.github.com\/repos\/wl-online-payments-direct\/sdk-php\/zipball\/0e5bfb4671e090a7b837dcf4fd9c31669711e890",
-                "reference": "0e5bfb4671e090a7b837dcf4fd9c31669711e890",
+                "url": "https://api.github.com/repos/symfony/property-access/zipball/d49682f6f0764df725c95128213a38f7e0a9f358",
+                "reference": "d49682f6f0764df725c95128213a38f7e0a9f358",
                 "shasum": ""
             },
             "require": {
-                "ext-curl": "*",
-                "ext-json": "*",
-                "ext-mbstring": "*",
-                "php": ">=7.4",
-                "robtimus\/multipart": "~1.0"
+                "php": ">=7.1.3",
+                "symfony/inflector": "^3.4|^4.0|^5.0",
+                "symfony/polyfill-php80": "^1.16"
             },
             "require-dev": {
-                "phpunit\/phpunit": "~9"
+                "symfony/cache": "^3.4|^4.0|^5.0"
             },
-            "time": "2025-05-14T12:24:59+00:00",
+            "suggest": {
+                "psr/cache-implementation": "To cache access methods."
+            },
+            "time": "2022-06-27T13:16:42+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
-                    "Syde\\Vendor\\Cawl\\OnlinePayments\\Sdk\\": [
-                        "src\/OnlinePayments\/Sdk",
-                        "lib\/OnlinePayments\/Sdk"
+                    "Symfony\\Component\\PropertyAccess\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides functions to read and write from/to an object or array using a simple string notation",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "access",
+                "array",
+                "extraction",
+                "index",
+                "injection",
+                "object",
+                "property",
+                "property path",
+                "reflection"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/property-access/tree/v4.4.44"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/property-access"
+        },
+        {
+            "name": "symfony/property-info",
+            "version": "v4.4.49",
+            "version_normalized": "4.4.49.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/property-info.git",
+                "reference": "971cf46634e44d93d2174cf004555b69b19c9487"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/property-info/zipball/971cf46634e44d93d2174cf004555b69b19c9487",
+                "reference": "971cf46634e44d93d2174cf004555b69b19c9487",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.3",
+                "symfony/inflector": "^3.4|^4.0|^5.0",
+                "symfony/polyfill-php80": "^1.16"
+            },
+            "conflict": {
+                "phpdocumentor/reflection-docblock": "<3.0|>=3.2.0,<3.2.2",
+                "phpdocumentor/type-resolver": "<0.3.0|1.3.*",
+                "symfony/dependency-injection": "<3.4"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^1.10.4",
+                "phpdocumentor/reflection-docblock": "^3.0|^4.0|^5.0",
+                "symfony/cache": "^3.4|^4.0|^5.0",
+                "symfony/dependency-injection": "^3.4|^4.0|^5.0",
+                "symfony/serializer": "^3.4|^4.0|^5.0"
+            },
+            "suggest": {
+                "phpdocumentor/reflection-docblock": "To use the PHPDoc",
+                "psr/cache-implementation": "To cache results",
+                "symfony/doctrine-bridge": "To use Doctrine metadata",
+                "symfony/serializer": "To use Serializer metadata"
+            },
+            "time": "2022-11-15T11:00:03+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\PropertyInfo\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kévin Dunglas",
+                    "email": "dunglas@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Extracts information about PHP class' properties using metadata of popular sources",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "doctrine",
+                "phpdoc",
+                "property",
+                "symfony",
+                "type",
+                "validator"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/property-info/tree/v4.4.49"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/property-info"
+        },
+        {
+            "name": "symfony/serializer",
+            "version": "v4.4.47",
+            "version_normalized": "4.4.47.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/serializer.git",
+                "reference": "6e01d63c55657930a6de03d6e36aae50af98888d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/serializer/zipball/6e01d63c55657930a6de03d6e36aae50af98888d",
+                "reference": "6e01d63c55657930a6de03d6e36aae50af98888d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.3",
+                "symfony/polyfill-ctype": "~1.8",
+                "symfony/polyfill-php80": "^1.16"
+            },
+            "conflict": {
+                "phpdocumentor/reflection-docblock": "<3.0|>=3.2.0,<3.2.2",
+                "phpdocumentor/type-resolver": "<0.3.0|1.3.*",
+                "symfony/dependency-injection": "<3.4",
+                "symfony/property-access": "<3.4",
+                "symfony/property-info": "<3.4",
+                "symfony/yaml": "<3.4"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^1.10.4",
+                "phpdocumentor/reflection-docblock": "^3.2|^4.0|^5.0",
+                "symfony/cache": "^3.4|^4.0|^5.0",
+                "symfony/config": "^3.4|^4.0|^5.0",
+                "symfony/dependency-injection": "^3.4|^4.0|^5.0",
+                "symfony/error-handler": "^4.4|^5.0",
+                "symfony/http-foundation": "^3.4|^4.0|^5.0",
+                "symfony/mime": "^4.4|^5.0",
+                "symfony/property-access": "^4.4.36|^5.3.13",
+                "symfony/property-info": "^3.4.13|~4.0|^5.0",
+                "symfony/validator": "^3.4|^4.0|^5.0",
+                "symfony/yaml": "^3.4|^4.0|^5.0"
+            },
+            "suggest": {
+                "doctrine/annotations": "For using the annotation mapping.",
+                "psr/cache-implementation": "For using the metadata cache.",
+                "symfony/config": "For using the XML mapping loader.",
+                "symfony/http-foundation": "For using a MIME type guesser within the DataUriNormalizer.",
+                "symfony/property-access": "For using the ObjectNormalizer.",
+                "symfony/property-info": "To deserialize relations.",
+                "symfony/yaml": "For using the default YAML mapping loader."
+            },
+            "time": "2022-09-19T08:38:33+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Serializer\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Handles serializing and deserializing data structures, including object graphs, into array structures or other formats like XML and JSON.",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/serializer/tree/v4.4.47"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/serializer"
+        },
+        {
+            "name": "symfony/string",
+            "version": "v5.4.26",
+            "version_normalized": "5.4.26.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/string.git",
+                "reference": "1181fe9270e373537475e826873b5867b863883c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/string/zipball/1181fe9270e373537475e826873b5867b863883c",
+                "reference": "1181fe9270e373537475e826873b5867b863883c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/polyfill-ctype": "~1.8",
+                "symfony/polyfill-intl-grapheme": "~1.0",
+                "symfony/polyfill-intl-normalizer": "~1.0",
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/polyfill-php80": "~1.15"
+            },
+            "conflict": {
+                "symfony/translation-contracts": ">=3.0"
+            },
+            "require-dev": {
+                "symfony/error-handler": "^4.4|^5.0|^6.0",
+                "symfony/http-client": "^4.4|^5.0|^6.0",
+                "symfony/translation-contracts": "^1.1|^2",
+                "symfony/var-exporter": "^4.4|^5.0|^6.0"
+            },
+            "time": "2023-06-28T12:46:07+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "Resources/functions.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Component\\String\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides an object-oriented API to strings and deals with bytes, UTF-8 code points and grapheme clusters in a unified way",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "grapheme",
+                "i18n",
+                "string",
+                "unicode",
+                "utf-8",
+                "utf8"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/string/tree/v5.4.26"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/string"
+        },
+        {
+            "name": "symfony/translation-contracts",
+            "version": "v2.5.2",
+            "version_normalized": "2.5.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/translation-contracts.git",
+                "reference": "136b19dd05cdf0709db6537d058bcab6dd6e2dbe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/136b19dd05cdf0709db6537d058bcab6dd6e2dbe",
+                "reference": "136b19dd05cdf0709db6537d058bcab6dd6e2dbe",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5"
+            },
+            "suggest": {
+                "symfony/translation-implementation": ""
+            },
+            "time": "2022-06-27T16:58:25+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "2.5-dev"
+                },
+                "thanks": {
+                    "name": "symfony/contracts",
+                    "url": "https://github.com/symfony/contracts"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Contracts\\Translation\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Generic abstractions related to translation",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "abstractions",
+                "contracts",
+                "decoupling",
+                "interfaces",
+                "interoperability",
+                "standards"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/translation-contracts/tree/v2.5.2"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/translation-contracts"
+        },
+        {
+            "name": "symfony/validator",
+            "version": "v4.4.48",
+            "version_normalized": "4.4.48.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/validator.git",
+                "reference": "54781a4c41efbd283b779110bf8ae7f263737775"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/54781a4c41efbd283b779110bf8ae7f263737775",
+                "reference": "54781a4c41efbd283b779110bf8ae7f263737775",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.3",
+                "symfony/polyfill-ctype": "~1.8",
+                "symfony/polyfill-mbstring": "~1.0",
+                "symfony/polyfill-php80": "^1.16",
+                "symfony/translation-contracts": "^1.1|^2"
+            },
+            "conflict": {
+                "doctrine/lexer": "<1.1",
+                "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0",
+                "symfony/dependency-injection": "<3.4",
+                "symfony/http-kernel": "<4.4",
+                "symfony/intl": "<4.3",
+                "symfony/translation": ">=5.0",
+                "symfony/yaml": "<3.4"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^1.10.4",
+                "doctrine/cache": "^1.0|^2.0",
+                "egulias/email-validator": "^2.1.10|^3",
+                "symfony/cache": "^3.4|^4.0|^5.0",
+                "symfony/config": "^3.4|^4.0|^5.0",
+                "symfony/dependency-injection": "^3.4|^4.0|^5.0",
+                "symfony/expression-language": "^3.4|^4.0|^5.0",
+                "symfony/http-client": "^4.3|^5.0",
+                "symfony/http-foundation": "^4.1|^5.0",
+                "symfony/http-kernel": "^4.4",
+                "symfony/intl": "^4.3|^5.0",
+                "symfony/mime": "^4.4|^5.0",
+                "symfony/property-access": "^3.4|^4.0|^5.0",
+                "symfony/property-info": "^3.4|^4.0|^5.0",
+                "symfony/translation": "^4.2",
+                "symfony/yaml": "^3.4|^4.0|^5.0"
+            },
+            "suggest": {
+                "doctrine/annotations": "For using the annotation mapping. You will also need doctrine/cache.",
+                "doctrine/cache": "For using the default cached annotation reader.",
+                "egulias/email-validator": "Strict (RFC compliant) email validation",
+                "psr/cache-implementation": "For using the mapping cache.",
+                "symfony/config": "",
+                "symfony/expression-language": "For using the Expression validator",
+                "symfony/http-foundation": "",
+                "symfony/intl": "",
+                "symfony/property-access": "For accessing properties within comparison constraints",
+                "symfony/property-info": "To automatically add NotNull and Type constraints",
+                "symfony/translation": "For translating validation errors.",
+                "symfony/yaml": ""
+            },
+            "time": "2022-10-25T13:54:11+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Validator\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides tools to validate values",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/validator/tree/v4.4.48"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/validator"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "v4.4.45",
+            "version_normalized": "4.4.45.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "aeccc4dc52a9e634f1d1eebeb21eacfdcff1053d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/aeccc4dc52a9e634f1d1eebeb21eacfdcff1053d",
+                "reference": "aeccc4dc52a9e634f1d1eebeb21eacfdcff1053d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.3",
+                "symfony/polyfill-ctype": "~1.8"
+            },
+            "conflict": {
+                "symfony/console": "<3.4"
+            },
+            "require-dev": {
+                "symfony/console": "^3.4|^4.0|^5.0"
+            },
+            "suggest": {
+                "symfony/console": "For validating YAML files using the lint command"
+            },
+            "time": "2022-08-02T15:47:23+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Yaml\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Loads and dumps YAML files",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/yaml/tree/v4.4.45"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/yaml"
+        },
+        {
+            "name": "webmozart/assert",
+            "version": "1.11.0",
+            "version_normalized": "1.11.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webmozarts/assert.git",
+                "reference": "11cb2199493b2f8a3b53e7f19068fc6aac760991"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/11cb2199493b2f8a3b53e7f19068fc6aac760991",
+                "reference": "11cb2199493b2f8a3b53e7f19068fc6aac760991",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "php": "^7.2 || ^8.0"
+            },
+            "conflict": {
+                "phpstan/phpstan": "<0.12.20",
+                "vimeo/psalm": "<4.6.1 || 4.6.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.5.13"
+            },
+            "time": "2022-06-03T18:03:27+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.10-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Webmozart\\Assert\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                }
+            ],
+            "description": "Assertions to validate method input/output with nice error messages.",
+            "keywords": [
+                "assert",
+                "check",
+                "validate"
+            ],
+            "support": {
+                "issues": "https://github.com/webmozarts/assert/issues",
+                "source": "https://github.com/webmozarts/assert/tree/1.11.0"
+            },
+            "install-path": "../webmozart/assert"
+        },
+        {
+            "name": "wl-online-payments-direct/sdk-php",
+            "version": "5.7.0",
+            "version_normalized": "5.7.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wl-online-payments-direct/sdk-php.git",
+                "reference": "6f4a99ab1ac44ab1e41563236e2e2599bab4b85a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wl-online-payments-direct/sdk-php/zipball/6f4a99ab1ac44ab1e41563236e2e2599bab4b85a",
+                "reference": "6f4a99ab1ac44ab1e41563236e2e2599bab4b85a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~7.4||~8.0||~8.1"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.9",
+                "phpunit/phpunit": "^9.0"
+            },
+            "time": "2023-08-10T13:01:11+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "OnlinePayments\\Sdk\\": [
+                        "src/OnlinePayments/Sdk",
+                        "lib/OnlinePayments/Sdk"
                     ]
                 }
             },
-            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2798,10 +2367,10 @@
                 "sdk"
             ],
             "support": {
-                "issues": "https:\/\/github.com\/wl-online-payments-direct\/sdk-php\/issues",
-                "source": "https:\/\/github.com\/wl-online-payments-direct\/sdk-php\/tree\/6.1.0"
+                "issues": "https://github.com/wl-online-payments-direct/sdk-php/issues",
+                "source": "https://github.com/wl-online-payments-direct/sdk-php/tree/5.7.0"
             },
-            "install-path": "..\/wl-online-payments-direct\/sdk-php"
+            "install-path": "../wl-online-payments-direct/sdk-php"
         }
     ],
     "dev": false,

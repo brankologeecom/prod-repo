@@ -1,32 +1,32 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Merchant\Payments;
+namespace OnlinePayments\Sdk\Merchant\Payments;
 
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\ApiException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\AuthorizationException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\CallContext;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\InvalidResponseException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\DeclinedPaymentException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\DeclinedRefundException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\CancelPaymentRequest;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\CancelPaymentResponse;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\CapturePaymentRequest;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\CaptureResponse;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\CreatePaymentRequest;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\CreatePaymentResponse;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\PaymentDetailsResponse;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\PaymentResponse;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\RefundRequest;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\RefundResponse;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\SubsequentPaymentRequest;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\SubsequentPaymentResponse;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\IdempotenceException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\PlatformException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\ReferenceException;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\ValidationException;
+use OnlinePayments\Sdk\ApiException;
+use OnlinePayments\Sdk\AuthorizationException;
+use OnlinePayments\Sdk\CallContext;
+use OnlinePayments\Sdk\Communication\InvalidResponseException;
+use OnlinePayments\Sdk\DeclinedPaymentException;
+use OnlinePayments\Sdk\DeclinedRefundException;
+use OnlinePayments\Sdk\Domain\CancelPaymentRequest;
+use OnlinePayments\Sdk\Domain\CancelPaymentResponse;
+use OnlinePayments\Sdk\Domain\CapturePaymentRequest;
+use OnlinePayments\Sdk\Domain\CaptureResponse;
+use OnlinePayments\Sdk\Domain\CreatePaymentRequest;
+use OnlinePayments\Sdk\Domain\CreatePaymentResponse;
+use OnlinePayments\Sdk\Domain\PaymentDetailsResponse;
+use OnlinePayments\Sdk\Domain\PaymentResponse;
+use OnlinePayments\Sdk\Domain\RefundRequest;
+use OnlinePayments\Sdk\Domain\RefundResponse;
+use OnlinePayments\Sdk\Domain\SubsequentPaymentRequest;
+use OnlinePayments\Sdk\Domain\SubsequentPaymentResponse;
+use OnlinePayments\Sdk\IdempotenceException;
+use OnlinePayments\Sdk\PlatformException;
+use OnlinePayments\Sdk\ReferenceException;
+use OnlinePayments\Sdk\ValidationException;
+
 /**
  * Payments client interface.
  */
@@ -49,6 +49,7 @@ interface PaymentsClientInterface
      * @throws InvalidResponseException
      */
     function createPayment(CreatePaymentRequest $body, CallContext $callContext = null);
+
     /**
      * Resource /v2/{merchantId}/payments/{paymentId} - Get payment
      *
@@ -65,6 +66,7 @@ interface PaymentsClientInterface
      * @throws InvalidResponseException
      */
     function getPayment($paymentId, CallContext $callContext = null);
+
     /**
      * Resource /v2/{merchantId}/payments/{paymentId}/details - Get payment details
      *
@@ -81,6 +83,7 @@ interface PaymentsClientInterface
      * @throws InvalidResponseException
      */
     function getPaymentDetails($paymentId, CallContext $callContext = null);
+
     /**
      * Resource /v2/{merchantId}/payments/{paymentId}/cancel - Cancel payment
      *
@@ -98,6 +101,7 @@ interface PaymentsClientInterface
      * @throws InvalidResponseException
      */
     function cancelPayment($paymentId, CancelPaymentRequest $body, CallContext $callContext = null);
+
     /**
      * Resource /v2/{merchantId}/payments/{paymentId}/capture - Capture payment
      *
@@ -115,6 +119,7 @@ interface PaymentsClientInterface
      * @throws InvalidResponseException
      */
     function capturePayment($paymentId, CapturePaymentRequest $body, CallContext $callContext = null);
+
     /**
      * Resource /v2/{merchantId}/payments/{paymentId}/refund - Refund payment
      *
@@ -133,6 +138,7 @@ interface PaymentsClientInterface
      * @throws InvalidResponseException
      */
     function refundPayment($paymentId, RefundRequest $body, CallContext $callContext = null);
+
     /**
      * Resource /v2/{merchantId}/payments/{paymentId}/subsequent - Subsequent payment
      *

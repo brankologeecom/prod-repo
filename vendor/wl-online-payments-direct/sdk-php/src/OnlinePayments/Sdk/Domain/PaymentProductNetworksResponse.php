@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,6 +15,7 @@ class PaymentProductNetworksResponse extends DataObject
      * @var string[]
      */
     public $networks = null;
+
     /**
      * @return string[]
      */
@@ -22,6 +23,7 @@ class PaymentProductNetworksResponse extends DataObject
     {
         return $this->networks;
     }
+
     /**
      * @param string[]
      */
@@ -29,22 +31,24 @@ class PaymentProductNetworksResponse extends DataObject
     {
         $this->networks = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->networks)) {
+        if (!is_null($this->networks)) {
             $object->networks = [];
             foreach ($this->networks as $element) {
-                if (!\is_null($element)) {
+                if (!is_null($element)) {
                     $object->networks[] = $element;
                 }
             }
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -53,9 +57,9 @@ class PaymentProductNetworksResponse extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'networks')) {
-            if (!\is_array($object->networks) && !\is_object($object->networks)) {
-                throw new UnexpectedValueException('value \'' . \print_r($object->networks, \true) . '\' is not an array or object');
+        if (property_exists($object, 'networks')) {
+            if (!is_array($object->networks) && !is_object($object->networks)) {
+                throw new UnexpectedValueException('value \'' . print_r($object->networks, true) . '\' is not an array or object');
             }
             $this->networks = [];
             foreach ($object->networks as $element) {

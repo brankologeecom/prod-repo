@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,10 +15,12 @@ class CardInfo extends DataObject
      * @var string
      */
     public $cardNumber = null;
+
     /**
      * @var int
      */
     public $paymentProductId = null;
+
     /**
      * @return string
      */
@@ -26,6 +28,7 @@ class CardInfo extends DataObject
     {
         return $this->cardNumber;
     }
+
     /**
      * @param string
      */
@@ -33,6 +36,7 @@ class CardInfo extends DataObject
     {
         $this->cardNumber = $value;
     }
+
     /**
      * @return int
      */
@@ -40,6 +44,7 @@ class CardInfo extends DataObject
     {
         return $this->paymentProductId;
     }
+
     /**
      * @param int
      */
@@ -47,20 +52,22 @@ class CardInfo extends DataObject
     {
         $this->paymentProductId = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->cardNumber)) {
+        if (!is_null($this->cardNumber)) {
             $object->cardNumber = $this->cardNumber;
         }
-        if (!\is_null($this->paymentProductId)) {
+        if (!is_null($this->paymentProductId)) {
             $object->paymentProductId = $this->paymentProductId;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -69,10 +76,10 @@ class CardInfo extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'cardNumber')) {
+        if (property_exists($object, 'cardNumber')) {
             $this->cardNumber = $object->cardNumber;
         }
-        if (\property_exists($object, 'paymentProductId')) {
+        if (property_exists($object, 'paymentProductId')) {
             $this->paymentProductId = $object->paymentProductId;
         }
         return $this;

@@ -1,8 +1,8 @@
 <?php
-
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk;
+namespace OnlinePayments\Sdk;
 
 use DateTime;
+
 /**
  * Class CallContext
  *
@@ -12,10 +12,13 @@ class CallContext
 {
     /** @var string */
     private $idempotenceKey = '';
+
     /** @var string */
     private $idempotenceRequestTimestamp = '';
+
     /** @var DateTime|null */
     private $idempotenceResponseDateTime;
+
     /**
      * @return string
      */
@@ -23,6 +26,7 @@ class CallContext
     {
         return $this->idempotenceKey;
     }
+
     /**
      * @param string $idempotenceKey
      */
@@ -30,6 +34,7 @@ class CallContext
     {
         $this->idempotenceKey = $idempotenceKey;
     }
+
     /**
      * @return string
      */
@@ -37,6 +42,7 @@ class CallContext
     {
         return $this->idempotenceRequestTimestamp;
     }
+
     /**
      * @param string $idempotenceRequestTimestamp
      */
@@ -44,6 +50,7 @@ class CallContext
     {
         $this->idempotenceRequestTimestamp = $idempotenceRequestTimestamp;
     }
+
     /**
      * @return DateTime|null
      */
@@ -51,6 +58,7 @@ class CallContext
     {
         return $this->idempotenceResponseDateTime;
     }
+
     /**
      * @param DateTime $idempotenceResponseDateTime
      */

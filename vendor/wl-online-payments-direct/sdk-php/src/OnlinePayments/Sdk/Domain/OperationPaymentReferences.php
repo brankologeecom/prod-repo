@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,6 +15,7 @@ class OperationPaymentReferences extends DataObject
      * @var string
      */
     public $merchantReference = null;
+
     /**
      * @return string
      */
@@ -22,6 +23,7 @@ class OperationPaymentReferences extends DataObject
     {
         return $this->merchantReference;
     }
+
     /**
      * @param string
      */
@@ -29,17 +31,19 @@ class OperationPaymentReferences extends DataObject
     {
         $this->merchantReference = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->merchantReference)) {
+        if (!is_null($this->merchantReference)) {
             $object->merchantReference = $this->merchantReference;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -48,7 +52,7 @@ class OperationPaymentReferences extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'merchantReference')) {
+        if (property_exists($object, 'merchantReference')) {
             $this->merchantReference = $object->merchantReference;
         }
         return $this;

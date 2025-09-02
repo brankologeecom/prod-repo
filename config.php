@@ -1,5 +1,0 @@
-<?php
-
-namespace Syde\Vendor\Cawl;
-
-return ['PLUGIN_VERSION' => '13.4.5', 'NAME' => 'cawl', 'PLUGIN_TITLE' => 'CAWL', 'TEXT_DOMAIN' => 'cawl-for-woocommerce', 'NAMESPACE' => 'Syde\\Vendor\\Cawl\\Inpsyde\\WorldlineForWoocommerce', 'PLUGIN_AUTHOR' => 'CAWL', 'PLUGIN_AUTHOR_URI' => 'https://www.cawl.fr/', 'TEST_ENDPOINT' => 'https://payment.preprod.cawl-solutions.fr', 'LIVE_ENDPOINT' => 'https://payment.cawl-solutions.fr', 'CONTACT_URL' => 'https://docs.ecommerce.cawl-solutions.fr/fr/about/contact/', 'DOCUMENTATION_URL' => 'https://docs.ecommerce.cawl-solutions.fr/fr/integration/how-to-integrate/plugins/woocommerce', 'TEST_CREATE_ACCOUNT_URL' => 'https://signup.preprod.cawl-solutions.fr/', 'LIVE_CREATE_ACCOUNT_URL' => 'https://docs.ecommerce.ca.cawl-solutions.fr/en/about/live-environment', 'TEST_VIEW_ACCOUNT_URL' => 'https://portail.login.preprod.cawl-solutions.fr/', 'LIVE_VIEW_ACCOUNT_URL' => 'https://portail.login.cawl-solutions.fr/', 'GATEWAY_TITLE_DEFAULT' => 'Offre e-commerce de CAWL'];

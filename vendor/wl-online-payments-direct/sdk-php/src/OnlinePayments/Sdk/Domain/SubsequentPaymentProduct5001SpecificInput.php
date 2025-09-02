@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,6 +15,7 @@ class SubsequentPaymentProduct5001SpecificInput extends DataObject
      * @var string
      */
     public $subsequentType = null;
+
     /**
      * @return string
      */
@@ -22,6 +23,7 @@ class SubsequentPaymentProduct5001SpecificInput extends DataObject
     {
         return $this->subsequentType;
     }
+
     /**
      * @param string
      */
@@ -29,17 +31,19 @@ class SubsequentPaymentProduct5001SpecificInput extends DataObject
     {
         $this->subsequentType = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->subsequentType)) {
+        if (!is_null($this->subsequentType)) {
             $object->subsequentType = $this->subsequentType;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -48,7 +52,7 @@ class SubsequentPaymentProduct5001SpecificInput extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'subsequentType')) {
+        if (property_exists($object, 'subsequentType')) {
             $this->subsequentType = $object->subsequentType;
         }
         return $this;

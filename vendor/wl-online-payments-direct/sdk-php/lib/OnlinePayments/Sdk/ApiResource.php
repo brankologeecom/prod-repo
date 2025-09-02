@@ -1,6 +1,5 @@
 <?php
-
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk;
+namespace OnlinePayments\Sdk;
 
 /**
  * Class ApiResource
@@ -13,10 +12,12 @@ class ApiResource
      * @var ApiResource|null
      */
     private $parent;
+
     /**
      * @var array
      */
     protected $context = array();
+
     /**
      * Creates a new proxy object for a API resource.
      *
@@ -28,6 +29,7 @@ class ApiResource
         $this->parent = $parent;
         $this->context = $context;
     }
+
     /**
      * Returns the connection associated with this resource.
      *
@@ -37,6 +39,7 @@ class ApiResource
     {
         return $this->parent->getCommunicator();
     }
+
     /**
      * Returns the client headers with this resource.
      *
@@ -46,6 +49,7 @@ class ApiResource
     {
         return $this->parent->getClientMetaInfo();
     }
+
     /**
      * Converts a URI template to a fully qualified URI by replacing
      * URI parameters ('{...}') by their corresponding value in
@@ -59,7 +63,7 @@ class ApiResource
         // We assume that API URLs follow the recommendations in
         // RFC 1738, and therefore do not use unencoded { and }.
         foreach ($this->context as $name => $value) {
-            $template = \str_replace('{' . $name . '}', $value, $template);
+            $template = str_replace('{' . $name . '}', $value, $template);
         }
         return $template;
     }

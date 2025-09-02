@@ -1,6 +1,6 @@
 <?php
 
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication;
+namespace OnlinePayments\Sdk\Communication;
 
 /**
  * Interface ConnectionResponseInterface
@@ -13,15 +13,18 @@ interface ConnectionResponseInterface
      * @return int
      */
     public function getHttpStatusCode();
+
     /**
      * @return array
      */
     public function getHeaders();
+
     /**
      * @param string $name
      * @return mixed
      */
     public function getHeaderValue($name);
+
     /**
      * @return string
      */

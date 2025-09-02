@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -16,10 +16,12 @@ class Feedbacks extends DataObject
      * @deprecated The URL where the webhook will be dispatched for all status change events related to this payment.
      */
     public $webhookUrl = null;
+
     /**
      * @var string[]
      */
     public $webhooksUrls = null;
+
     /**
      * @return string
      * @deprecated The URL where the webhook will be dispatched for all status change events related to this payment.
@@ -28,6 +30,7 @@ class Feedbacks extends DataObject
     {
         return $this->webhookUrl;
     }
+
     /**
      * @param string
      * @deprecated The URL where the webhook will be dispatched for all status change events related to this payment.
@@ -36,6 +39,7 @@ class Feedbacks extends DataObject
     {
         $this->webhookUrl = $value;
     }
+
     /**
      * @return string[]
      */
@@ -43,6 +47,7 @@ class Feedbacks extends DataObject
     {
         return $this->webhooksUrls;
     }
+
     /**
      * @param string[]
      */
@@ -50,25 +55,27 @@ class Feedbacks extends DataObject
     {
         $this->webhooksUrls = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->webhookUrl)) {
+        if (!is_null($this->webhookUrl)) {
             $object->webhookUrl = $this->webhookUrl;
         }
-        if (!\is_null($this->webhooksUrls)) {
+        if (!is_null($this->webhooksUrls)) {
             $object->webhooksUrls = [];
             foreach ($this->webhooksUrls as $element) {
-                if (!\is_null($element)) {
+                if (!is_null($element)) {
                     $object->webhooksUrls[] = $element;
                 }
             }
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -77,12 +84,12 @@ class Feedbacks extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'webhookUrl')) {
+        if (property_exists($object, 'webhookUrl')) {
             $this->webhookUrl = $object->webhookUrl;
         }
-        if (\property_exists($object, 'webhooksUrls')) {
-            if (!\is_array($object->webhooksUrls) && !\is_object($object->webhooksUrls)) {
-                throw new UnexpectedValueException('value \'' . \print_r($object->webhooksUrls, \true) . '\' is not an array or object');
+        if (property_exists($object, 'webhooksUrls')) {
+            if (!is_array($object->webhooksUrls) && !is_object($object->webhooksUrls)) {
+                throw new UnexpectedValueException('value \'' . print_r($object->webhooksUrls, true) . '\' is not an array or object');
             }
             $this->webhooksUrls = [];
             foreach ($object->webhooksUrls as $element) {

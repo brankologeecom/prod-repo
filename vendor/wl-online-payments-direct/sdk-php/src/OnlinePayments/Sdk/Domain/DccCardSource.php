@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,18 +15,22 @@ class DccCardSource extends DataObject
      * @var CardInfo
      */
     public $card = null;
+
     /**
      * @var string
      */
     public $encryptedCustomerInput = null;
+
     /**
      * @var string
      */
     public $hostedTokenizationId = null;
+
     /**
      * @var string
      */
     public $token = null;
+
     /**
      * @return CardInfo
      */
@@ -34,6 +38,7 @@ class DccCardSource extends DataObject
     {
         return $this->card;
     }
+
     /**
      * @param CardInfo
      */
@@ -41,6 +46,7 @@ class DccCardSource extends DataObject
     {
         $this->card = $value;
     }
+
     /**
      * @return string
      */
@@ -48,6 +54,7 @@ class DccCardSource extends DataObject
     {
         return $this->encryptedCustomerInput;
     }
+
     /**
      * @param string
      */
@@ -55,6 +62,7 @@ class DccCardSource extends DataObject
     {
         $this->encryptedCustomerInput = $value;
     }
+
     /**
      * @return string
      */
@@ -62,6 +70,7 @@ class DccCardSource extends DataObject
     {
         return $this->hostedTokenizationId;
     }
+
     /**
      * @param string
      */
@@ -69,6 +78,7 @@ class DccCardSource extends DataObject
     {
         $this->hostedTokenizationId = $value;
     }
+
     /**
      * @return string
      */
@@ -76,6 +86,7 @@ class DccCardSource extends DataObject
     {
         return $this->token;
     }
+
     /**
      * @param string
      */
@@ -83,26 +94,28 @@ class DccCardSource extends DataObject
     {
         $this->token = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->card)) {
+        if (!is_null($this->card)) {
             $object->card = $this->card->toObject();
         }
-        if (!\is_null($this->encryptedCustomerInput)) {
+        if (!is_null($this->encryptedCustomerInput)) {
             $object->encryptedCustomerInput = $this->encryptedCustomerInput;
         }
-        if (!\is_null($this->hostedTokenizationId)) {
+        if (!is_null($this->hostedTokenizationId)) {
             $object->hostedTokenizationId = $this->hostedTokenizationId;
         }
-        if (!\is_null($this->token)) {
+        if (!is_null($this->token)) {
             $object->token = $this->token;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -111,20 +124,20 @@ class DccCardSource extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'card')) {
-            if (!\is_object($object->card)) {
-                throw new UnexpectedValueException('value \'' . \print_r($object->card, \true) . '\' is not an object');
+        if (property_exists($object, 'card')) {
+            if (!is_object($object->card)) {
+                throw new UnexpectedValueException('value \'' . print_r($object->card, true) . '\' is not an object');
             }
             $value = new CardInfo();
             $this->card = $value->fromObject($object->card);
         }
-        if (\property_exists($object, 'encryptedCustomerInput')) {
+        if (property_exists($object, 'encryptedCustomerInput')) {
             $this->encryptedCustomerInput = $object->encryptedCustomerInput;
         }
-        if (\property_exists($object, 'hostedTokenizationId')) {
+        if (property_exists($object, 'hostedTokenizationId')) {
             $this->hostedTokenizationId = $object->hostedTokenizationId;
         }
-        if (\property_exists($object, 'token')) {
+        if (property_exists($object, 'token')) {
             $this->token = $object->token;
         }
         return $this;

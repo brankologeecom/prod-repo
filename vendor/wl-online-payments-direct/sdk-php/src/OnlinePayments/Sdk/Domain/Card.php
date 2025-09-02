@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,18 +15,22 @@ class Card extends DataObject
      * @var string
      */
     public $cardNumber = null;
+
     /**
      * @var string
      */
     public $cardholderName = null;
+
     /**
      * @var string
      */
     public $cvv = null;
+
     /**
      * @var string
      */
     public $expiryDate = null;
+
     /**
      * @return string
      */
@@ -34,6 +38,7 @@ class Card extends DataObject
     {
         return $this->cardNumber;
     }
+
     /**
      * @param string
      */
@@ -41,6 +46,7 @@ class Card extends DataObject
     {
         $this->cardNumber = $value;
     }
+
     /**
      * @return string
      */
@@ -48,6 +54,7 @@ class Card extends DataObject
     {
         return $this->cardholderName;
     }
+
     /**
      * @param string
      */
@@ -55,6 +62,7 @@ class Card extends DataObject
     {
         $this->cardholderName = $value;
     }
+
     /**
      * @return string
      */
@@ -62,6 +70,7 @@ class Card extends DataObject
     {
         return $this->cvv;
     }
+
     /**
      * @param string
      */
@@ -69,6 +78,7 @@ class Card extends DataObject
     {
         $this->cvv = $value;
     }
+
     /**
      * @return string
      */
@@ -76,6 +86,7 @@ class Card extends DataObject
     {
         return $this->expiryDate;
     }
+
     /**
      * @param string
      */
@@ -83,26 +94,28 @@ class Card extends DataObject
     {
         $this->expiryDate = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->cardNumber)) {
+        if (!is_null($this->cardNumber)) {
             $object->cardNumber = $this->cardNumber;
         }
-        if (!\is_null($this->cardholderName)) {
+        if (!is_null($this->cardholderName)) {
             $object->cardholderName = $this->cardholderName;
         }
-        if (!\is_null($this->cvv)) {
+        if (!is_null($this->cvv)) {
             $object->cvv = $this->cvv;
         }
-        if (!\is_null($this->expiryDate)) {
+        if (!is_null($this->expiryDate)) {
             $object->expiryDate = $this->expiryDate;
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -111,16 +124,16 @@ class Card extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'cardNumber')) {
+        if (property_exists($object, 'cardNumber')) {
             $this->cardNumber = $object->cardNumber;
         }
-        if (\property_exists($object, 'cardholderName')) {
+        if (property_exists($object, 'cardholderName')) {
             $this->cardholderName = $object->cardholderName;
         }
-        if (\property_exists($object, 'cvv')) {
+        if (property_exists($object, 'cvv')) {
             $this->cvv = $object->cvv;
         }
-        if (\property_exists($object, 'expiryDate')) {
+        if (property_exists($object, 'expiryDate')) {
             $this->expiryDate = $object->expiryDate;
         }
         return $this;

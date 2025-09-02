@@ -1,11 +1,11 @@
 <?php
-
 /*
  * This file was automatically generated.
  */
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain;
+namespace OnlinePayments\Sdk\Domain;
 
 use UnexpectedValueException;
+
 /**
  * @package OnlinePayments\Sdk\Domain
  */
@@ -15,10 +15,12 @@ class MandateMerchantAction extends DataObject
      * @var string
      */
     public $actionType = null;
+
     /**
      * @var MandateRedirectData
      */
     public $redirectData = null;
+
     /**
      * @return string
      */
@@ -26,6 +28,7 @@ class MandateMerchantAction extends DataObject
     {
         return $this->actionType;
     }
+
     /**
      * @param string
      */
@@ -33,6 +36,7 @@ class MandateMerchantAction extends DataObject
     {
         $this->actionType = $value;
     }
+
     /**
      * @return MandateRedirectData
      */
@@ -40,6 +44,7 @@ class MandateMerchantAction extends DataObject
     {
         return $this->redirectData;
     }
+
     /**
      * @param MandateRedirectData
      */
@@ -47,20 +52,22 @@ class MandateMerchantAction extends DataObject
     {
         $this->redirectData = $value;
     }
+
     /**
      * @return object
      */
     public function toObject()
     {
         $object = parent::toObject();
-        if (!\is_null($this->actionType)) {
+        if (!is_null($this->actionType)) {
             $object->actionType = $this->actionType;
         }
-        if (!\is_null($this->redirectData)) {
+        if (!is_null($this->redirectData)) {
             $object->redirectData = $this->redirectData->toObject();
         }
         return $object;
     }
+
     /**
      * @param object $object
      * @return $this
@@ -69,12 +76,12 @@ class MandateMerchantAction extends DataObject
     public function fromObject($object)
     {
         parent::fromObject($object);
-        if (\property_exists($object, 'actionType')) {
+        if (property_exists($object, 'actionType')) {
             $this->actionType = $object->actionType;
         }
-        if (\property_exists($object, 'redirectData')) {
-            if (!\is_object($object->redirectData)) {
-                throw new UnexpectedValueException('value \'' . \print_r($object->redirectData, \true) . '\' is not an object');
+        if (property_exists($object, 'redirectData')) {
+            if (!is_object($object->redirectData)) {
+                throw new UnexpectedValueException('value \'' . print_r($object->redirectData, true) . '\' is not an object');
             }
             $value = new MandateRedirectData();
             $this->redirectData = $value->fromObject($object->redirectData);

@@ -1,6 +1,5 @@
 <?php
-
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication;
+namespace OnlinePayments\Sdk\Communication;
 
 /**
  * Interface MetadataProviderInterface

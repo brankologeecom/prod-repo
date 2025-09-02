@@ -1,12 +1,13 @@
 <?php
 
-namespace Syde\Vendor\Cawl\OnlinePayments\Sdk;
+namespace OnlinePayments\Sdk;
 
 use Exception;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\RequestObject;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Communication\ResponseClassMap;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Domain\DataObject;
-use Syde\Vendor\Cawl\OnlinePayments\Sdk\Logging\CommunicatorLogger;
+use OnlinePayments\Sdk\Communication\RequestObject;
+use OnlinePayments\Sdk\Communication\ResponseClassMap;
+use OnlinePayments\Sdk\Domain\DataObject;
+use OnlinePayments\Sdk\Logging\CommunicatorLogger;
+
 /**
  * Interface CommunicatorInterface
  *
@@ -18,10 +19,12 @@ interface CommunicatorInterface
      * @param CommunicatorLogger $communicatorLogger
      */
     public function enableLogging(CommunicatorLogger $communicatorLogger);
+
     /**
      *
      */
     public function disableLogging();
+
     /**
      * @param ResponseClassMap $responseClassMap
      * @param string $relativeUriPath
@@ -32,6 +35,7 @@ interface CommunicatorInterface
      * @throws ResponseException
      */
     public function get(ResponseClassMap $responseClassMap, $relativeUriPath, $clientMetaInfo = '', RequestObject $requestParameters = null, CallContext $callContext = null);
+
     /**
      * @param ResponseClassMap $responseClassMap
      * @param string $relativeUriPath
@@ -42,6 +46,7 @@ interface CommunicatorInterface
      * @throws Exception
      */
     public function delete(ResponseClassMap $responseClassMap, $relativeUriPath, $clientMetaInfo = '', RequestObject $requestParameters = null, CallContext $callContext = null);
+
     /**
      * @param ResponseClassMap $responseClassMap
      * @param string $relativeUriPath
@@ -53,6 +58,7 @@ interface CommunicatorInterface
      * @throws Exception
      */
     public function post(ResponseClassMap $responseClassMap, $relativeUriPath, $clientMetaInfo = '', $requestBodyObject = null, RequestObject $requestParameters = null, CallContext $callContext = null);
+
     /**
      * @param ResponseClassMap $responseClassMap
      * @param string $relativeUriPath

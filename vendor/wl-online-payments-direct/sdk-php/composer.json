@@ -1,10 +1,8 @@
 {
-    "name": "wl-online-payments-direct\/sdk-php",
+    "name": "wl-online-payments-direct/sdk-php",
     "type": "library",
     "description": "PHP SDK to communicate with the payment platform server-to-server API",
-    "keywords": [
-        "SDK"
-    ],
+    "keywords": ["SDK"],
     "license": "MIT",
     "authors": [
         {
@@ -16,24 +14,19 @@
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "robtimus\/multipart": "~1.0"
+        "robtimus/multipart": "~1.0"
     },
     "require-dev": {
-        "phpunit\/phpunit": "~9"
+        "phpunit/phpunit": "~9"
     },
     "autoload": {
         "psr-4": {
-            "Syde\\Vendor\\Cawl\\OnlinePayments\\Sdk\\": [
-                "src\/OnlinePayments\/Sdk",
-                "lib\/OnlinePayments\/Sdk"
-            ]
+            "OnlinePayments\\Sdk\\": ["src/OnlinePayments/Sdk", "lib/OnlinePayments/Sdk"]
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Syde\\Vendor\\Cawl\\OnlinePayments\\Sdk\\": [
-                "tests\/OnlinePayments\/Sdk"
-            ]
+            "OnlinePayments\\Sdk\\": ["tests/OnlinePayments/Sdk"]
         }
     }
 }
