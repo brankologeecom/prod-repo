@@ -1,0 +1,32 @@
+{
+    "name": "worldline/module-magento-payment-core",
+    "description": "Worldline Online Payments",
+    "require": {
+        "php": ">=7.3",
+        "ext-json": "*",
+        "wl-online-payments-direct/sdk-php": "6.2"
+    },
+    "type": "magento2-module",
+    "version": "2.29.0",
+    "license": ["MIT"],
+    "authors": [
+        {
+            "name": "Worldline Online Payments",
+            "homepage": "https://worldline.com/"
+        }
+    ],
+    "tracker": {
+        "extensionId": "WLOP-MG/v23.24",
+        "name": "Direct Magento Plugin",
+        "creator": "Amasty"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Worldline\\PaymentCore\\": ""
+        }
+    }
+}
+
